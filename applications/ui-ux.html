@@ -1,0 +1,431 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style data-emotion="css" data-s="">
+</style>
+<meta http-equiv="origin-trial" content="A/kargTFyk8MR5ueravczef/wIlTkbVk1qXQesp39nV+xNECPdLBVeYffxrM8TmZT6RArWGQVCJ0LRivD7glcAUAAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZS5jb206NDQzIiwiZmVhdHVyZSI6IkRpc2FibGVUaGlyZFBhcnR5U3RvcmFnZVBhcnRpdGlvbmluZzIiLCJleHBpcnkiOjE3NDIzNDIzOTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+<style>.ace_editor.ace_autocomplete .ace_marker-layer .ace_active-line {    background-color: #CAD6FA;    z-index: 1;}.ace_editor.ace_autocomplete .ace_line-hover {    border: 1px solid #abbffe;    margin-top: -1px;    background: rgba(233,233,253,0.4);}.ace_editor.ace_autocomplete .ace_line-hover {    position: absolute;    z-index: 2;}.ace_editor.ace_autocomplete .ace_scroller {   background: none;   border: none;   box-shadow: none;}.ace_rightAlignedText {    color: gray;    display: inline-block;    position: absolute;    right: 4px;    text-align: right;    z-index: -1;}.ace_editor.ace_autocomplete .ace_completion-highlight{    color: #000;    text-shadow: 0 0 0.01em;}.ace_editor.ace_autocomplete {    width: 280px;    z-index: 200000;    background: #fbfbfb;    color: #444;    border: 1px lightgray solid;    position: fixed;    box-shadow: 2px 3px 5px rgba(0,0,0,.2);    line-height: 1.4;}
+</style>
+<style>.ace_snippet-marker {    -moz-box-sizing: border-box;    box-sizing: border-box;    background: rgba(194, 193, 208, 0.09);    border: 1px dotted rgba(211, 208, 235, 0.62);    position: absolute;}
+</style>
+<style type="text/css">.tippy-touch{cursor:pointer!important}.tippy-notransition{transition:none!important}.tippy-popper{max-width:350px;-webkit-perspective:700px;perspective:700px;z-index:9999;outline:0;transition-timing-function:cubic-bezier(.165,.84,.44,1);pointer-events:none;line-height:1.4}.tippy-popper[data-html]{max-width:96%;max-width:calc(100% - 20px)}.tippy-popper[x-placement^=top] .tippy-backdrop{border-radius:40% 40% 0 0}.tippy-popper[x-placement^=top] .tippy-roundarrow{bottom:-8px;-webkit-transform-origin:50% 0;transform-origin:50% 0}.tippy-popper[x-placement^=top] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(180deg);transform:rotate(180deg)}.tippy-popper[x-placement^=top] .tippy-arrow{border-top:7px solid #333;border-right:7px solid transparent;border-left:7px solid transparent;bottom:-7px;margin:0 6px;-webkit-transform-origin:50% 0;transform-origin:50% 0}.tippy-popper[x-placement^=top] .tippy-backdrop{-webkit-transform-origin:0 90%;transform-origin:0 90%}.tippy-popper[x-placement^=top] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(6) translate(-50%,25%);transform:scale(6) translate(-50%,25%);opacity:1}.tippy-popper[x-placement^=top] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(1) translate(-50%,25%);transform:scale(1) translate(-50%,25%);opacity:0}.tippy-popper[x-placement^=top] [data-animation=shift-toward][data-state=visible]{opacity:1;-webkit-transform:translateY(-10px);transform:translateY(-10px)}.tippy-popper[x-placement^=top] [data-animation=shift-toward][data-state=hidden]{opacity:0;-webkit-transform:translateY(-20px);transform:translateY(-20px)}.tippy-popper[x-placement^=top] [data-animation=perspective]{-webkit-transform-origin:bottom;transform-origin:bottom}.tippy-popper[x-placement^=top] [data-animation=perspective][data-state=visible]{opacity:1;-webkit-transform:translateY(-10px) rotateX(0);transform:translateY(-10px) rotateX(0)}.tippy-popper[x-placement^=top] [data-animation=perspective][data-state=hidden]{opacity:0;-webkit-transform:translateY(0) rotateX(90deg);transform:translateY(0) rotateX(90deg)}.tippy-popper[x-placement^=top] [data-animation=fade][data-state=visible]{opacity:1;-webkit-transform:translateY(-10px);transform:translateY(-10px)}.tippy-popper[x-placement^=top] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateY(-10px);transform:translateY(-10px)}.tippy-popper[x-placement^=top] [data-animation=shift-away][data-state=visible]{opacity:1;-webkit-transform:translateY(-10px);transform:translateY(-10px)}.tippy-popper[x-placement^=top] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateY(0);transform:translateY(0)}.tippy-popper[x-placement^=top] [data-animation=scale][data-state=visible]{opacity:1;-webkit-transform:translateY(-10px) scale(1);transform:translateY(-10px) scale(1)}.tippy-popper[x-placement^=top] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateY(0) scale(0);transform:translateY(0) scale(0)}.tippy-popper[x-placement^=bottom] .tippy-backdrop{border-radius:0 0 30% 30%}.tippy-popper[x-placement^=bottom] .tippy-roundarrow{top:-8px;-webkit-transform-origin:50% 100%;transform-origin:50% 100%}.tippy-popper[x-placement^=bottom] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(0);transform:rotate(0)}.tippy-popper[x-placement^=bottom] .tippy-arrow{border-bottom:7px solid #333;border-right:7px solid transparent;border-left:7px solid transparent;top:-7px;margin:0 6px;-webkit-transform-origin:50% 100%;transform-origin:50% 100%}.tippy-popper[x-placement^=bottom] .tippy-backdrop{-webkit-transform-origin:0 -90%;transform-origin:0 -90%}.tippy-popper[x-placement^=bottom] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(6) translate(-50%,-125%);transform:scale(6) translate(-50%,-125%);opacity:1}.tippy-popper[x-placement^=bottom] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(1) translate(-50%,-125%);transform:scale(1) translate(-50%,-125%);opacity:0}.tippy-popper[x-placement^=bottom] [data-animation=shift-toward][data-state=visible]{opacity:1;-webkit-transform:translateY(10px);transform:translateY(10px)}.tippy-popper[x-placement^=bottom] [data-animation=shift-toward][data-state=hidden]{opacity:0;-webkit-transform:translateY(20px);transform:translateY(20px)}.tippy-popper[x-placement^=bottom] [data-animation=perspective]{-webkit-transform-origin:top;transform-origin:top}.tippy-popper[x-placement^=bottom] [data-animation=perspective][data-state=visible]{opacity:1;-webkit-transform:translateY(10px) rotateX(0);transform:translateY(10px) rotateX(0)}.tippy-popper[x-placement^=bottom] [data-animation=perspective][data-state=hidden]{opacity:0;-webkit-transform:translateY(0) rotateX(-90deg);transform:translateY(0) rotateX(-90deg)}.tippy-popper[x-placement^=bottom] [data-animation=fade][data-state=visible]{opacity:1;-webkit-transform:translateY(10px);transform:translateY(10px)}.tippy-popper[x-placement^=bottom] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateY(10px);transform:translateY(10px)}.tippy-popper[x-placement^=bottom] [data-animation=shift-away][data-state=visible]{opacity:1;-webkit-transform:translateY(10px);transform:translateY(10px)}.tippy-popper[x-placement^=bottom] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateY(0);transform:translateY(0)}.tippy-popper[x-placement^=bottom] [data-animation=scale][data-state=visible]{opacity:1;-webkit-transform:translateY(10px) scale(1);transform:translateY(10px) scale(1)}.tippy-popper[x-placement^=bottom] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateY(0) scale(0);transform:translateY(0) scale(0)}.tippy-popper[x-placement^=left] .tippy-backdrop{border-radius:50% 0 0 50%}.tippy-popper[x-placement^=left] .tippy-roundarrow{right:-16px;-webkit-transform-origin:33.33333333% 50%;transform-origin:33.33333333% 50%}.tippy-popper[x-placement^=left] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(90deg);transform:rotate(90deg)}.tippy-popper[x-placement^=left] .tippy-arrow{border-left:7px solid #333;border-top:7px solid transparent;border-bottom:7px solid transparent;right:-7px;margin:3px 0;-webkit-transform-origin:0 50%;transform-origin:0 50%}.tippy-popper[x-placement^=left] .tippy-backdrop{-webkit-transform-origin:100% 0;transform-origin:100% 0}.tippy-popper[x-placement^=left] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(6) translate(40%,-50%);transform:scale(6) translate(40%,-50%);opacity:1}.tippy-popper[x-placement^=left] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(1.5) translate(40%,-50%);transform:scale(1.5) translate(40%,-50%);opacity:0}.tippy-popper[x-placement^=left] [data-animation=shift-toward][data-state=visible]{opacity:1;-webkit-transform:translateX(-10px);transform:translateX(-10px)}.tippy-popper[x-placement^=left] [data-animation=shift-toward][data-state=hidden]{opacity:0;-webkit-transform:translateX(-20px);transform:translateX(-20px)}.tippy-popper[x-placement^=left] [data-animation=perspective]{-webkit-transform-origin:right;transform-origin:right}.tippy-popper[x-placement^=left] [data-animation=perspective][data-state=visible]{opacity:1;-webkit-transform:translateX(-10px) rotateY(0);transform:translateX(-10px) rotateY(0)}.tippy-popper[x-placement^=left] [data-animation=perspective][data-state=hidden]{opacity:0;-webkit-transform:translateX(0) rotateY(-90deg);transform:translateX(0) rotateY(-90deg)}.tippy-popper[x-placement^=left] [data-animation=fade][data-state=visible]{opacity:1;-webkit-transform:translateX(-10px);transform:translateX(-10px)}.tippy-popper[x-placement^=left] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateX(-10px);transform:translateX(-10px)}.tippy-popper[x-placement^=left] [data-animation=shift-away][data-state=visible]{opacity:1;-webkit-transform:translateX(-10px);transform:translateX(-10px)}.tippy-popper[x-placement^=left] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateX(0);transform:translateX(0)}.tippy-popper[x-placement^=left] [data-animation=scale][data-state=visible]{opacity:1;-webkit-transform:translateX(-10px) scale(1);transform:translateX(-10px) scale(1)}.tippy-popper[x-placement^=left] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateX(0) scale(0);transform:translateX(0) scale(0)}.tippy-popper[x-placement^=right] .tippy-backdrop{border-radius:0 50% 50% 0}.tippy-popper[x-placement^=right] .tippy-roundarrow{left:-16px;-webkit-transform-origin:66.66666666% 50%;transform-origin:66.66666666% 50%}.tippy-popper[x-placement^=right] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(-90deg);transform:rotate(-90deg)}.tippy-popper[x-placement^=right] .tippy-arrow{border-right:7px solid #333;border-top:7px solid transparent;border-bottom:7px solid transparent;left:-7px;margin:3px 0;-webkit-transform-origin:100% 50%;transform-origin:100% 50%}.tippy-popper[x-placement^=right] .tippy-backdrop{-webkit-transform-origin:-100% 0;transform-origin:-100% 0}.tippy-popper[x-placement^=right] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(6) translate(-140%,-50%);transform:scale(6) translate(-140%,-50%);opacity:1}.tippy-popper[x-placement^=right] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(1.5) translate(-140%,-50%);transform:scale(1.5) translate(-140%,-50%);opacity:0}.tippy-popper[x-placement^=right] [data-animation=shift-toward][data-state=visible]{opacity:1;-webkit-transform:translateX(10px);transform:translateX(10px)}.tippy-popper[x-placement^=right] [data-animation=shift-toward][data-state=hidden]{opacity:0;-webkit-transform:translateX(20px);transform:translateX(20px)}.tippy-popper[x-placement^=right] [data-animation=perspective]{-webkit-transform-origin:left;transform-origin:left}.tippy-popper[x-placement^=right] [data-animation=perspective][data-state=visible]{opacity:1;-webkit-transform:translateX(10px) rotateY(0);transform:translateX(10px) rotateY(0)}.tippy-popper[x-placement^=right] [data-animation=perspective][data-state=hidden]{opacity:0;-webkit-transform:translateX(0) rotateY(90deg);transform:translateX(0) rotateY(90deg)}.tippy-popper[x-placement^=right] [data-animation=fade][data-state=visible]{opacity:1;-webkit-transform:translateX(10px);transform:translateX(10px)}.tippy-popper[x-placement^=right] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateX(10px);transform:translateX(10px)}.tippy-popper[x-placement^=right] [data-animation=shift-away][data-state=visible]{opacity:1;-webkit-transform:translateX(10px);transform:translateX(10px)}.tippy-popper[x-placement^=right] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateX(0);transform:translateX(0)}.tippy-popper[x-placement^=right] [data-animation=scale][data-state=visible]{opacity:1;-webkit-transform:translateX(10px) scale(1);transform:translateX(10px) scale(1)}.tippy-popper[x-placement^=right] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateX(0) scale(0);transform:translateX(0) scale(0)}.tippy-tooltip{position:relative;color:#fff;border-radius:4px;font-size:.9rem;padding:.3rem .6rem;text-align:center;will-change:transform;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background-color:#333}.tippy-tooltip[data-size=small]{padding:.2rem .4rem;font-size:.75rem}.tippy-tooltip[data-size=large]{padding:.4rem .8rem;font-size:1rem}.tippy-tooltip[data-animatefill]{overflow:hidden;background-color:transparent}.tippy-tooltip[data-animatefill] .tippy-content{transition:-webkit-clip-path cubic-bezier(.46,.1,.52,.98);transition:clip-path cubic-bezier(.46,.1,.52,.98);transition:clip-path cubic-bezier(.46,.1,.52,.98),-webkit-clip-path cubic-bezier(.46,.1,.52,.98)}.tippy-tooltip[data-interactive],.tippy-tooltip[data-interactive] path{pointer-events:auto}.tippy-tooltip[data-inertia][data-state=visible]{transition-timing-function:cubic-bezier(.53,2,.36,.85)}.tippy-tooltip[data-inertia][data-state=hidden]{transition-timing-function:ease}.tippy-arrow,.tippy-roundarrow{position:absolute;width:0;height:0}.tippy-roundarrow{width:24px;height:8px;fill:#333;pointer-events:none}.tippy-backdrop{position:absolute;will-change:transform;background-color:#333;border-radius:50%;width:26%;left:50%;top:50%;z-index:-1;transition:all cubic-bezier(.46,.1,.52,.98);-webkit-backface-visibility:hidden;backface-visibility:hidden}.tippy-backdrop:after{content:"";float:left;padding-top:100%}body:not(.tippy-touch) .tippy-tooltip[data-animatefill][data-state=visible] .tippy-content{-webkit-clip-path:ellipse(100% 100% at 50% 50%);clip-path:ellipse(100% 100% at 50% 50%)}body:not(.tippy-touch) .tippy-tooltip[data-animatefill][data-state=hidden] .tippy-content{-webkit-clip-path:ellipse(5% 50% at 50% 50%);clip-path:ellipse(5% 50% at 50% 50%)}body:not(.tippy-touch) .tippy-popper[x-placement=right] .tippy-tooltip[data-animatefill][data-state=visible] .tippy-content{-webkit-clip-path:ellipse(135% 100% at 0 50%);clip-path:ellipse(135% 100% at 0 50%)}body:not(.tippy-touch) .tippy-popper[x-placement=right] .tippy-tooltip[data-animatefill][data-state=hidden] .tippy-content{-webkit-clip-path:ellipse(40% 100% at 0 50%);clip-path:ellipse(40% 100% at 0 50%)}body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-animatefill][data-state=visible] .tippy-content{-webkit-clip-path:ellipse(135% 100% at 100% 50%);clip-path:ellipse(135% 100% at 100% 50%)}body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-animatefill][data-state=hidden] .tippy-content{-webkit-clip-path:ellipse(40% 100% at 100% 50%);clip-path:ellipse(40% 100% at 100% 50%)}@media (max-width:360px){.tippy-popper{max-width:96%;max-width:calc(100% - 20px)}}
+</style>
+<style data-merge-styles="true">
+</style>
+
+<style data-merge-styles="true">
+</style>
+<style data-merge-styles="true">
+</style>
+
+
+  
+  <title>Job Application, at GataraAI
+  </title>
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <meta id="viewport" name="viewport" content="width=device-width, minimum-scale=1.0">
+  
+  <meta id="rendered-by" content="jben">
+  
+  <link rel="stylesheet" media="all" href="./application/application-503576cead2d834a5d82da818670031f8db2f2c51eb2512be35e876ded3907a1.css">
+
+<link rel="stylesheet" media="all" href="./application/responsive-95ad71d0f9cbcb13adb28ed74687b15c00a64bb1c4a6ab47ab9072493777804c.css">
+  
+<link rel="stylesheet" media="all" href="/main.css">
+    
+
+        
+<link rel="stylesheet" media="screen" href="./application/greenhouse.css">
+
+
+
+
+<style id="googleidentityservice_button_styles">.qJTHM{-webkit-user-select:none;color:#202124;direction:ltr;-webkit-touch-callout:none;font-family:"Roboto-Regular",arial,sans-serif;-webkit-font-smoothing:antialiased;font-weight:400;margin:0;overflow:hidden;-webkit-text-size-adjust:100%}.ynRLnc{left:-9999px;position:absolute;top:-9999px}.L6cTce{display:none}.bltWBb{word-break:break-all}.hSRGPd{color:#1a73e8;cursor:pointer;font-weight:500;text-decoration:none}.Bz112c-W3lGp{height:16px;width:16px}.Bz112c-E3DyYd{height:20px;width:20px}.Bz112c-r9oPif{height:24px;width:24px}.Bz112c-uaxL4e{-webkit-border-radius:10px;border-radius:10px}.LgbsSe-Bz112c{display:block}.S9gUrf-YoZ4jf,.S9gUrf-YoZ4jf *{border:none;margin:0;padding:0}.fFW7wc-ibnC6b>.aZ2wEe>div{border-color:#4285f4}.P1ekSe-ZMv3u>div:nth-child(1){background-color:#1a73e8!important}.P1ekSe-ZMv3u>div:nth-child(2),.P1ekSe-ZMv3u>div:nth-child(3){background-image:linear-gradient(to right,rgba(255,255,255,.7),rgba(255,255,255,.7)),linear-gradient(to right,#1a73e8,#1a73e8)!important}.haAclf{display:inline-block}.nsm7Bb-HzV7m-LgbsSe{-webkit-border-radius:4px;border-radius:4px;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-transition:background-color .218s,border-color .218s;transition:background-color .218s,border-color .218s;-webkit-user-select:none;-webkit-appearance:none;background-color:#fff;background-image:none;border:1px solid #dadce0;color:#3c4043;cursor:pointer;font-family:"Google Sans",arial,sans-serif;font-size:14px;height:40px;letter-spacing:0.25px;outline:none;overflow:hidden;padding:0 12px;position:relative;text-align:center;vertical-align:middle;white-space:nowrap;width:auto}@media screen and (-ms-high-contrast:active){.nsm7Bb-HzV7m-LgbsSe{border:2px solid windowText;color:windowText}}.nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe{font-size:14px;height:32px;letter-spacing:0.25px;padding:0 10px}.nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe{font-size:11px;height:20px;letter-spacing:0.3px;padding:0 8px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe{padding:0;width:40px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.pSzOP-SxQuSe{width:32px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.purZT-SxQuSe{width:20px}.nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK{-webkit-border-radius:20px;border-radius:20px}.nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK.pSzOP-SxQuSe{-webkit-border-radius:16px;border-radius:16px}.nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK.purZT-SxQuSe{-webkit-border-radius:10px;border-radius:10px}.nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc{border:none;color:#fff}.nsm7Bb-HzV7m-LgbsSe.MFS4be-v3pZbf-Ia7Qfc{background-color:#1a73e8}.nsm7Bb-HzV7m-LgbsSe.MFS4be-JaPV2b-Ia7Qfc{background-color:#202124;color:#e8eaed}.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c{height:18px;margin-right:8px;min-width:18px;width:18px}.nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c{height:14px;min-width:14px;width:14px}.nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c{height:10px;min-width:10px;width:10px}.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-Bz112c{margin-left:8px;margin-right:-4px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c{margin:0;padding:10px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.pSzOP-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c{padding:8px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c{padding:4px}.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{-webkit-border-top-left-radius:3px;border-top-left-radius:3px;-webkit-border-bottom-left-radius:3px;border-bottom-left-radius:3px;display:-webkit-box;display:-webkit-flex;display:flex;justify-content:center;-webkit-align-items:center;align-items:center;background-color:#fff;height:36px;margin-left:-10px;margin-right:12px;min-width:36px;width:36px}.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf .nsm7Bb-HzV7m-LgbsSe-Bz112c,.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf .nsm7Bb-HzV7m-LgbsSe-Bz112c{margin:0;padding:0}.nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{height:28px;margin-left:-8px;margin-right:10px;min-width:28px;width:28px}.nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{height:16px;margin-left:-6px;margin-right:8px;min-width:16px;width:16px}.nsm7Bb-HzV7m-LgbsSe.Bz112c-LgbsSe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{-webkit-border-radius:3px;border-radius:3px;margin-left:2px;margin-right:0;padding:0}.nsm7Bb-HzV7m-LgbsSe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{-webkit-border-radius:18px;border-radius:18px}.nsm7Bb-HzV7m-LgbsSe.pSzOP-SxQuSe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{-webkit-border-radius:14px;border-radius:14px}.nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{-webkit-border-radius:8px;border-radius:8px}.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-flex-direction:row;flex-direction:row;justify-content:space-between;-webkit-flex-wrap:nowrap;flex-wrap:nowrap;height:100%;position:relative;width:100%}.nsm7Bb-HzV7m-LgbsSe .oXtfBe-l4eHX{justify-content:center}.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-BPrWId{-webkit-flex-grow:1;flex-grow:1;font-family:"Google Sans",arial,sans-serif;font-weight:500;overflow:hidden;text-overflow:ellipsis;vertical-align:top}.nsm7Bb-HzV7m-LgbsSe.purZT-SxQuSe .nsm7Bb-HzV7m-LgbsSe-BPrWId{font-weight:300}.nsm7Bb-HzV7m-LgbsSe .oXtfBe-l4eHX .nsm7Bb-HzV7m-LgbsSe-BPrWId{-webkit-flex-grow:0;flex-grow:0}.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-MJoBVe{-webkit-transition:background-color .218s;transition:background-color .218s;bottom:0;left:0;position:absolute;right:0;top:0}.nsm7Bb-HzV7m-LgbsSe:hover,.nsm7Bb-HzV7m-LgbsSe:focus{-webkit-box-shadow:none;box-shadow:none;border-color:#d2e3fc;outline:none}.nsm7Bb-HzV7m-LgbsSe:hover .nsm7Bb-HzV7m-LgbsSe-MJoBVe,.nsm7Bb-HzV7m-LgbsSe:focus .nsm7Bb-HzV7m-LgbsSe-MJoBVe{background:rgba(66,133,244,.04)}.nsm7Bb-HzV7m-LgbsSe:active .nsm7Bb-HzV7m-LgbsSe-MJoBVe{background:rgba(66,133,244,.1)}.nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc:hover .nsm7Bb-HzV7m-LgbsSe-MJoBVe,.nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc:focus .nsm7Bb-HzV7m-LgbsSe-MJoBVe{background:rgba(255,255,255,.24)}.nsm7Bb-HzV7m-LgbsSe.MFS4be-Ia7Qfc:active .nsm7Bb-HzV7m-LgbsSe-MJoBVe{background:rgba(255,255,255,.32)}.nsm7Bb-HzV7m-LgbsSe .n1UuX-DkfjY{-webkit-border-radius:50%;border-radius:50%;display:-webkit-box;display:-webkit-flex;display:flex;height:20px;margin-left:-4px;margin-right:8px;min-width:20px;width:20px}.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId{font-family:"Roboto";font-size:12px;text-align:left}.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .ssJRIf,.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff .fmcmS{overflow:hidden;text-overflow:ellipsis}.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;color:#5f6368;fill:#5f6368;font-size:11px;font-weight:400}.nsm7Bb-HzV7m-LgbsSe.jVeSEe.MFS4be-Ia7Qfc .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff{color:#e8eaed;fill:#e8eaed}.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-BPrWId .K4efff .Bz112c{height:18px;margin:-3px -3px -3px 2px;min-width:18px;width:18px}.nsm7Bb-HzV7m-LgbsSe.jVeSEe .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{-webkit-border-top-left-radius:0;border-top-left-radius:0;-webkit-border-bottom-left-radius:0;border-bottom-left-radius:0;-webkit-border-top-right-radius:3px;border-top-right-radius:3px;-webkit-border-bottom-right-radius:3px;border-bottom-right-radius:3px;margin-left:12px;margin-right:-10px}.nsm7Bb-HzV7m-LgbsSe.jVeSEe.JGcpL-RbRzK .nsm7Bb-HzV7m-LgbsSe-Bz112c-haAclf{-webkit-border-radius:18px;border-radius:18px}.L5Fo6c-sM5MNb{border:0;display:block;left:0;position:relative;top:0}.L5Fo6c-bF1uUb{-webkit-border-radius:4px;border-radius:4px;bottom:0;cursor:pointer;left:0;position:absolute;right:0;top:0}.L5Fo6c-bF1uUb:focus{border:none;outline:none}sentinel{}
+</style>
+<style>.picker-dialog-frame{width:100%;height:100%;border:0;overflow:hidden}.picker-dialog-bg{position:absolute;top:0;left:0;background-color:#fff;z-index:1000}.picker-dialog{position:absolute;top:0;left:0;background-color:#fff;border:1px solid #acacac;width:auto;padding:0;z-index:1001;overflow:auto;box-shadow:0 4px 16px rgba(0,0,0,.2)}.picker-dialog-content{height:100%;font-size:0;padding:0}.picker-dialog-buttons,.picker-dialog-title{display:none}
+</style>
+<style type="text/css">
+@font-face {
+  font-weight: 400;
+  font-style:  normal;
+  font-family: circular;
+
+  src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Book.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 700;
+  font-style:  normal;
+  font-family: circular;
+
+  src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Bold.woff2') format('woff2');
+}
+</style>
+<style type="text/css">  @-webkit-keyframes rotate {
+    from  { -webkit-transform: rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg); }
+  }
+
+  @keyframes rotate {
+    from  { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+    .dropbox-dropin-btn, .dropbox-dropin-btn:link, .dropbox-dropin-btn:hover {
+      display: inline-block;
+      height: 14px;
+      font-family: "Lucida Grande", "Segoe UI", "Tahoma", "Helvetica Neue", "Helvetica", sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      color: #636363;
+      text-decoration: none;
+      padding: 1px 7px 5px 3px;
+      border: 1px solid #ebebeb;
+      border-radius: 2px;
+      border-bottom-color: #d4d4d4;
+        background: #fcfcfc;
+  background: -moz-linear-gradient(top, #fcfcfc 0%, #f5f5f5 100%);
+  background: -webkit-linear-gradient(top, #fcfcfc 0%, #f5f5f5 100%);
+  background: linear-gradient(to bottom, #fcfcfc 0%, #f5f5f5 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f5f5f5',GradientType=0);  
+    }
+
+    .dropbox-dropin-default:hover, .dropbox-dropin-error:hover {
+      border-color: #dedede;
+      border-bottom-color: #cacaca;
+        background: #fdfdfd;
+  background: -moz-linear-gradient(top, #fdfdfd 0%, #f5f5f5 100%);
+  background: -webkit-linear-gradient(top, #fdfdfd 0%, #f5f5f5 100%);
+  background: linear-gradient(to bottom, #fdfdfd 0%, #f5f5f5 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdfdfd', endColorstr='#f5f5f5',GradientType=0);  
+    }
+
+    .dropbox-dropin-default:active, .dropbox-dropin-error:active {
+      border-color: #d1d1d1;
+      box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
+    }
+
+    .dropbox-dropin-btn .dropin-btn-status {
+      display: inline-block;
+      width: 15px;
+      height: 14px;
+      vertical-align: bottom;
+      margin: 0 5px 0 2px;
+      background: transparent url('https://www.dropbox.com/static/metaserver/static/images/widgets/dbx-saver-status.png') no-repeat;
+      position: relative;
+      top: 2px;
+    }
+
+    .dropbox-dropin-default .dropin-btn-status {
+      background-position: 0px 0px;
+    }
+
+    .dropbox-dropin-progress .dropin-btn-status {
+      width: 18px;
+      margin: 0 4px 0 0;
+      background: url('https://www.dropbox.com/static/metaserver/static/images/widgets/dbx-progress.png') no-repeat center center;
+        -webkit-animation-name: rotate;
+        -webkit-animation-duration: 1.7s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+      animation-name: rotate;
+      animation-duration: 1.7s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    .dropbox-dropin-success .dropin-btn-status {
+      background-position: -15px 0px;
+    }
+
+    .dropbox-dropin-disabled {
+      background: #e0e0e0;
+      border: 1px #dadada solid;
+      border-bottom: 1px solid #ccc;
+      box-shadow: none;
+    }
+
+    .dropbox-dropin-disabled .dropin-btn-status {
+      background-position: -30px 0px;
+    }
+
+    .dropbox-dropin-error .dropin-btn-status {
+      background-position: -45px 0px;
+    }
+
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.4) {
+      .dropbox-dropin-btn .dropin-btn-status {
+        background-image: url('https://www.dropbox.com/static/metaserver/static/images/widgets/dbx-saver-status-2x.png');
+        background-size: 60px 14px;
+          -webkit-background-size: 60px 14px;
+      }
+
+      .dropbox-dropin-progress .dropin-btn-status {
+        background: url('https://www.dropbox.com/static/metaserver/static/images/widgets/dbx-progress-2x.png') no-repeat center center;
+        background-size: 20px 20px;
+          -webkit-background-size: 20px 20px;
+      }
+  }
+
+    .dropbox-saver:hover, .dropbox-chooser:hover {
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .dropbox-chooser, .dropbox-dropin-btn {
+      line-height: 11px !important;
+      text-decoration: none !important;
+      box-sizing: content-box !important;
+        -webkit-box-sizing: content-box !important;
+        -moz-box-sizing: content-box !important;
+    }
+    
+    /* Styles for small screens */
+    @media only screen and (max-width: 767px) {
+        .new {
+            padding-left: 25px !important; /* Adjusted left padding for small screens */
+            padding-right: 15px !important; /* Adjusted right padding for small screens */
+        }
+
+        .app-title {
+          padding-right: 15px !important;
+        }
+    }
+
+    ::selection {
+  background-color: #68ad78;
+}
+    </style>
+    <style data-styled="active" data-styled-version="5.3.11">
+    </style>
+  </head>
+
+<body style="background-color: #faf9f5;">
+  
+  <div id="wrapper" class="new">
+    
+    <div id="main" class="accessible">
+      
+
+
+
+
+
+
+<div id="app_body" style="padding-left:20px">
+  
+  <div class="logo-container">
+      
+    <div id="logo">
+      <a target="_blank" href="/">
+      <img alt="Logo" src="/public/logo.svg" width="75" height="75">
+  </a>
+  </div>
+
+</div>
+
+    
+    <div id="header" style="padding-right: 0px;">
+  <h1 class="app-title" style="padding-right: 0px; font-size: 35px;">UI/UX Designer
+  </h1>
+
+
+    <div class="location">
+      Remote | Prefered Aleppo, Syria<br>
+      Part-Time | 5 hours
+    </div>
+
+</div>
+  
+  <div id="content" class="">
+    
+    <div class="content-intro">
+      <h2>
+      <strong>About Gatara AI
+    </strong>
+  </h2>
+
+<p>
+  Gatara AI’s mission is to simplify AI for everyone, making it accessible, intuitive, and transformative. Our team is a rapidly growing group of passionate software developers, designers, and business leaders working together to build AI solutions that are not only powerful but also practical and inclusive.
+</p>
+</div>
+
+    
+    <div>
+
+<h2>About the role:
+</h2>
+
+</div>
+
+<p>
+    At <strong>Gatara AI</strong>, we believe that great design is not just about aesthetics—it’s about creating experiences that are
+     <strong>simple, clear, catchy, and useful</strong>. We’re looking for a talented <strong>UI/UX Designer</strong> who shares this philosophy 
+     and can apply the <strong>"Don’t Make Me Think"</strong> strategy to design intuitive, 
+     user-friendly interfaces that drive engagement and satisfaction.
+</p>
+
+<div>
+    Your mission is to design interfaces that are not only visually appealing but also incredibly easy to use, 
+    ensuring that users can navigate our AI-powered SaaS products effortlessly. 
+    By creating designs that prioritize user experience, you’ll play a key role in increasing our profits,
+    expanding our reach, and helping us achieve our mission of making AI accessible to everyone.
+</div>
+
+<div>&nbsp;
+</div>
+  
+<div>
+
+
+<h2>What You’ll Do:
+</h2>
+
+<ul>
+
+<li>Design <strong>user-friendly interfaces</strong> that are simple, clear, and intuitive, applying the <strong>"Don’t Make Me Think"</strong> philosophy to every project.
+</li>
+
+<li>Create wireframes, prototypes, and high-fidelity designs that prioritize <strong>instant clarity</strong> and <strong>familiar navigation patterns</strong>, ensuring users can navigate effortlessly without confusion.
+</li>
+
+<li>Collaborate with the frontend and backend teams to ensure seamless integration of your designs.
+</li>
+
+<li>Conduct <strong>usability testing</strong> to observe real users interacting with your designs, identify weaknesses, and validate design choices.
+</li>
+
+<li>Develop <strong>streamlined user flows</strong> that minimize clicks and unnecessary options, enhancing decision-making and user satisfaction.
+</li>
+
+<li>
+    Maintain <strong>consistency</strong> in layouts, icons, and design elements to promote user comfort and reduce frustration.
+</li>    
+
+<li>
+    Stay up-to-date with the latest trends in UI/UX design and incorporate best practices into your work.
+</li>  
+
+<li>
+    Focus on creating designs that not only look great but also drive user engagement and satisfaction, ultimately increasing our profits and reach.
+</li> 
+
+</ul>
+
+<h2>What We’re Looking For:
+</h2>
+
+<ul>
+
+<li>A strong portfolio showcasing your ability to design <strong>simple, clear, and user-friendly interfaces</strong> that reduce cognitive load and enhance engagement.
+</li>
+
+<li>
+    Expertise in Figma as a design tool
+</li>
+
+<li>A deep understanding of the <strong>"Don’t Make Me Think"</strong> philosophy and how to apply it to create intuitive user experiences.
+</li>
+
+<li>Experience conducting <strong>user research</strong> and <strong>usability testing</strong>, with a focus on identifying and eliminating elements that force users to think or cause confusion.
+</li>
+
+<li>Strong visual design skills with an eye for detail and aesthetics, ensuring designs are both beautiful and functional.
+</li>
+
+<li>
+    Ability to create <strong>familiar layouts</strong> and <strong>recognizable icons</strong> that promote seamless navigation and reduce frustration.
+</li>
+
+<li>
+    A passion for <strong>simplicity in design</strong>, with the discipline to iterate constantly and refine designs to meet user needs effectively.
+</li>
+
+<li>
+    Ability to collaborate effectively with cross-functional teams, including developers and product managers.
+</li>
+
+</ul>
+
+
+<p><strong>We encourage you to apply even if you do not believe you meet every single qualification.</strong> Not all strong candidates will meet every single qualification as listed. <br>we urge you not to exclude yourself prematurely and to submit an application if you're interested in this work.</p>
+    
+</div>
+
+<div class="content-conclusion"><h2><strong>Logistics</strong></h2>
+
+  <h4 style="margin-top: 0px; margin-bottom: 0px;">Salary and Payment:</h4>
+  <p style="margin-top: 2px;">
+    As a startup <strong>AI company</strong>, we are currently in the early stages of our journey and have not yet generated revenue. 
+    This means that, at this time, we are <u>unable to offer a salary or regular payments to our team members</u>. 
+    By <strong>joining us</strong>, you will be <strong>investing</strong> in the future of the company, just as our CEO and founder are doing.
+  </p>  
+  <p>
+    <strong>We are deeply committed to the success of this venture</strong>, 
+    and we believe in the potential of our vision. Once the company grows and begins to generate revenue, 
+    we will ensure that all team members are compensated fairly for their contributions. 
+    Your dedication and hard work will be recognized and rewarded as we achieve milestones together.
+  </p>  
+  <p>
+    <strong>This is an opportunity to be part of something groundbreaking from the ground up</strong>, 
+    to gain invaluable experience, and to share in the success of the company as it grows. 
+    If you are passionate about AI, innovation, and building something transformative, 
+    we would love to have you on board.
+  </p>  
+ 
+  <h2 ><strong>How we're different</strong></h2>
+  <h4 style="margin-top: 0px; margin-bottom: 0px;">Our Philosophy is Simple:</h4>
+    <ul style="padding-left: 30px; margin-top: 1px;">
+      <li>Anything without a purpose has no value.</li>  
+      <li>
+        We believe in purpose-driven work. There’s no room for "just because" or going through the motions. 
+        Every action, every idea, and every effort must align with a greater goal. 
+        If you’re someone who thrives on ambition, innovation, and creating real impact, you’ll fit right in.
+      </li>
+      <li>Here, you won’t just join as another employee—you’ll join as a key player in shaping the future of AI.</li>
+      <li>Join us like a golden fish, but once you’re in the game, let your ambition take over and aim to score. Build, innovate, and create impact.</li>
+      <li>We don’t just accept this—we encourage it.</li>  
+      <li>Leveraging, competing, and complementing each other has a purpose. A dynamic like this is incredibly valuable to us.</li>  
+      <li>It’s dynamism that sparks creativity, and creativity is what drives the future of AI.</li>
+    </ul>
+  <p>
+    We’re not looking for ordinary employees. 
+    We’re looking for <strong>EGHO</strong>—individuals who are driven to achieve greatness, 
+    not just for the company, but for themselves. If you’re someone who is <strong>NOT</strong> motivated to push boundaries, 
+    challenge the status quo, and achieve your own ambitious goals, <u>this might <strong>NOT</strong> be the right fit for you</u>.
+  </p>
+  <p>
+    <strong>But</strong> if you’re ready to build, innovate, and leave a lasting impact, we encourage you to take the leap.
+  </p>
+  <h2><strong>Come work with us!</strong></h2>
+  <p><strong>We’re seeking the best of the best</strong>—talented developers who thrive on solving challenging problems with elegant, efficient code. If you’re passionate about cutting-edge AI technology and want to make a meaningful impact, we’d love to hear from you!</p></div>
+
+  <p>
+    <strong>Deadline to apply:&nbsp;
+  </strong>3/3/2025
+  </p>
+
+
+  <div style="display: block; margin-top: 40px;">
+    <a href="https://forms.gle/7HqsEVuPnd8Wx7S77" style="text-decoration: none; color: #fff;
+                        background-color: #141413; padding: 13px 20px 15px 20px; border-radius: 12px;
+                        cursor: pointer;">
+      <span style="font-family: 'Product Sans Regular' !important; font-size: 14px;">
+        Submit Application
+      </span>
+    </a>
+  </div>
+
+</div>
+
+    </div>
+  
+  </div>
+
+
+          </html>

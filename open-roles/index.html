@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+
+<html
+  lang="en"
+  class="__variable_42f43f __variable_403256 __variable_57fc85 __variable_34e0db"
+  style=""
+>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+      .ace_editor.ace_autocomplete .ace_marker-layer .ace_active-line {
+        background-color: #cad6fa;
+        z-index: 1;
+      }
+      .ace_editor.ace_autocomplete .ace_line-hover {
+        border: 1px solid #abbffe;
+        margin-top: -1px;
+        background: rgba(233, 233, 253, 0.4);
+      }
+      .ace_editor.ace_autocomplete .ace_line-hover {
+        position: absolute;
+        z-index: 2;
+      }
+      .ace_editor.ace_autocomplete .ace_scroller {
+        background: none;
+        border: none;
+        box-shadow: none;
+      }
+      .ace_rightAlignedText {
+        color: gray;
+        display: inline-block;
+        position: absolute;
+        right: 4px;
+        text-align: right;
+        z-index: -1;
+      }
+      .ace_editor.ace_autocomplete .ace_completion-highlight {
+        color: #000;
+        text-shadow: 0 0 0.01em;
+      }
+      .ace_editor.ace_autocomplete {
+        width: 280px;
+        z-index: 200000;
+        background: #fbfbfb;
+        color: #444;
+        border: 1px lightgray solid;
+        position: fixed;
+        box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);
+        line-height: 1.4;
+      }
+    </style>
+    <style>
+      .ace_snippet-marker {
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        background: rgba(194, 193, 208, 0.09);
+        border: 1px dotted rgba(211, 208, 235, 0.62);
+        position: absolute;
+      }
+    </style>
+    <style type="text/css">
+      .tippy-touch {
+        cursor: pointer !important;
+      }
+      .tippy-notransition {
+        transition: none !important;
+      }
+      .tippy-popper {
+        max-width: 350px;
+        -webkit-perspective: 700px;
+        perspective: 700px;
+        z-index: 9999;
+        outline: 0;
+        transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+        pointer-events: none;
+        line-height: 1.4;
+      }
+      .tippy-popper[data-html] {
+        max-width: 96%;
+        max-width: calc(100% - 20px);
+      }
+      .tippy-popper[x-placement^='top'] .tippy-backdrop {
+        border-radius: 40% 40% 0 0;
+      }
+      .tippy-popper[x-placement^='top'] .tippy-roundarrow {
+        bottom: -8px;
+        -webkit-transform-origin: 50% 0;
+        transform-origin: 50% 0;
+      }
+      .tippy-popper[x-placement^='top'] .tippy-roundarrow svg {
+        position: absolute;
+        left: 0;
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+      }
+      .tippy-popper[x-placement^='top'] .tippy-arrow {
+        border-top: 7px solid #333;
+        border-right: 7px solid transparent;
+        border-left: 7px solid transparent;
+        bottom: -7px;
+        margin: 0 6px;
+        -webkit-transform-origin: 50% 0;
+        transform-origin: 50% 0;
+      }
+      .tippy-popper[x-placement^='top'] .tippy-backdrop {
+        -webkit-transform-origin: 0 90%;
+        transform-origin: 0 90%;
+      }
+      .tippy-popper[x-placement^='top'] .tippy-backdrop[data-state='visible'] {
+        -webkit-transform: scale(6) translate(-50%, 25%);
+        transform: scale(6) translate(-50%, 25%);
+        opacity: 1;
+      }
+      .tippy-popper[x-placement^='top'] .tippy-backdrop[data-state='hidden'] {
+        -webkit-transform: scale(1) translate(-50%, 25%);
+        transform: scale(1) translate(-50%, 25%);
+        opacity: 0;
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='shift-toward'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='shift-toward'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+      }
+      .tippy-popper[x-placement^='top'] [data-animation='perspective'] {
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='perspective'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(-10px) rotateX(0);
+        transform: translateY(-10px) rotateX(0);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='perspective'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(0) rotateX(90deg);
+        transform: translateY(0) rotateX(90deg);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='fade'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='fade'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='shift-away'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='shift-away'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='scale'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(-10px) scale(1);
+        transform: translateY(-10px) scale(1);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='scale'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(0) scale(0);
+        transform: translateY(0) scale(0);
+      }
+      .tippy-popper[x-placement^='bottom'] .tippy-backdrop {
+        border-radius: 0 0 30% 30%;
+      }
+      .tippy-popper[x-placement^='bottom'] .tippy-roundarrow {
+        top: -8px;
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+      }
+      .tippy-popper[x-placement^='bottom'] .tippy-roundarrow svg {
+        position: absolute;
+        left: 0;
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+      }
+      .tippy-popper[x-placement^='bottom'] .tippy-arrow {
+        border-bottom: 7px solid #333;
+        border-right: 7px solid transparent;
+        border-left: 7px solid transparent;
+        top: -7px;
+        margin: 0 6px;
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+      }
+      .tippy-popper[x-placement^='bottom'] .tippy-backdrop {
+        -webkit-transform-origin: 0 -90%;
+        transform-origin: 0 -90%;
+      }
+      .tippy-popper[x-placement^='bottom']
+        .tippy-backdrop[data-state='visible'] {
+        -webkit-transform: scale(6) translate(-50%, -125%);
+        transform: scale(6) translate(-50%, -125%);
+        opacity: 1;
+      }
+      .tippy-popper[x-placement^='bottom']
+        .tippy-backdrop[data-state='hidden'] {
+        -webkit-transform: scale(1) translate(-50%, -125%);
+        transform: scale(1) translate(-50%, -125%);
+        opacity: 0;
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='shift-toward'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='shift-toward'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+      }
+      .tippy-popper[x-placement^='bottom'] [data-animation='perspective'] {
+        -webkit-transform-origin: top;
+        transform-origin: top;
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='perspective'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(10px) rotateX(0);
+        transform: translateY(10px) rotateX(0);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='perspective'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(0) rotateX(-90deg);
+        transform: translateY(0) rotateX(-90deg);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='fade'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='fade'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='shift-away'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='shift-away'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='scale'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(10px) scale(1);
+        transform: translateY(10px) scale(1);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='scale'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(0) scale(0);
+        transform: translateY(0) scale(0);
+      }
+      .tippy-popper[x-placement^='left'] .tippy-backdrop {
+        border-radius: 50% 0 0 50%;
+      }
+      .tippy-popper[x-placement^='left'] .tippy-roundarrow {
+        right: -16px;
+        -webkit-transform-origin: 33.33333333% 50%;
+        transform-origin: 33.33333333% 50%;
+      }
+      .tippy-popper[x-placement^='left'] .tippy-roundarrow svg {
+        position: absolute;
+        left: 0;
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+      }
+      .tippy-popper[x-placement^='left'] .tippy-arrow {
+        border-left: 7px solid #333;
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+        right: -7px;
+        margin: 3px 0;
+        -webkit-transform-origin: 0 50%;
+        transform-origin: 0 50%;
+      }
+      .tippy-popper[x-placement^='left'] .tippy-backdrop {
+        -webkit-transform-origin: 100% 0;
+        transform-origin: 100% 0;
+      }
+      .tippy-popper[x-placement^='left'] .tippy-backdrop[data-state='visible'] {
+        -webkit-transform: scale(6) translate(40%, -50%);
+        transform: scale(6) translate(40%, -50%);
+        opacity: 1;
+      }
+      .tippy-popper[x-placement^='left'] .tippy-backdrop[data-state='hidden'] {
+        -webkit-transform: scale(1.5) translate(40%, -50%);
+        transform: scale(1.5) translate(40%, -50%);
+        opacity: 0;
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='shift-toward'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(-10px);
+        transform: translateX(-10px);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='shift-toward'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(-20px);
+        transform: translateX(-20px);
+      }
+      .tippy-popper[x-placement^='left'] [data-animation='perspective'] {
+        -webkit-transform-origin: right;
+        transform-origin: right;
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='perspective'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(-10px) rotateY(0);
+        transform: translateX(-10px) rotateY(0);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='perspective'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(0) rotateY(-90deg);
+        transform: translateX(0) rotateY(-90deg);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='fade'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(-10px);
+        transform: translateX(-10px);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='fade'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(-10px);
+        transform: translateX(-10px);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='shift-away'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(-10px);
+        transform: translateX(-10px);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='shift-away'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='scale'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(-10px) scale(1);
+        transform: translateX(-10px) scale(1);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='scale'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(0) scale(0);
+        transform: translateX(0) scale(0);
+      }
+      .tippy-popper[x-placement^='right'] .tippy-backdrop {
+        border-radius: 0 50% 50% 0;
+      }
+      .tippy-popper[x-placement^='right'] .tippy-roundarrow {
+        left: -16px;
+        -webkit-transform-origin: 66.66666666% 50%;
+        transform-origin: 66.66666666% 50%;
+      }
+      .tippy-popper[x-placement^='right'] .tippy-roundarrow svg {
+        position: absolute;
+        left: 0;
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+      }
+      .tippy-popper[x-placement^='right'] .tippy-arrow {
+        border-right: 7px solid #333;
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+        left: -7px;
+        margin: 3px 0;
+        -webkit-transform-origin: 100% 50%;
+        transform-origin: 100% 50%;
+      }
+      .tippy-popper[x-placement^='right'] .tippy-backdrop {
+        -webkit-transform-origin: -100% 0;
+        transform-origin: -100% 0;
+      }
+      .tippy-popper[x-placement^='right']
+        .tippy-backdrop[data-state='visible'] {
+        -webkit-transform: scale(6) translate(-140%, -50%);
+        transform: scale(6) translate(-140%, -50%);
+        opacity: 1;
+      }
+      .tippy-popper[x-placement^='right'] .tippy-backdrop[data-state='hidden'] {
+        -webkit-transform: scale(1.5) translate(-140%, -50%);
+        transform: scale(1.5) translate(-140%, -50%);
+        opacity: 0;
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='shift-toward'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='shift-toward'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(20px);
+        transform: translateX(20px);
+      }
+      .tippy-popper[x-placement^='right'] [data-animation='perspective'] {
+        -webkit-transform-origin: left;
+        transform-origin: left;
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='perspective'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(10px) rotateY(0);
+        transform: translateX(10px) rotateY(0);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='perspective'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(0) rotateY(90deg);
+        transform: translateX(0) rotateY(90deg);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='fade'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='fade'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='shift-away'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='shift-away'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='scale'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(10px) scale(1);
+        transform: translateX(10px) scale(1);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='scale'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(0) scale(0);
+        transform: translateX(0) scale(0);
+      }
+      .tippy-tooltip {
+        position: relative;
+        color: #fff;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        padding: 0.3rem 0.6rem;
+        text-align: center;
+        will-change: transform;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: #333;
+      }
+      .tippy-tooltip[data-size='small'] {
+        padding: 0.2rem 0.4rem;
+        font-size: 0.75rem;
+      }
+      .tippy-tooltip[data-size='large'] {
+        padding: 0.4rem 0.8rem;
+        font-size: 1rem;
+      }
+      .tippy-tooltip[data-animatefill] {
+        overflow: hidden;
+        background-color: transparent;
+      }
+      .tippy-tooltip[data-animatefill] .tippy-content {
+        transition: -webkit-clip-path cubic-bezier(0.46, 0.1, 0.52, 0.98);
+        transition: clip-path cubic-bezier(0.46, 0.1, 0.52, 0.98);
+        transition: clip-path cubic-bezier(0.46, 0.1, 0.52, 0.98),
+          -webkit-clip-path cubic-bezier(0.46, 0.1, 0.52, 0.98);
+      }
+      .tippy-tooltip[data-interactive],
+      .tippy-tooltip[data-interactive] path {
+        pointer-events: auto;
+      }
+      .tippy-tooltip[data-inertia][data-state='visible'] {
+        transition-timing-function: cubic-bezier(0.53, 2, 0.36, 0.85);
+      }
+      .tippy-tooltip[data-inertia][data-state='hidden'] {
+        transition-timing-function: ease;
+      }
+      .tippy-arrow,
+      .tippy-roundarrow {
+        position: absolute;
+        width: 0;
+        height: 0;
+      }
+      .tippy-roundarrow {
+        width: 24px;
+        height: 8px;
+        fill: #333;
+        pointer-events: none;
+      }
+      .tippy-backdrop {
+        position: absolute;
+        will-change: transform;
+        background-color: #333;
+        border-radius: 50%;
+        width: 26%;
+        left: 50%;
+        top: 50%;
+        z-index: -1;
+        transition: all cubic-bezier(0.46, 0.1, 0.52, 0.98);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
+      .tippy-backdrop:after {
+        content: '';
+        float: left;
+        padding-top: 100%;
+      }
+      body:not(.tippy-touch)
+        .tippy-tooltip[data-animatefill][data-state='visible']
+        .tippy-content {
+        -webkit-clip-path: ellipse(100% 100% at 50% 50%);
+        clip-path: ellipse(100% 100% at 50% 50%);
+      }
+      body:not(.tippy-touch)
+        .tippy-tooltip[data-animatefill][data-state='hidden']
+        .tippy-content {
+        -webkit-clip-path: ellipse(5% 50% at 50% 50%);
+        clip-path: ellipse(5% 50% at 50% 50%);
+      }
+      body:not(.tippy-touch)
+        .tippy-popper[x-placement='right']
+        .tippy-tooltip[data-animatefill][data-state='visible']
+        .tippy-content {
+        -webkit-clip-path: ellipse(135% 100% at 0 50%);
+        clip-path: ellipse(135% 100% at 0 50%);
+      }
+      body:not(.tippy-touch)
+        .tippy-popper[x-placement='right']
+        .tippy-tooltip[data-animatefill][data-state='hidden']
+        .tippy-content {
+        -webkit-clip-path: ellipse(40% 100% at 0 50%);
+        clip-path: ellipse(40% 100% at 0 50%);
+      }
+      body:not(.tippy-touch)
+        .tippy-popper[x-placement='left']
+        .tippy-tooltip[data-animatefill][data-state='visible']
+        .tippy-content {
+        -webkit-clip-path: ellipse(135% 100% at 100% 50%);
+        clip-path: ellipse(135% 100% at 100% 50%);
+      }
+      body:not(.tippy-touch)
+        .tippy-popper[x-placement='left']
+        .tippy-tooltip[data-animatefill][data-state='hidden']
+        .tippy-content {
+        -webkit-clip-path: ellipse(40% 100% at 100% 50%);
+        clip-path: ellipse(40% 100% at 100% 50%);
+      }
+      @media (max-width: 360px) {
+        .tippy-popper {
+          max-width: 96%;
+          max-width: calc(100% - 20px);
+        }
+      }
+    </style>
+    <style data-emotion="css b62m3t-container" data-s="">
+      .css-b62m3t-container {
+        position: relative;
+        box-sizing: border-box;
+      }
+    </style>
+    <style data-emotion="css 7pg0cj-a11yText" data-s="">
+      .css-7pg0cj-a11yText {
+        z-index: 9999;
+        border: 0;
+        clip: rect(1px, 1px, 1px, 1px);
+        height: 1px;
+        width: 1px;
+        position: absolute;
+        overflow: hidden;
+        padding: 0;
+        white-space: nowrap;
+      }
+    </style>
+    <style data-emotion="css x7wa8m-control" data-s="">
+      .css-x7wa8m-control {
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        cursor: default;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        min-height: 38px;
+        outline: 0 !important;
+        position: relative;
+        -webkit-transition: all 100ms;
+        transition: all 100ms;
+        background-color: hsl(0, 0%, 100%);
+        border-color: hsl(0, 0%, 80%);
+        border-radius: 8px;
+        border-style: solid;
+        border-width: 1px;
+        box-sizing: border-box;
+        height: 44px;
+      }
+      .css-x7wa8m-control:hover {
+        border-color: hsl(0, 0%, 70%);
+      }
+    </style>
+    <style data-emotion="css hlgwow" data-s="">
+      .css-hlgwow {
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        display: grid;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        -webkit-box-flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-overflow-scrolling: touch;
+        position: relative;
+        overflow: hidden;
+        padding: 2px 8px;
+        box-sizing: border-box;
+      }
+    </style>
+    <style data-emotion="css 1dimb5e-singleValue" data-s="">
+      .css-1dimb5e-singleValue {
+        grid-area: 1/1/2/3;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: hsl(0, 0%, 20%);
+        margin-left: 2px;
+        margin-right: 2px;
+        box-sizing: border-box;
+      }
+    </style>
+    <style data-emotion="css 19bb58m" data-s="">
+      .css-19bb58m {
+        visibility: visible;
+        -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        display: inline-grid;
+        grid-area: 1/1/2/3;
+        grid-template-columns: 0 min-content;
+        margin: 2px;
+        padding-bottom: 2px;
+        padding-top: 2px;
+        color: hsl(0, 0%, 20%);
+        box-sizing: border-box;
+      }
+      .css-19bb58m:after {
+        content: attr(data-value) ' ';
+        visibility: hidden;
+        white-space: pre;
+        grid-area: 1/2;
+        font: inherit;
+        min-width: 2px;
+        border: 0;
+        margin: 0;
+        outline: 0;
+        padding: 0;
+      }
+    </style>
+    <style data-emotion="css 1wy0on6" data-s="">
+      .css-1wy0on6 {
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-align-self: stretch;
+        -ms-flex-item-align: stretch;
+        align-self: stretch;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        box-sizing: border-box;
+      }
+    </style>
+    <style data-emotion="css 1u9des2-indicatorSeparator" data-s="">
+      .css-1u9des2-indicatorSeparator {
+        -webkit-align-self: stretch;
+        -ms-flex-item-align: stretch;
+        align-self: stretch;
+        width: 1px;
+        background-color: hsl(0, 0%, 80%);
+        margin-bottom: 8px;
+        margin-top: 8px;
+        box-sizing: border-box;
+      }
+    </style>
+    <style data-emotion="css 1xc3v61-indicatorContainer" data-s="">
+      .css-1xc3v61-indicatorContainer {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-transition: color 150ms;
+        transition: color 150ms;
+        color: hsl(0, 0%, 80%);
+        padding: 8px;
+        box-sizing: border-box;
+      }
+      .css-1xc3v61-indicatorContainer:hover {
+        color: hsl(0, 0%, 60%);
+      }
+    </style>
+    <style data-emotion="css 8mmkcg" data-s="">
+      .css-8mmkcg {
+        display: inline-block;
+        fill: currentColor;
+        line-height: 1;
+        stroke: currentColor;
+        stroke-width: 0;
+      }
+    </style>
+    <style data-emotion="css b62m3t-container" data-s="">
+      .css-b62m3t-container {
+        position: relative;
+        box-sizing: border-box;
+      }
+    </style>
+    <style data-emotion="css 7pg0cj-a11yText" data-s="">
+      .css-7pg0cj-a11yText {
+        z-index: 9999;
+        border: 0;
+        clip: rect(1px, 1px, 1px, 1px);
+        height: 1px;
+        width: 1px;
+        position: absolute;
+        overflow: hidden;
+        padding: 0;
+        white-space: nowrap;
+      }
+    </style>
+    <style data-emotion="css x7wa8m-control" data-s="">
+      .css-x7wa8m-control {
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        cursor: default;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        min-height: 38px;
+        outline: 0 !important;
+        position: relative;
+        -webkit-transition: all 100ms;
+        transition: all 100ms;
+        background-color: hsl(0, 0%, 100%);
+        border-color: hsl(0, 0%, 80%);
+        border-radius: 8px;
+        border-style: solid;
+        border-width: 1px;
+        box-sizing: border-box;
+        height: 44px;
+      }
+      .css-x7wa8m-control:hover {
+        border-color: hsl(0, 0%, 70%);
+      }
+    </style>
+    <style data-emotion="css hlgwow" data-s="">
+      .css-hlgwow {
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        display: grid;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        -webkit-box-flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-overflow-scrolling: touch;
+        position: relative;
+        overflow: hidden;
+        padding: 2px 8px;
+        box-sizing: border-box;
+      }
+    </style>
+    <style data-emotion="css 1dimb5e-singleValue" data-s="">
+      .css-1dimb5e-singleValue {
+        grid-area: 1/1/2/3;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: hsl(0, 0%, 20%);
+        margin-left: 2px;
+        margin-right: 2px;
+        box-sizing: border-box;
+      }
+    </style>
+    <style data-emotion="css 19bb58m" data-s="">
+      .css-19bb58m {
+        visibility: visible;
+        -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        display: inline-grid;
+        grid-area: 1/1/2/3;
+        grid-template-columns: 0 min-content;
+        margin: 2px;
+        padding-bottom: 2px;
+        padding-top: 2px;
+        color: hsl(0, 0%, 20%);
+        box-sizing: border-box;
+      }
+      .css-19bb58m:after {
+        content: attr(data-value) ' ';
+        visibility: hidden;
+        white-space: pre;
+        grid-area: 1/2;
+        font: inherit;
+        min-width: 2px;
+        border: 0;
+        margin: 0;
+        outline: 0;
+        padding: 0;
+      }
+    </style>
+    <style data-emotion="css 1wy0on6" data-s="">
+      .css-1wy0on6 {
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-align-self: stretch;
+        -ms-flex-item-align: stretch;
+        align-self: stretch;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        box-sizing: border-box;
+      }
+    </style>
+    <style data-emotion="css 1u9des2-indicatorSeparator" data-s="">
+      .css-1u9des2-indicatorSeparator {
+        -webkit-align-self: stretch;
+        -ms-flex-item-align: stretch;
+        align-self: stretch;
+        width: 1px;
+        background-color: hsl(0, 0%, 80%);
+        margin-bottom: 8px;
+        margin-top: 8px;
+        box-sizing: border-box;
+      }
+    </style>
+    <style data-emotion="css 1xc3v61-indicatorContainer" data-s="">
+      .css-1xc3v61-indicatorContainer {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-transition: color 150ms;
+        transition: color 150ms;
+        color: hsl(0, 0%, 80%);
+        padding: 8px;
+        box-sizing: border-box;
+      }
+      .css-1xc3v61-indicatorContainer:hover {
+        color: hsl(0, 0%, 60%);
+      }
+    </style>
+    <style data-emotion="css 8mmkcg" data-s="">
+      .css-8mmkcg {
+        display: inline-block;
+        fill: currentColor;
+        line-height: 1;
+        stroke: currentColor;
+        stroke-width: 0;
+      }
+    </style>
+    <style data-emotion="css" data-s=""></style>
+    <style data-merge-styles="true"></style>
+    <style data-merge-styles="true"></style>
+    <style data-merge-styles="true"></style>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      rel="stylesheet"
+      href="./jobs/60a6eb6d0fe040c5.css"
+      data-precedence="next"
+    />
+    <link
+      rel="stylesheet"
+      href="./jobs/b65f95011ed324dc.css"
+      data-precedence="next"
+    />
+    <link
+      rel="stylesheet"
+      href="./jobs/9fa4718bb3ae1cae.css"
+      data-precedence="next"
+    />
+    <link
+      rel="stylesheet"
+      href="./jobs/91315883a9b46a52.css"
+      data-precedence="next"
+    />
+    <link
+      rel="stylesheet"
+      href="./jobs/1f513daff08a6d25.css"
+      data-precedence="next"
+    />
+    <link
+      rel="stylesheet"
+      href="./jobs/c3a81d2cee1ead21.css"
+      data-precedence="next"
+    />
+    <link
+      rel="stylesheet"
+      href="./jobs/ac6d945a28327846.css"
+      data-precedence="next"
+    />
+    <link
+      rel="stylesheet"
+      href="./jobs/8a05732638d9b3eb.css"
+      data-precedence="next"
+    />
+    <link
+      rel="stylesheet"
+      href="./jobs/fec95abf28dff384.css"
+      data-precedence="next"
+    />
+    <link
+      rel="stylesheet"
+      href="./jobs/31ced174618104b6.css"
+      data-precedence="next"
+    />
+    <link
+      rel="preload"
+      as="script"
+      fetchpriority="low"
+      nonce=""
+      href="./jobs/webpack-e9d54e67e346c7b2.js"
+    />
+
+    <style type="text/css">
+      @font-face {
+        font-weight: 400;
+        font-style: normal;
+        font-family: circular;
+
+        src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Book.woff2')
+          format('woff2');
+      }
+
+      @font-face {
+        font-weight: 700;
+        font-style: normal;
+        font-family: circular;
+
+        src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Bold.woff2')
+          format('woff2');
+      }
+    </style>
+    <style data-styled="active" data-styled-version="5.3.11"></style>
+    <link rel="stylesheet" media="all" href="/main.css">
+  </head>
+
+  <body style="">
+    
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <main id="main" class="bg-ivory-light">
+      <article>
+        <section
+          class="OpenRoles_b-openRoles__U6_rO Section_section-wrapper__7hN5D Section_flush-top__B83gq"
+        >
+          <div class="wrapper">
+            <div
+              class="OpenRoles_contentWrap__sZKqJ OpenRoles_is-inview__s_qD_"
+            >
+              <div class="spacer-small-mb">
+                <h1 class="h2" style="margin-bottom: 40px; font-family: 'Product Sans Medium Regular'; font-size: 40px;">Open Roles</h1>
+              </div>
+
+              <div>
+                <!--$-->
+                <!--/$-->
+                <div
+                  class="OpenRoles_role-container__gM9zW"
+                  id="role-container-0"
+                >
+                  <input
+                    id="role-0"
+                    class="OpenRoles_role-input__VW2A1"
+                    type="checkbox"
+                    name="open-roles"
+                  />
+                  <label
+                    for="role-0"
+                    class="OpenRoles_role-label__tlmxy s:grid s:grid-12"
+                  >
+                    <h4
+                      class="OpenRoles_role-title__UjdUz h4 s:col-start-1 s:col-span-4"
+                      style="font-family: 'Product Sans Medium Regular'; font-size: 30px;"
+                    >
+                      Marketing &amp; Content
+                    </h4>
+                    <span
+                      class="OpenRoles_role-count__SQbmz text-label s:col-start-5 s:col-span-6" style="font-family: 'Product Sans Regular'; font-size: 20px;"
+                      >1 Open Roles
+                    </span>
+                    <span
+                      class="OpenRoles_role-icon__Dma_O s:col-start-11 s:col-span-2"
+                    >
+                      <svg
+                        class="Icon_icon__UdTNj OpenRoles_icon-more__fRHZN"
+                        width="40"
+                        height="40"
+                        viewBox="0 0 40 40"
+                      >
+                        <path
+                          d="M18.958 31.25V21.042H8.75v-2.084h10.208V8.75h2.084v10.208H31.25v2.084H21.042V31.25h-2.084Z"
+                          fill="#141413"
+                        ></path>
+                      </svg>
+                      <svg
+                        class="Icon_icon__UdTNj OpenRoles_icon-less__B_vDq"
+                        width="40"
+                        height="40"
+                        viewBox="0 0 40 40"
+                      >
+                        <path
+                          d="M8.75 21.042v-2.084h22.5v2.084H8.75Z"
+                          fill="#141413"
+                        ></path>
+                      </svg>
+                    </span>
+                  </label>
+                  <article
+                    id="role-content-0"
+                    class="OpenRoles_role-content__QKtYZ s:grid s:grid-12"
+                  >
+                    <div
+                      class="OpenRoles_role-post__m5PWW OpenRoles_row__l95xm s:col-start-5 s:col-span-8"
+                    >
+                      <div class="OpenRoles_flex__QUBeQ">
+                        <h2 class="OpenRoles_role-heading__sBi1o h3" style="font-family: 'Product Sans Medium Regular'; font-size: 25px;">
+                          Content Creator
+                        </h2>
+                        <p class="text-b2 spacer-micro-mt">
+                          Remote | Prefered Aleppo
+                        </p>
+                      </div>
+                      <a
+                        class="OpenRoles_job-link__ZFmt8 btn-primary"
+                        href="/applications/content-creator"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        <span class="btn-label"  style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Apply </span>
+                      </a>
+                    </div>
+                  </article>
+                </div>
+
+                <div
+                  class="OpenRoles_role-container__gM9zW"
+                  id="role-container-3"
+                >
+                  <input
+                    id="role-3"
+                    class="OpenRoles_role-input__VW2A1"
+                    type="checkbox"
+                    name="open-roles"
+                  />
+                  <label
+                    for="role-3"
+                    class="OpenRoles_role-label__tlmxy s:grid s:grid-12"
+                  >
+                    <h4
+                      class="OpenRoles_role-title__UjdUz h4 s:col-start-1 s:col-span-4"
+                      style="font-family: 'Product Sans Medium Regular'; font-size: 30px;"
+                    >
+                      Software Development
+                    </h4>
+                    <span
+                      class="OpenRoles_role-count__SQbmz text-label s:col-start-5 s:col-span-6" style="font-family: 'Product Sans Regular'; font-size: 20px;"
+                      >2 Open Roles
+                    </span>
+                    <span
+                      class="OpenRoles_role-icon__Dma_O s:col-start-11 s:col-span-2"
+                    >
+                      <svg
+                        class="Icon_icon__UdTNj OpenRoles_icon-more__fRHZN"
+                        width="40"
+                        height="40"
+                        viewBox="0 0 40 40"
+                      >
+                        <path
+                          d="M18.958 31.25V21.042H8.75v-2.084h10.208V8.75h2.084v10.208H31.25v2.084H21.042V31.25h-2.084Z"
+                          fill="#141413"
+                        ></path>
+                      </svg>
+                      <svg
+                        class="Icon_icon__UdTNj OpenRoles_icon-less__B_vDq"
+                        width="40"
+                        height="40"
+                        viewBox="0 0 40 40"
+                      >
+                        <path
+                          d="M8.75 21.042v-2.084h22.5v2.084H8.75Z"
+                          fill="#141413"
+                        ></path>
+                      </svg>
+                    </span>
+                  </label>
+                  <article
+                    id="role-content-3"
+                    class="OpenRoles_role-content__QKtYZ s:grid s:grid-12"
+                  >
+                    <div
+                      class="OpenRoles_role-post__m5PWW OpenRoles_row__l95xm s:col-start-5 s:col-span-8"
+                    >
+                      <div class="OpenRoles_flex__QUBeQ">
+                        <h2 class="OpenRoles_role-heading__sBi1o h3" style="font-family: 'Product Sans Medium Regular' !important; font-size: 25px;">
+                          Frontend React-Typescript Developer
+                        </h2>
+                        <p class="text-b2 spacer-micro-mt">
+                          Remote | Prefered Aleppo
+                        </p>
+                      </div>
+                      <a
+                        class="OpenRoles_job-link__ZFmt8 btn-primary"
+                        href="/applications/react-typescript"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        <span class="btn-label"  style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Apply </span>
+                      </a>
+                    </div>
+                    <div
+                      class="OpenRoles_role-post__m5PWW OpenRoles_row__l95xm s:col-start-5 s:col-span-8"
+                    >
+                      <div class="OpenRoles_flex__QUBeQ">
+                        <h2 class="OpenRoles_role-heading__sBi1o h3"  style="font-family: 'Product Sans Medium Regular'; font-size: 25px;">
+                          Backend Django Developer
+                        </h2>
+                        <p class="text-b2 spacer-micro-mt">
+                          Remote | Prefered Aleppo
+                        </p>
+                      </div>
+                      <a
+                        class="OpenRoles_job-link__ZFmt8 btn-primary"
+                        href="/applications/django"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        <span class="btn-label"  style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Apply </span>
+                      </a>
+                    </div>
+                  </article>
+                </div>
+
+                <div
+                  class="OpenRoles_role-container__gM9zW"
+                  id="role-container-3"
+                >
+                  <input
+                    id="role-3"
+                    class="OpenRoles_role-input__VW2A1"
+                    type="checkbox"
+                    name="open-roles"
+                  />
+                  <label
+                    for="role-3"
+                    class="OpenRoles_role-label__tlmxy s:grid s:grid-12"
+                  >
+                    <h4
+                      class="OpenRoles_role-title__UjdUz h4 s:col-start-1 s:col-span-4"
+                      style="font-family: 'Product Sans Medium Regular'; font-size: 30px;"
+                    >
+                      Design
+                    </h4>
+                    <span
+                      class="OpenRoles_role-count__SQbmz text-label s:col-start-5 s:col-span-6"  style="font-family: 'Product Sans Regular'; font-size: 20px;"
+                      >1 Open Roles
+                    </span>
+                    <span
+                      class="OpenRoles_role-icon__Dma_O s:col-start-11 s:col-span-2"
+                    >
+                      <svg
+                        class="Icon_icon__UdTNj OpenRoles_icon-more__fRHZN"
+                        width="40"
+                        height="40"
+                        viewBox="0 0 40 40"
+                      >
+                        <path
+                          d="M18.958 31.25V21.042H8.75v-2.084h10.208V8.75h2.084v10.208H31.25v2.084H21.042V31.25h-2.084Z"
+                          fill="#141413"
+                        ></path>
+                      </svg>
+                      <svg
+                        class="Icon_icon__UdTNj OpenRoles_icon-less__B_vDq"
+                        width="40"
+                        height="40"
+                        viewBox="0 0 40 40"
+                      >
+                        <path
+                          d="M8.75 21.042v-2.084h22.5v2.084H8.75Z"
+                          fill="#141413"
+                        ></path>
+                      </svg>
+                    </span>
+                  </label>
+                  <article
+                    id="role-content-3"
+                    class="OpenRoles_role-content__QKtYZ s:grid s:grid-12"
+                  >
+                    <div
+                      class="OpenRoles_role-post__m5PWW OpenRoles_row__l95xm s:col-start-5 s:col-span-8"
+                    >
+                      <div class="OpenRoles_flex__QUBeQ">
+                        <h2 class="OpenRoles_role-heading__sBi1o h3" style="font-family: 'Product Sans Medium Regular'; font-size: 25px;">
+                          UI/UX Designer
+                        </h2>
+                        <p class="text-b2 spacer-micro-mt">
+                          Remote | Prefered Aleppo
+                        </p>
+                      </div>
+                      <a
+                        class="OpenRoles_job-link__ZFmt8 btn-primary"
+                        href="/applications/ui-ux"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        <span class="btn-label"  style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Apply </span>
+                      </a>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script type="module" src="/src/js/main.js"></script>    
+  </body>
+</html>

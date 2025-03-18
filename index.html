@@ -1,0 +1,2202 @@
+<html
+  lang="en"
+  class="__variable_42f43f __variable_403256 __variable_57fc85 __variable_34e0db"
+>
+  <head>
+    <style data-emotion="css" data-s=""></style>
+    <style>
+      .ace_editor.ace_autocomplete .ace_marker-layer .ace_active-line {
+        background-color: #cad6fa;
+        z-index: 1;
+      }
+      .ace_editor.ace_autocomplete .ace_line-hover {
+        border: 1px solid #abbffe;
+        margin-top: -1px;
+        background: rgba(233, 233, 253, 0.4);
+      }
+      .ace_editor.ace_autocomplete .ace_line-hover {
+        position: absolute;
+        z-index: 2;
+      }
+      .ace_editor.ace_autocomplete .ace_scroller {
+        background: none;
+        border: none;
+        box-shadow: none;
+      }
+      .ace_rightAlignedText {
+        color: gray;
+        display: inline-block;
+        position: absolute;
+        right: 4px;
+        text-align: right;
+        z-index: -1;
+      }
+      .ace_editor.ace_autocomplete .ace_completion-highlight {
+        color: #000;
+        text-shadow: 0 0 0.01em;
+      }
+      .ace_editor.ace_autocomplete {
+        width: 280px;
+        z-index: 200000;
+        background: #fbfbfb;
+        color: #444;
+        border: 1px lightgray solid;
+        position: fixed;
+        box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);
+        line-height: 1.4;
+      }
+    </style>
+    <style>
+      .ace_snippet-marker {
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        background: rgba(194, 193, 208, 0.09);
+        border: 1px dotted rgba(211, 208, 235, 0.62);
+        position: absolute;
+      }
+    </style>
+    <style type="text/css">
+      .tippy-touch {
+        cursor: pointer !important;
+      }
+      .tippy-notransition {
+        transition: none !important;
+      }
+      .tippy-popper {
+        max-width: 350px;
+        -webkit-perspective: 700px;
+        perspective: 700px;
+        z-index: 9999;
+        outline: 0;
+        transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+        pointer-events: none;
+        line-height: 1.4;
+      }
+      .tippy-popper[data-html] {
+        max-width: 96%;
+        max-width: calc(100% - 20px);
+      }
+      .tippy-popper[x-placement^='top'] .tippy-backdrop {
+        border-radius: 40% 40% 0 0;
+      }
+      .tippy-popper[x-placement^='top'] .tippy-roundarrow {
+        bottom: -8px;
+        -webkit-transform-origin: 50% 0;
+        transform-origin: 50% 0;
+      }
+      .tippy-popper[x-placement^='top'] .tippy-roundarrow svg {
+        position: absolute;
+        left: 0;
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+      }
+      .tippy-popper[x-placement^='top'] .tippy-arrow {
+        border-top: 7px solid #333;
+        border-right: 7px solid transparent;
+        border-left: 7px solid transparent;
+        bottom: -7px;
+        margin: 0 6px;
+        -webkit-transform-origin: 50% 0;
+        transform-origin: 50% 0;
+      }
+      .tippy-popper[x-placement^='top'] .tippy-backdrop {
+        -webkit-transform-origin: 0 90%;
+        transform-origin: 0 90%;
+      }
+      .tippy-popper[x-placement^='top'] .tippy-backdrop[data-state='visible'] {
+        -webkit-transform: scale(6) translate(-50%, 25%);
+        transform: scale(6) translate(-50%, 25%);
+        opacity: 1;
+      }
+      .tippy-popper[x-placement^='top'] .tippy-backdrop[data-state='hidden'] {
+        -webkit-transform: scale(1) translate(-50%, 25%);
+        transform: scale(1) translate(-50%, 25%);
+        opacity: 0;
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='shift-toward'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='shift-toward'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+      }
+      .tippy-popper[x-placement^='top'] [data-animation='perspective'] {
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='perspective'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(-10px) rotateX(0);
+        transform: translateY(-10px) rotateX(0);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='perspective'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(0) rotateX(90deg);
+        transform: translateY(0) rotateX(90deg);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='fade'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='fade'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='shift-away'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='shift-away'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='scale'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(-10px) scale(1);
+        transform: translateY(-10px) scale(1);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='scale'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(0) scale(0);
+        transform: translateY(0) scale(0);
+      }
+      .tippy-popper[x-placement^='bottom'] .tippy-backdrop {
+        border-radius: 0 0 30% 30%;
+      }
+      .tippy-popper[x-placement^='bottom'] .tippy-roundarrow {
+        top: -8px;
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+      }
+      .tippy-popper[x-placement^='bottom'] .tippy-roundarrow svg {
+        position: absolute;
+        left: 0;
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+      }
+      .tippy-popper[x-placement^='bottom'] .tippy-arrow {
+        border-bottom: 7px solid #333;
+        border-right: 7px solid transparent;
+        border-left: 7px solid transparent;
+        top: -7px;
+        margin: 0 6px;
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+      }
+      .tippy-popper[x-placement^='bottom'] .tippy-backdrop {
+        -webkit-transform-origin: 0 -90%;
+        transform-origin: 0 -90%;
+      }
+      .tippy-popper[x-placement^='bottom']
+        .tippy-backdrop[data-state='visible'] {
+        -webkit-transform: scale(6) translate(-50%, -125%);
+        transform: scale(6) translate(-50%, -125%);
+        opacity: 1;
+      }
+      .tippy-popper[x-placement^='bottom']
+        .tippy-backdrop[data-state='hidden'] {
+        -webkit-transform: scale(1) translate(-50%, -125%);
+        transform: scale(1) translate(-50%, -125%);
+        opacity: 0;
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='shift-toward'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='shift-toward'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+      }
+      .tippy-popper[x-placement^='bottom'] [data-animation='perspective'] {
+        -webkit-transform-origin: top;
+        transform-origin: top;
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='perspective'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(10px) rotateX(0);
+        transform: translateY(10px) rotateX(0);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='perspective'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(0) rotateX(-90deg);
+        transform: translateY(0) rotateX(-90deg);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='fade'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='fade'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='shift-away'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='shift-away'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='scale'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(10px) scale(1);
+        transform: translateY(10px) scale(1);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='scale'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(0) scale(0);
+        transform: translateY(0) scale(0);
+      }
+      .tippy-popper[x-placement^='left'] .tippy-backdrop {
+        border-radius: 50% 0 0 50%;
+      }
+      .tippy-popper[x-placement^='left'] .tippy-roundarrow {
+        right: -16px;
+        -webkit-transform-origin: 33.33333333% 50%;
+        transform-origin: 33.33333333% 50%;
+      }
+      .tippy-popper[x-placement^='left'] .tippy-roundarrow svg {
+        position: absolute;
+        left: 0;
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+      }
+      .tippy-popper[x-placement^='left'] .tippy-arrow {
+        border-left: 7px solid #333;
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+        right: -7px;
+        margin: 3px 0;
+        -webkit-transform-origin: 0 50%;
+        transform-origin: 0 50%;
+      }
+      .tippy-popper[x-placement^='left'] .tippy-backdrop {
+        -webkit-transform-origin: 100% 0;
+        transform-origin: 100% 0;
+      }
+      .tippy-popper[x-placement^='left'] .tippy-backdrop[data-state='visible'] {
+        -webkit-transform: scale(6) translate(40%, -50%);
+        transform: scale(6) translate(40%, -50%);
+        opacity: 1;
+      }
+      .tippy-popper[x-placement^='left'] .tippy-backdrop[data-state='hidden'] {
+        -webkit-transform: scale(1.5) translate(40%, -50%);
+        transform: scale(1.5) translate(40%, -50%);
+        opacity: 0;
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='shift-toward'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(-10px);
+        transform: translateX(-10px);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='shift-toward'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(-20px);
+        transform: translateX(-20px);
+      }
+      .tippy-popper[x-placement^='left'] [data-animation='perspective'] {
+        -webkit-transform-origin: right;
+        transform-origin: right;
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='perspective'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(-10px) rotateY(0);
+        transform: translateX(-10px) rotateY(0);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='perspective'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(0) rotateY(-90deg);
+        transform: translateX(0) rotateY(-90deg);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='fade'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(-10px);
+        transform: translateX(-10px);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='fade'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(-10px);
+        transform: translateX(-10px);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='shift-away'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(-10px);
+        transform: translateX(-10px);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='shift-away'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='scale'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(-10px) scale(1);
+        transform: translateX(-10px) scale(1);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='scale'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(0) scale(0);
+        transform: translateX(0) scale(0);
+      }
+      .tippy-popper[x-placement^='right'] .tippy-backdrop {
+        border-radius: 0 50% 50% 0;
+      }
+      .tippy-popper[x-placement^='right'] .tippy-roundarrow {
+        left: -16px;
+        -webkit-transform-origin: 66.66666666% 50%;
+        transform-origin: 66.66666666% 50%;
+      }
+      .tippy-popper[x-placement^='right'] .tippy-roundarrow svg {
+        position: absolute;
+        left: 0;
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+      }
+      .tippy-popper[x-placement^='right'] .tippy-arrow {
+        border-right: 7px solid #333;
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+        left: -7px;
+        margin: 3px 0;
+        -webkit-transform-origin: 100% 50%;
+        transform-origin: 100% 50%;
+      }
+      .tippy-popper[x-placement^='right'] .tippy-backdrop {
+        -webkit-transform-origin: -100% 0;
+        transform-origin: -100% 0;
+      }
+      .tippy-popper[x-placement^='right']
+        .tippy-backdrop[data-state='visible'] {
+        -webkit-transform: scale(6) translate(-140%, -50%);
+        transform: scale(6) translate(-140%, -50%);
+        opacity: 1;
+      }
+      .tippy-popper[x-placement^='right'] .tippy-backdrop[data-state='hidden'] {
+        -webkit-transform: scale(1.5) translate(-140%, -50%);
+        transform: scale(1.5) translate(-140%, -50%);
+        opacity: 0;
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='shift-toward'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='shift-toward'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(20px);
+        transform: translateX(20px);
+      }
+      .tippy-popper[x-placement^='right'] [data-animation='perspective'] {
+        -webkit-transform-origin: left;
+        transform-origin: left;
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='perspective'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(10px) rotateY(0);
+        transform: translateX(10px) rotateY(0);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='perspective'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(0) rotateY(90deg);
+        transform: translateX(0) rotateY(90deg);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='fade'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='fade'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='shift-away'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='shift-away'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='scale'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(10px) scale(1);
+        transform: translateX(10px) scale(1);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='scale'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(0) scale(0);
+        transform: translateX(0) scale(0);
+      }
+      .tippy-tooltip {
+        position: relative;
+        color: #fff;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        padding: 0.3rem 0.6rem;
+        text-align: center;
+        will-change: transform;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: #333;
+      }
+      .tippy-tooltip[data-size='small'] {
+        padding: 0.2rem 0.4rem;
+        font-size: 0.75rem;
+      }
+      .tippy-tooltip[data-size='large'] {
+        padding: 0.4rem 0.8rem;
+        font-size: 1rem;
+      }
+      .tippy-tooltip[data-animatefill] {
+        overflow: hidden;
+        background-color: transparent;
+      }
+      .tippy-tooltip[data-animatefill] .tippy-content {
+        transition: -webkit-clip-path cubic-bezier(0.46, 0.1, 0.52, 0.98);
+        transition: clip-path cubic-bezier(0.46, 0.1, 0.52, 0.98);
+        transition: clip-path cubic-bezier(0.46, 0.1, 0.52, 0.98),
+          -webkit-clip-path cubic-bezier(0.46, 0.1, 0.52, 0.98);
+      }
+      .tippy-tooltip[data-interactive],
+      .tippy-tooltip[data-interactive] path {
+        pointer-events: auto;
+      }
+      .tippy-tooltip[data-inertia][data-state='visible'] {
+        transition-timing-function: cubic-bezier(0.53, 2, 0.36, 0.85);
+      }
+      .tippy-tooltip[data-inertia][data-state='hidden'] {
+        transition-timing-function: ease;
+      }
+      .tippy-arrow,
+      .tippy-roundarrow {
+        position: absolute;
+        width: 0;
+        height: 0;
+      }
+      .tippy-roundarrow {
+        width: 24px;
+        height: 8px;
+        fill: #333;
+        pointer-events: none;
+      }
+      .tippy-backdrop {
+        position: absolute;
+        will-change: transform;
+        background-color: #333;
+        border-radius: 50%;
+        width: 26%;
+        left: 50%;
+        top: 50%;
+        z-index: -1;
+        transition: all cubic-bezier(0.46, 0.1, 0.52, 0.98);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
+      .tippy-backdrop:after {
+        content: '';
+        float: left;
+        padding-top: 100%;
+      }
+      body:not(.tippy-touch)
+        .tippy-tooltip[data-animatefill][data-state='visible']
+        .tippy-content {
+        -webkit-clip-path: ellipse(100% 100% at 50% 50%);
+        clip-path: ellipse(100% 100% at 50% 50%);
+      }
+      body:not(.tippy-touch)
+        .tippy-tooltip[data-animatefill][data-state='hidden']
+        .tippy-content {
+        -webkit-clip-path: ellipse(5% 50% at 50% 50%);
+        clip-path: ellipse(5% 50% at 50% 50%);
+      }
+      body:not(.tippy-touch)
+        .tippy-popper[x-placement='right']
+        .tippy-tooltip[data-animatefill][data-state='visible']
+        .tippy-content {
+        -webkit-clip-path: ellipse(135% 100% at 0 50%);
+        clip-path: ellipse(135% 100% at 0 50%);
+      }
+      body:not(.tippy-touch)
+        .tippy-popper[x-placement='right']
+        .tippy-tooltip[data-animatefill][data-state='hidden']
+        .tippy-content {
+        -webkit-clip-path: ellipse(40% 100% at 0 50%);
+        clip-path: ellipse(40% 100% at 0 50%);
+      }
+      body:not(.tippy-touch)
+        .tippy-popper[x-placement='left']
+        .tippy-tooltip[data-animatefill][data-state='visible']
+        .tippy-content {
+        -webkit-clip-path: ellipse(135% 100% at 100% 50%);
+        clip-path: ellipse(135% 100% at 100% 50%);
+      }
+      body:not(.tippy-touch)
+        .tippy-popper[x-placement='left']
+        .tippy-tooltip[data-animatefill][data-state='hidden']
+        .tippy-content {
+        -webkit-clip-path: ellipse(40% 100% at 100% 50%);
+        clip-path: ellipse(40% 100% at 100% 50%);
+      }
+      @media (max-width: 360px) {
+        .tippy-popper {
+          max-width: 96%;
+          max-width: calc(100% - 20px);
+        }
+      }
+    </style>
+    <style data-emotion="css" data-s=""></style>
+    <style>
+      .ace_editor.ace_autocomplete .ace_marker-layer .ace_active-line {
+        background-color: #cad6fa;
+        z-index: 1;
+      }
+      .ace_editor.ace_autocomplete .ace_line-hover {
+        border: 1px solid #abbffe;
+        margin-top: -1px;
+        background: rgba(233, 233, 253, 0.4);
+      }
+      .ace_editor.ace_autocomplete .ace_line-hover {
+        position: absolute;
+        z-index: 2;
+      }
+      .ace_editor.ace_autocomplete .ace_scroller {
+        background: none;
+        border: none;
+        box-shadow: none;
+      }
+      .ace_rightAlignedText {
+        color: gray;
+        display: inline-block;
+        position: absolute;
+        right: 4px;
+        text-align: right;
+        z-index: -1;
+      }
+      .ace_editor.ace_autocomplete .ace_completion-highlight {
+        color: #000;
+        text-shadow: 0 0 0.01em;
+      }
+      .ace_editor.ace_autocomplete {
+        width: 280px;
+        z-index: 200000;
+        background: #fbfbfb;
+        color: #444;
+        border: 1px lightgray solid;
+        position: fixed;
+        box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);
+        line-height: 1.4;
+      }
+    </style>
+    <style>
+      .ace_snippet-marker {
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        background: rgba(194, 193, 208, 0.09);
+        border: 1px dotted rgba(211, 208, 235, 0.62);
+        position: absolute;
+      }
+    </style>
+    <style type="text/css">
+      .tippy-touch {
+        cursor: pointer !important;
+      }
+      .tippy-notransition {
+        transition: none !important;
+      }
+      .tippy-popper {
+        max-width: 350px;
+        -webkit-perspective: 700px;
+        perspective: 700px;
+        z-index: 9999;
+        outline: 0;
+        transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+        pointer-events: none;
+        line-height: 1.4;
+      }
+      .tippy-popper[data-html] {
+        max-width: 96%;
+        max-width: calc(100% - 20px);
+      }
+      .tippy-popper[x-placement^='top'] .tippy-backdrop {
+        border-radius: 40% 40% 0 0;
+      }
+      .tippy-popper[x-placement^='top'] .tippy-roundarrow {
+        bottom: -8px;
+        -webkit-transform-origin: 50% 0;
+        transform-origin: 50% 0;
+      }
+      .tippy-popper[x-placement^='top'] .tippy-roundarrow svg {
+        position: absolute;
+        left: 0;
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+      }
+      .tippy-popper[x-placement^='top'] .tippy-arrow {
+        border-top: 7px solid #333;
+        border-right: 7px solid transparent;
+        border-left: 7px solid transparent;
+        bottom: -7px;
+        margin: 0 6px;
+        -webkit-transform-origin: 50% 0;
+        transform-origin: 50% 0;
+      }
+      .tippy-popper[x-placement^='top'] .tippy-backdrop {
+        -webkit-transform-origin: 0 90%;
+        transform-origin: 0 90%;
+      }
+      .tippy-popper[x-placement^='top'] .tippy-backdrop[data-state='visible'] {
+        -webkit-transform: scale(6) translate(-50%, 25%);
+        transform: scale(6) translate(-50%, 25%);
+        opacity: 1;
+      }
+      .tippy-popper[x-placement^='top'] .tippy-backdrop[data-state='hidden'] {
+        -webkit-transform: scale(1) translate(-50%, 25%);
+        transform: scale(1) translate(-50%, 25%);
+        opacity: 0;
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='shift-toward'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='shift-toward'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+      }
+      .tippy-popper[x-placement^='top'] [data-animation='perspective'] {
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='perspective'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(-10px) rotateX(0);
+        transform: translateY(-10px) rotateX(0);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='perspective'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(0) rotateX(90deg);
+        transform: translateY(0) rotateX(90deg);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='fade'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='fade'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='shift-away'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='shift-away'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='scale'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(-10px) scale(1);
+        transform: translateY(-10px) scale(1);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='scale'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(0) scale(0);
+        transform: translateY(0) scale(0);
+      }
+      .tippy-popper[x-placement^='bottom'] .tippy-backdrop {
+        border-radius: 0 0 30% 30%;
+      }
+      .tippy-popper[x-placement^='bottom'] .tippy-roundarrow {
+        top: -8px;
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+      }
+      .tippy-popper[x-placement^='bottom'] .tippy-roundarrow svg {
+        position: absolute;
+        left: 0;
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+      }
+      .tippy-popper[x-placement^='bottom'] .tippy-arrow {
+        border-bottom: 7px solid #333;
+        border-right: 7px solid transparent;
+        border-left: 7px solid transparent;
+        top: -7px;
+        margin: 0 6px;
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+      }
+      .tippy-popper[x-placement^='bottom'] .tippy-backdrop {
+        -webkit-transform-origin: 0 -90%;
+        transform-origin: 0 -90%;
+      }
+      .tippy-popper[x-placement^='bottom']
+        .tippy-backdrop[data-state='visible'] {
+        -webkit-transform: scale(6) translate(-50%, -125%);
+        transform: scale(6) translate(-50%, -125%);
+        opacity: 1;
+      }
+      .tippy-popper[x-placement^='bottom']
+        .tippy-backdrop[data-state='hidden'] {
+        -webkit-transform: scale(1) translate(-50%, -125%);
+        transform: scale(1) translate(-50%, -125%);
+        opacity: 0;
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='shift-toward'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='shift-toward'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+      }
+      .tippy-popper[x-placement^='bottom'] [data-animation='perspective'] {
+        -webkit-transform-origin: top;
+        transform-origin: top;
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='perspective'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(10px) rotateX(0);
+        transform: translateY(10px) rotateX(0);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='perspective'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(0) rotateX(-90deg);
+        transform: translateY(0) rotateX(-90deg);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='fade'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='fade'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='shift-away'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='shift-away'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='scale'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(10px) scale(1);
+        transform: translateY(10px) scale(1);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='scale'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(0) scale(0);
+        transform: translateY(0) scale(0);
+      }
+      .tippy-popper[x-placement^='left'] .tippy-backdrop {
+        border-radius: 50% 0 0 50%;
+      }
+      .tippy-popper[x-placement^='left'] .tippy-roundarrow {
+        right: -16px;
+        -webkit-transform-origin: 33.33333333% 50%;
+        transform-origin: 33.33333333% 50%;
+      }
+      .tippy-popper[x-placement^='left'] .tippy-roundarrow svg {
+        position: absolute;
+        left: 0;
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+      }
+      .tippy-popper[x-placement^='left'] .tippy-arrow {
+        border-left: 7px solid #333;
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+        right: -7px;
+        margin: 3px 0;
+        -webkit-transform-origin: 0 50%;
+        transform-origin: 0 50%;
+      }
+      .tippy-popper[x-placement^='left'] .tippy-backdrop {
+        -webkit-transform-origin: 100% 0;
+        transform-origin: 100% 0;
+      }
+      .tippy-popper[x-placement^='left'] .tippy-backdrop[data-state='visible'] {
+        -webkit-transform: scale(6) translate(40%, -50%);
+        transform: scale(6) translate(40%, -50%);
+        opacity: 1;
+      }
+      .tippy-popper[x-placement^='left'] .tippy-backdrop[data-state='hidden'] {
+        -webkit-transform: scale(1.5) translate(40%, -50%);
+        transform: scale(1.5) translate(40%, -50%);
+        opacity: 0;
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='shift-toward'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(-10px);
+        transform: translateX(-10px);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='shift-toward'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(-20px);
+        transform: translateX(-20px);
+      }
+      .tippy-popper[x-placement^='left'] [data-animation='perspective'] {
+        -webkit-transform-origin: right;
+        transform-origin: right;
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='perspective'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(-10px) rotateY(0);
+        transform: translateX(-10px) rotateY(0);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='perspective'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(0) rotateY(-90deg);
+        transform: translateX(0) rotateY(-90deg);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='fade'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(-10px);
+        transform: translateX(-10px);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='fade'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(-10px);
+        transform: translateX(-10px);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='shift-away'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(-10px);
+        transform: translateX(-10px);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='shift-away'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='scale'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(-10px) scale(1);
+        transform: translateX(-10px) scale(1);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='scale'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(0) scale(0);
+        transform: translateX(0) scale(0);
+      }
+      .tippy-popper[x-placement^='right'] .tippy-backdrop {
+        border-radius: 0 50% 50% 0;
+      }
+      .tippy-popper[x-placement^='right'] .tippy-roundarrow {
+        left: -16px;
+        -webkit-transform-origin: 66.66666666% 50%;
+        transform-origin: 66.66666666% 50%;
+      }
+      .tippy-popper[x-placement^='right'] .tippy-roundarrow svg {
+        position: absolute;
+        left: 0;
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+      }
+      .tippy-popper[x-placement^='right'] .tippy-arrow {
+        border-right: 7px solid #333;
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+        left: -7px;
+        margin: 3px 0;
+        -webkit-transform-origin: 100% 50%;
+        transform-origin: 100% 50%;
+      }
+      .tippy-popper[x-placement^='right'] .tippy-backdrop {
+        -webkit-transform-origin: -100% 0;
+        transform-origin: -100% 0;
+      }
+      .tippy-popper[x-placement^='right']
+        .tippy-backdrop[data-state='visible'] {
+        -webkit-transform: scale(6) translate(-140%, -50%);
+        transform: scale(6) translate(-140%, -50%);
+        opacity: 1;
+      }
+      .tippy-popper[x-placement^='right'] .tippy-backdrop[data-state='hidden'] {
+        -webkit-transform: scale(1.5) translate(-140%, -50%);
+        transform: scale(1.5) translate(-140%, -50%);
+        opacity: 0;
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='shift-toward'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='shift-toward'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(20px);
+        transform: translateX(20px);
+      }
+      .tippy-popper[x-placement^='right'] [data-animation='perspective'] {
+        -webkit-transform-origin: left;
+        transform-origin: left;
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='perspective'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(10px) rotateY(0);
+        transform: translateX(10px) rotateY(0);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='perspective'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(0) rotateY(90deg);
+        transform: translateX(0) rotateY(90deg);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='fade'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='fade'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='shift-away'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='shift-away'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='scale'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(10px) scale(1);
+        transform: translateX(10px) scale(1);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='scale'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(0) scale(0);
+        transform: translateX(0) scale(0);
+      }
+      .tippy-tooltip {
+        position: relative;
+        color: #fff;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        padding: 0.3rem 0.6rem;
+        text-align: center;
+        will-change: transform;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: #333;
+      }
+      .tippy-tooltip[data-size='small'] {
+        padding: 0.2rem 0.4rem;
+        font-size: 0.75rem;
+      }
+      .tippy-tooltip[data-size='large'] {
+        padding: 0.4rem 0.8rem;
+        font-size: 1rem;
+      }
+      .tippy-tooltip[data-animatefill] {
+        overflow: hidden;
+        background-color: transparent;
+      }
+      .tippy-tooltip[data-animatefill] .tippy-content {
+        transition: -webkit-clip-path cubic-bezier(0.46, 0.1, 0.52, 0.98);
+        transition: clip-path cubic-bezier(0.46, 0.1, 0.52, 0.98);
+        transition: clip-path cubic-bezier(0.46, 0.1, 0.52, 0.98),
+          -webkit-clip-path cubic-bezier(0.46, 0.1, 0.52, 0.98);
+      }
+      .tippy-tooltip[data-interactive],
+      .tippy-tooltip[data-interactive] path {
+        pointer-events: auto;
+      }
+      .tippy-tooltip[data-inertia][data-state='visible'] {
+        transition-timing-function: cubic-bezier(0.53, 2, 0.36, 0.85);
+      }
+      .tippy-tooltip[data-inertia][data-state='hidden'] {
+        transition-timing-function: ease;
+      }
+      .tippy-arrow,
+      .tippy-roundarrow {
+        position: absolute;
+        width: 0;
+        height: 0;
+      }
+      .tippy-roundarrow {
+        width: 24px;
+        height: 8px;
+        fill: #333;
+        pointer-events: none;
+      }
+      .tippy-backdrop {
+        position: absolute;
+        will-change: transform;
+        background-color: #333;
+        border-radius: 50%;
+        width: 26%;
+        left: 50%;
+        top: 50%;
+        z-index: -1;
+        transition: all cubic-bezier(0.46, 0.1, 0.52, 0.98);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
+      .tippy-backdrop:after {
+        content: '';
+        float: left;
+        padding-top: 100%;
+      }
+      body:not(.tippy-touch)
+        .tippy-tooltip[data-animatefill][data-state='visible']
+        .tippy-content {
+        -webkit-clip-path: ellipse(100% 100% at 50% 50%);
+        clip-path: ellipse(100% 100% at 50% 50%);
+      }
+      body:not(.tippy-touch)
+        .tippy-tooltip[data-animatefill][data-state='hidden']
+        .tippy-content {
+        -webkit-clip-path: ellipse(5% 50% at 50% 50%);
+        clip-path: ellipse(5% 50% at 50% 50%);
+      }
+      body:not(.tippy-touch)
+        .tippy-popper[x-placement='right']
+        .tippy-tooltip[data-animatefill][data-state='visible']
+        .tippy-content {
+        -webkit-clip-path: ellipse(135% 100% at 0 50%);
+        clip-path: ellipse(135% 100% at 0 50%);
+      }
+      body:not(.tippy-touch)
+        .tippy-popper[x-placement='right']
+        .tippy-tooltip[data-animatefill][data-state='hidden']
+        .tippy-content {
+        -webkit-clip-path: ellipse(40% 100% at 0 50%);
+        clip-path: ellipse(40% 100% at 0 50%);
+      }
+      body:not(.tippy-touch)
+        .tippy-popper[x-placement='left']
+        .tippy-tooltip[data-animatefill][data-state='visible']
+        .tippy-content {
+        -webkit-clip-path: ellipse(135% 100% at 100% 50%);
+        clip-path: ellipse(135% 100% at 100% 50%);
+      }
+      body:not(.tippy-touch)
+        .tippy-popper[x-placement='left']
+        .tippy-tooltip[data-animatefill][data-state='hidden']
+        .tippy-content {
+        -webkit-clip-path: ellipse(40% 100% at 100% 50%);
+        clip-path: ellipse(40% 100% at 100% 50%);
+      }
+      @media (max-width: 360px) {
+        .tippy-popper {
+          max-width: 96%;
+          max-width: calc(100% - 20px);
+        }
+      }
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style data-emotion="css" data-s=""></style>
+    <style>
+      .ace_editor.ace_autocomplete .ace_marker-layer .ace_active-line {
+        background-color: #cad6fa;
+        z-index: 1;
+      }
+      .ace_editor.ace_autocomplete .ace_line-hover {
+        border: 1px solid #abbffe;
+        margin-top: -1px;
+        background: rgba(233, 233, 253, 0.4);
+      }
+      .ace_editor.ace_autocomplete .ace_line-hover {
+        position: absolute;
+        z-index: 2;
+      }
+      .ace_editor.ace_autocomplete .ace_scroller {
+        background: none;
+        border: none;
+        box-shadow: none;
+      }
+      .ace_rightAlignedText {
+        color: gray;
+        display: inline-block;
+        position: absolute;
+        right: 4px;
+        text-align: right;
+        z-index: -1;
+      }
+      .ace_editor.ace_autocomplete .ace_completion-highlight {
+        color: #000;
+        text-shadow: 0 0 0.01em;
+      }
+      .ace_editor.ace_autocomplete {
+        width: 280px;
+        z-index: 200000;
+        background: #fbfbfb;
+        color: #444;
+        border: 1px lightgray solid;
+        position: fixed;
+        box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);
+        line-height: 1.4;
+      }
+    </style>
+    <style>
+      .ace_snippet-marker {
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        background: rgba(194, 193, 208, 0.09);
+        border: 1px dotted rgba(211, 208, 235, 0.62);
+        position: absolute;
+      }
+    </style>
+    <style type="text/css">
+      .tippy-touch {
+        cursor: pointer !important;
+      }
+      .tippy-notransition {
+        transition: none !important;
+      }
+      .tippy-popper {
+        max-width: 350px;
+        -webkit-perspective: 700px;
+        perspective: 700px;
+        z-index: 9999;
+        outline: 0;
+        transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+        pointer-events: none;
+        line-height: 1.4;
+      }
+      .tippy-popper[data-html] {
+        max-width: 96%;
+        max-width: calc(100% - 20px);
+      }
+      .tippy-popper[x-placement^='top'] .tippy-backdrop {
+        border-radius: 40% 40% 0 0;
+      }
+      .tippy-popper[x-placement^='top'] .tippy-roundarrow {
+        bottom: -8px;
+        -webkit-transform-origin: 50% 0;
+        transform-origin: 50% 0;
+      }
+      .tippy-popper[x-placement^='top'] .tippy-roundarrow svg {
+        position: absolute;
+        left: 0;
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+      }
+      .tippy-popper[x-placement^='top'] .tippy-arrow {
+        border-top: 7px solid #333;
+        border-right: 7px solid transparent;
+        border-left: 7px solid transparent;
+        bottom: -7px;
+        margin: 0 6px;
+        -webkit-transform-origin: 50% 0;
+        transform-origin: 50% 0;
+      }
+      .tippy-popper[x-placement^='top'] .tippy-backdrop {
+        -webkit-transform-origin: 0 90%;
+        transform-origin: 0 90%;
+      }
+      .tippy-popper[x-placement^='top'] .tippy-backdrop[data-state='visible'] {
+        -webkit-transform: scale(6) translate(-50%, 25%);
+        transform: scale(6) translate(-50%, 25%);
+        opacity: 1;
+      }
+      .tippy-popper[x-placement^='top'] .tippy-backdrop[data-state='hidden'] {
+        -webkit-transform: scale(1) translate(-50%, 25%);
+        transform: scale(1) translate(-50%, 25%);
+        opacity: 0;
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='shift-toward'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='shift-toward'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+      }
+      .tippy-popper[x-placement^='top'] [data-animation='perspective'] {
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='perspective'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(-10px) rotateX(0);
+        transform: translateY(-10px) rotateX(0);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='perspective'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(0) rotateX(90deg);
+        transform: translateY(0) rotateX(90deg);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='fade'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='fade'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='shift-away'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='shift-away'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='scale'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(-10px) scale(1);
+        transform: translateY(-10px) scale(1);
+      }
+      .tippy-popper[x-placement^='top']
+        [data-animation='scale'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(0) scale(0);
+        transform: translateY(0) scale(0);
+      }
+      .tippy-popper[x-placement^='bottom'] .tippy-backdrop {
+        border-radius: 0 0 30% 30%;
+      }
+      .tippy-popper[x-placement^='bottom'] .tippy-roundarrow {
+        top: -8px;
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+      }
+      .tippy-popper[x-placement^='bottom'] .tippy-roundarrow svg {
+        position: absolute;
+        left: 0;
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+      }
+      .tippy-popper[x-placement^='bottom'] .tippy-arrow {
+        border-bottom: 7px solid #333;
+        border-right: 7px solid transparent;
+        border-left: 7px solid transparent;
+        top: -7px;
+        margin: 0 6px;
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+      }
+      .tippy-popper[x-placement^='bottom'] .tippy-backdrop {
+        -webkit-transform-origin: 0 -90%;
+        transform-origin: 0 -90%;
+      }
+      .tippy-popper[x-placement^='bottom']
+        .tippy-backdrop[data-state='visible'] {
+        -webkit-transform: scale(6) translate(-50%, -125%);
+        transform: scale(6) translate(-50%, -125%);
+        opacity: 1;
+      }
+      .tippy-popper[x-placement^='bottom']
+        .tippy-backdrop[data-state='hidden'] {
+        -webkit-transform: scale(1) translate(-50%, -125%);
+        transform: scale(1) translate(-50%, -125%);
+        opacity: 0;
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='shift-toward'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='shift-toward'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+      }
+      .tippy-popper[x-placement^='bottom'] [data-animation='perspective'] {
+        -webkit-transform-origin: top;
+        transform-origin: top;
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='perspective'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(10px) rotateX(0);
+        transform: translateY(10px) rotateX(0);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='perspective'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(0) rotateX(-90deg);
+        transform: translateY(0) rotateX(-90deg);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='fade'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='fade'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='shift-away'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='shift-away'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='scale'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateY(10px) scale(1);
+        transform: translateY(10px) scale(1);
+      }
+      .tippy-popper[x-placement^='bottom']
+        [data-animation='scale'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateY(0) scale(0);
+        transform: translateY(0) scale(0);
+      }
+      .tippy-popper[x-placement^='left'] .tippy-backdrop {
+        border-radius: 50% 0 0 50%;
+      }
+      .tippy-popper[x-placement^='left'] .tippy-roundarrow {
+        right: -16px;
+        -webkit-transform-origin: 33.33333333% 50%;
+        transform-origin: 33.33333333% 50%;
+      }
+      .tippy-popper[x-placement^='left'] .tippy-roundarrow svg {
+        position: absolute;
+        left: 0;
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+      }
+      .tippy-popper[x-placement^='left'] .tippy-arrow {
+        border-left: 7px solid #333;
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+        right: -7px;
+        margin: 3px 0;
+        -webkit-transform-origin: 0 50%;
+        transform-origin: 0 50%;
+      }
+      .tippy-popper[x-placement^='left'] .tippy-backdrop {
+        -webkit-transform-origin: 100% 0;
+        transform-origin: 100% 0;
+      }
+      .tippy-popper[x-placement^='left'] .tippy-backdrop[data-state='visible'] {
+        -webkit-transform: scale(6) translate(40%, -50%);
+        transform: scale(6) translate(40%, -50%);
+        opacity: 1;
+      }
+      .tippy-popper[x-placement^='left'] .tippy-backdrop[data-state='hidden'] {
+        -webkit-transform: scale(1.5) translate(40%, -50%);
+        transform: scale(1.5) translate(40%, -50%);
+        opacity: 0;
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='shift-toward'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(-10px);
+        transform: translateX(-10px);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='shift-toward'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(-20px);
+        transform: translateX(-20px);
+      }
+      .tippy-popper[x-placement^='left'] [data-animation='perspective'] {
+        -webkit-transform-origin: right;
+        transform-origin: right;
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='perspective'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(-10px) rotateY(0);
+        transform: translateX(-10px) rotateY(0);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='perspective'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(0) rotateY(-90deg);
+        transform: translateX(0) rotateY(-90deg);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='fade'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(-10px);
+        transform: translateX(-10px);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='fade'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(-10px);
+        transform: translateX(-10px);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='shift-away'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(-10px);
+        transform: translateX(-10px);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='shift-away'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='scale'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(-10px) scale(1);
+        transform: translateX(-10px) scale(1);
+      }
+      .tippy-popper[x-placement^='left']
+        [data-animation='scale'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(0) scale(0);
+        transform: translateX(0) scale(0);
+      }
+      .tippy-popper[x-placement^='right'] .tippy-backdrop {
+        border-radius: 0 50% 50% 0;
+      }
+      .tippy-popper[x-placement^='right'] .tippy-roundarrow {
+        left: -16px;
+        -webkit-transform-origin: 66.66666666% 50%;
+        transform-origin: 66.66666666% 50%;
+      }
+      .tippy-popper[x-placement^='right'] .tippy-roundarrow svg {
+        position: absolute;
+        left: 0;
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+      }
+      .tippy-popper[x-placement^='right'] .tippy-arrow {
+        border-right: 7px solid #333;
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+        left: -7px;
+        margin: 3px 0;
+        -webkit-transform-origin: 100% 50%;
+        transform-origin: 100% 50%;
+      }
+      .tippy-popper[x-placement^='right'] .tippy-backdrop {
+        -webkit-transform-origin: -100% 0;
+        transform-origin: -100% 0;
+      }
+      .tippy-popper[x-placement^='right']
+        .tippy-backdrop[data-state='visible'] {
+        -webkit-transform: scale(6) translate(-140%, -50%);
+        transform: scale(6) translate(-140%, -50%);
+        opacity: 1;
+      }
+      .tippy-popper[x-placement^='right'] .tippy-backdrop[data-state='hidden'] {
+        -webkit-transform: scale(1.5) translate(-140%, -50%);
+        transform: scale(1.5) translate(-140%, -50%);
+        opacity: 0;
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='shift-toward'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='shift-toward'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(20px);
+        transform: translateX(20px);
+      }
+      .tippy-popper[x-placement^='right'] [data-animation='perspective'] {
+        -webkit-transform-origin: left;
+        transform-origin: left;
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='perspective'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(10px) rotateY(0);
+        transform: translateX(10px) rotateY(0);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='perspective'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(0) rotateY(90deg);
+        transform: translateX(0) rotateY(90deg);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='fade'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='fade'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='shift-away'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='shift-away'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='scale'][data-state='visible'] {
+        opacity: 1;
+        -webkit-transform: translateX(10px) scale(1);
+        transform: translateX(10px) scale(1);
+      }
+      .tippy-popper[x-placement^='right']
+        [data-animation='scale'][data-state='hidden'] {
+        opacity: 0;
+        -webkit-transform: translateX(0) scale(0);
+        transform: translateX(0) scale(0);
+      }
+      .tippy-tooltip {
+        position: relative;
+        color: #fff;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        padding: 0.3rem 0.6rem;
+        text-align: center;
+        will-change: transform;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: #333;
+      }
+      .tippy-tooltip[data-size='small'] {
+        padding: 0.2rem 0.4rem;
+        font-size: 0.75rem;
+      }
+      .tippy-tooltip[data-size='large'] {
+        padding: 0.4rem 0.8rem;
+        font-size: 1rem;
+      }
+      .tippy-tooltip[data-animatefill] {
+        overflow: hidden;
+        background-color: transparent;
+      }
+      .tippy-tooltip[data-animatefill] .tippy-content {
+        transition: -webkit-clip-path cubic-bezier(0.46, 0.1, 0.52, 0.98);
+        transition: clip-path cubic-bezier(0.46, 0.1, 0.52, 0.98);
+        transition: clip-path cubic-bezier(0.46, 0.1, 0.52, 0.98),
+          -webkit-clip-path cubic-bezier(0.46, 0.1, 0.52, 0.98);
+      }
+      .tippy-tooltip[data-interactive],
+      .tippy-tooltip[data-interactive] path {
+        pointer-events: auto;
+      }
+      .tippy-tooltip[data-inertia][data-state='visible'] {
+        transition-timing-function: cubic-bezier(0.53, 2, 0.36, 0.85);
+      }
+      .tippy-tooltip[data-inertia][data-state='hidden'] {
+        transition-timing-function: ease;
+      }
+      .tippy-arrow,
+      .tippy-roundarrow {
+        position: absolute;
+        width: 0;
+        height: 0;
+      }
+      .tippy-roundarrow {
+        width: 24px;
+        height: 8px;
+        fill: #333;
+        pointer-events: none;
+      }
+      .tippy-backdrop {
+        position: absolute;
+        will-change: transform;
+        background-color: #333;
+        border-radius: 50%;
+        width: 26%;
+        left: 50%;
+        top: 50%;
+        z-index: -1;
+        transition: all cubic-bezier(0.46, 0.1, 0.52, 0.98);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
+      .tippy-backdrop:after {
+        content: '';
+        float: left;
+        padding-top: 100%;
+      }
+      body:not(.tippy-touch)
+        .tippy-tooltip[data-animatefill][data-state='visible']
+        .tippy-content {
+        -webkit-clip-path: ellipse(100% 100% at 50% 50%);
+        clip-path: ellipse(100% 100% at 50% 50%);
+      }
+      body:not(.tippy-touch)
+        .tippy-tooltip[data-animatefill][data-state='hidden']
+        .tippy-content {
+        -webkit-clip-path: ellipse(5% 50% at 50% 50%);
+        clip-path: ellipse(5% 50% at 50% 50%);
+      }
+      body:not(.tippy-touch)
+        .tippy-popper[x-placement='right']
+        .tippy-tooltip[data-animatefill][data-state='visible']
+        .tippy-content {
+        -webkit-clip-path: ellipse(135% 100% at 0 50%);
+        clip-path: ellipse(135% 100% at 0 50%);
+      }
+      body:not(.tippy-touch)
+        .tippy-popper[x-placement='right']
+        .tippy-tooltip[data-animatefill][data-state='hidden']
+        .tippy-content {
+        -webkit-clip-path: ellipse(40% 100% at 0 50%);
+        clip-path: ellipse(40% 100% at 0 50%);
+      }
+      body:not(.tippy-touch)
+        .tippy-popper[x-placement='left']
+        .tippy-tooltip[data-animatefill][data-state='visible']
+        .tippy-content {
+        -webkit-clip-path: ellipse(135% 100% at 100% 50%);
+        clip-path: ellipse(135% 100% at 100% 50%);
+      }
+      body:not(.tippy-touch)
+        .tippy-popper[x-placement='left']
+        .tippy-tooltip[data-animatefill][data-state='hidden']
+        .tippy-content {
+        -webkit-clip-path: ellipse(40% 100% at 100% 50%);
+        clip-path: ellipse(40% 100% at 100% 50%);
+      }
+      @media (max-width: 360px) {
+        .tippy-popper {
+          max-width: 96%;
+          max-width: calc(100% - 20px);
+        }
+      }
+    </style>
+    <style data-merge-styles="true"></style>
+    <style data-merge-styles="true"></style>
+    <style data-merge-styles="true"></style>
+    <style data-merge-styles="true"></style>
+    <style data-merge-styles="true"></style>
+    <style data-merge-styles="true"></style>
+    <style data-merge-styles="true"></style>
+    <style data-merge-styles="true"></style>
+
+    <link
+      rel="stylesheet"
+      href="./home/60a6eb6d0fe040c5.css"
+      data-precedence="next"
+    />
+    <link
+      rel="stylesheet"
+      href="./home/166acf0bb0be8c25.css"
+      data-precedence="next"
+    />
+    <link
+      rel="stylesheet"
+      href="./home/9fa4718bb3ae1cae.css"
+      data-precedence="next"
+    />
+    <link
+      rel="stylesheet"
+      href="./home/91315883a9b46a52.css"
+      data-precedence="next"
+    />
+    <link
+      rel="stylesheet"
+      href="./home/1f513daff08a6d25.css"
+      data-precedence="next"
+    />
+    <link
+      rel="stylesheet"
+      href="./home/c3a81d2cee1ead21.css"
+      data-precedence="next"
+    />
+    <link
+      rel="stylesheet"
+      href="./home/ac6d945a28327846.css"
+      data-precedence="next"
+    />
+    <link
+      rel="stylesheet"
+      href="./home/8a05732638d9b3eb.css"
+      data-precedence="next"
+    />
+    <link
+      rel="stylesheet"
+      href="./home/fec95abf28dff384.css"
+      data-precedence="next"
+    />
+    <link
+      rel="stylesheet"
+      href="./home/31ced174618104b6.css"
+      data-precedence="next"
+    />
+    
+
+    <style type="text/css">
+      @font-face {
+        font-weight: 400;
+        font-style: normal;
+        font-family: circular;
+
+        src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Book.woff2')
+          format('woff2');
+      }
+
+      @font-face {
+        font-weight: 700;
+        font-style: normal;
+        font-family: circular;
+
+        src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Bold.woff2')
+          format('woff2');
+      }
+      ::selection {
+        background-color: #68ad78;
+      }
+    </style>
+
+    <style data-styled="active" data-styled-version="5.3.8"></style>
+    <style data-styled="active" data-styled-version="5.3.11"></style>
+    <style data-styled="active" data-styled-version="5.3.11"></style>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#141413" />
+    <title>Gatara AI</title>
+    <meta name="next-size-adjust" />
+
+
+    <meta name="description" content="Gatara is an AI and Automation company. We build reliable, interpretable, and steerable AI and Automation systems.">
+    <meta property="og:title" content="Home">
+    <meta property="og:description" content="Gatara is an AI and Automation company. We build reliable, interpretable, and steerable AI and Automation systems">
+    <link rel="icon" type="image/png" href="/logo.png">
+    <link rel="apple-touch-icon" href="/logo.png">
+    <link rel="apple-touch-icon" href="/logo.png" sizes="180x180">
+  
+    <link rel="stylesheet" media="all" href="/main.css">
+  </head>
+  <body>
+    <div id="loom-companion-mv3" ext-id="liecbddmkiiihnedobmlmillhodjkdmb">
+      <section id="shadow-host-companion"></section>
+    </div>
+    <scribe-shadow
+      id="crxjs-ext"
+      style="
+        position: fixed;
+        width: 0px;
+        height: 0px;
+        top: 0px;
+        left: 0px;
+        z-index: 2147483647;
+        overflow: visible;
+        visibility: visible;
+      "
+    >
+    </scribe-shadow>
+    <div></div>
+
+    
+
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <main id="main" class="bg-ivory-medium">
+      <article style="background-color: #faf9f5;">
+        <section
+          class="HeroStaggered_b-hero-staggered__N1sNA HeroStaggered_is-initialized__naNHR wrapper m:grid m:grid-12 Section_section-wrapper__7hN5D"
+          style="background-color: #faf9f5; padding-bottom: 0px; padding-right: 0px;"
+        >
+          <div class="m:col-start-2 m:col-span-7 xl:col-span-8">
+            <h1 class="HeroStaggered_heading__PXs7D h1" style="font-family: 'Product Sans Medium Regular' !important; padding-right: 0px;">
+              AI <a href="/not-available-yet/">products </a> that actually<br />
+              solve real problems,<br />
+              and make magic<br />
+              happen.
+            </h1>  
+          </div>
+        </section>
+        <section
+          class="HeroStaggered_b-hero-staggered__N1sNA HeroStaggered_is-initialized__naNHR wrapper m:grid m:grid-12 Section_section-wrapper__7hN5D"
+          style="background-color: #faf9f5; padding-top: 0px;"
+        >
+          <div class="m:col-start-2 m:col-span-7 xl:col-span-8">  
+            <ul class="HeroStaggered_cards__piR1t s:grid s:grid-8">
+              <li
+                class="HeroStaggered_cards-item__VzL8Y s:col-span-4 flex spacer-gap-mt"
+              >
+                <article
+                  class="CardCta_b-cardCta__IGAhZ HeroStaggered_b-cardCta__BW6AV bg-light contentFadeUp is-inview"
+                >
+                  <span class="CardCta_tag__6a69j text-caption"  style="font-family: 'Product Sans Regular'; font-size: 15px;">custom </span>
+                  <h2 class="h4" style="font-family: 'Product Sans Medium Regular' !important; font-size: 25px;">
+                    Buisness with AI</h2>
+                  <p class="CardCta_description__gU7PZ text-b2"  style="font-size: 18px;">
+                    Create AI-powered systems you can rely on. transform
+                    your buisness with AI.
+                  </p>
+                  <a
+                    href="/not-available-yet/"
+                    class="CardCta_b-cta-link__I6ux3 btn-primary"
+                    rel="noopener"
+                
+                  >
+                    <span class="btn-label"  style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Get Started </span>
+                  </a>
+                </article>
+              </li>
+              <li
+                class="HeroStaggered_cards-item__VzL8Y s:col-span-4 flex spacer-gap-mt"
+              >
+                <article
+                  class="CardCta_b-cardCta__IGAhZ HeroStaggered_b-cardCta__BW6AV bg-light contentFadeUp is-inview"
+                >
+                  <span class="CardCta_tag__6a69j text-caption"  style="font-family: 'Product Sans Regular'; font-size: 15px;"
+                    >Murshed.ai
+                  </span>
+                  <h2 class="h4" style="font-family: 'Product Sans Medium Regular' !important; font-size: 25px;">
+                    Meet Murshed 1.0</h2>
+                  <p class="CardCta_description__gU7PZ text-b2" style="font-size: 18px;">
+                    Murshed, our first AI SaaS product, is now available. Let's
+                    be organized!
+                  </p>
+                  <a
+                    class="CardCta_b-cta-link__I6ux3 btn-secondary"
+                    aria-label="Learn more"
+                    href="https://murshed.gatara.org"
+                  >
+                    <span class="btn-label"  style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Learn more </span>
+                  </a>
+                </article>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="Section_section-wrapper__7hN5D bg-ivory-light">
+          <div class="wrapper">
+            <div
+              class="AnnouncementBanner_banner__YZzql bg-manilla"
+              style="background-color: #ecf0e8 !important"
+            >
+              <div
+                class="AnnouncementBanner_announcement__9_Jh_"
+                style="gap: 0px"
+              >
+                <p class="text-label"></p>
+                <p class="AnnouncementBanner_message__JnquK" style="font-family: 'Product Sans Medium Regular' !important; font-size: 30px;">
+                  The complete AI solutions that delivers ease, speed, and
+                  unification across your business.
+                </p>
+                <h2 style="margin-top: 10px; line-height: 120%; font-family: 'Product Sans Medium Regular' !important; font-size: 26px;">
+                  Leverage our expertise to build, deploy, and scale Custom AI
+                  Solutions.
+                </h2>
+                <h3 style="margin-top: 10px; line-height: 120%; font-family: 'Product Sans Regular' !important; font-size: 23px;">
+                  Our services include AI automation, digital transformation,
+                  and custom AI development.<br />
+                  To learn how you can benefit from AI &amp; automation
+                  consultancy, simply request a free Demo.
+                </h3>
+              </div>
+              <div
+                class="AnnouncementBanner_sidebar__pSiF3"
+                style="background-color: #faf9f5"
+              >
+                <p class="text-label"  style="font-family: 'Product Sans Regular'; font-size: 18px;">Request A</p>
+                <p class="AnnouncementBanner_message__JnquK">
+                  <a href="/not-available-yet/"  style="font-family: 'Product Sans Regular'; font-size: 23px;">Free Demo </a>
+                </p>
+                <p class="AnnouncementBanner_message__JnquK">
+                  <a href="/not-available-yet/" style="font-family: 'Product Sans Regular'; font-size: 23px;">Free Call </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="RelatedLinks_b-news__VeVqr Section_section-wrapper__7hN5D bg-ivory-light"
+        >
+          <div class="wrapper">
+            <div class="RelatedLinks_top-content__HdTTI spacer-medium-mb">
+              <div class="RelatedLinks_block-label__9k9t7">
+                <h2 class="h3" style="font-family: 'Product Sans Medium Regular'; font-size: 29px;">Your 3-Steps to AI &amp; Automation Success</h2>
+              </div>
+            </div>
+            <div
+              class="RelatedLinks_block-content__Lffd5 s:grid s:grid-12 is-inview"
+            >
+              <a
+                class="PostCard_post-card__z_Sqq RelatedLinks_post-card__FnG_F s:col-span-6 m:col-span-4 bg-ivory-medium stagger-item"
+                href="#"
+              >
+                <div
+                  class="PostCard_post-info__pSlap RelatedLinks_post-info__rSLNO"
+                  style="background-color: #f0eee8"
+                >
+                  <div class="PostCard_post-info-wrapper__Ac6ep">
+                    <div class="PostCard_post-category__FwBDj">
+                      <h2  style="font-family: 'Product Sans Medium Regular'; font-size: 29px; margin-top: 25px">
+                        Free Process Health Check
+                      </h2>
+                    </div>
+                    <h3
+                      class="PostCard_post-heading__Ob1pu RelatedLinks_post-heading__OPQ8g h4"
+                      style="font-family: 'Product Sans Regular'; font-size: 23px;">
+                      Our consultants meticulously review your current
+                      processes, identifying areas ripe for AI &amp; automation
+                      that can boost productivity and cut costs.
+                    </h3>
+                  </div>
+                  <div
+                    class="PostCard_post-timestamp__etH9K RelatedLinks_post-timestamp__VxKS9 text-label"
+                    style="margin-top: 20px"
+                  >
+                    <div style="font-family: 'Product Sans Regular'; font-size: 18px;">Step 1</div>
+                  </div>
+                </div>
+              </a>
+
+              <a
+                class="PostCard_post-card__z_Sqq RelatedLinks_post-card__FnG_F s:col-span-6 m:col-span-4 bg-ivory-medium stagger-item"
+                href="#"
+              >
+                <div
+                  class="PostCard_post-info__pSlap RelatedLinks_post-info__rSLNO"
+                  style="background-color: #f0eee8"
+                >
+                  <div class="PostCard_post-info-wrapper__Ac6ep">
+                    <div class="PostCard_post-category__FwBDj">
+                      <h2  style="font-family: 'Product Sans Medium Regular'; font-size: 29px; margin-top: 25px">
+                        Personalised AI &amp; Automation Roadmap
+                      </h2>
+                    </div>
+                    <h3
+                      class="PostCard_post-heading__Ob1pu RelatedLinks_post-heading__OPQ8g h4"
+                      style="font-family: 'Product Sans Regular'; font-size: 23px;">
+                      We provide a tailored automation roadmap, with our
+                      recommended AI automation plan ready to implement. We
+                      calculate the time and cost savings at every step.
+                    </h3>
+                  </div>
+                  <div
+                    class="PostCard_post-timestamp__etH9K RelatedLinks_post-timestamp__VxKS9 text-label"
+                    style="margin-top: 20px"
+                  >
+                    <div style="font-family: 'Product Sans Regular'; font-size: 18px;">Step 2</div>
+                  </div>
+                </div>
+              </a>
+
+              <a
+                class="PostCard_post-card__z_Sqq RelatedLinks_post-card__FnG_F s:col-span-6 m:col-span-4 bg-ivory-medium stagger-item"
+                href="#"
+              >
+                <div
+                  class="PostCard_post-info__pSlap RelatedLinks_post-info__rSLNO"
+                  style="background-color: #f0eee8"
+                >
+                  <div class="PostCard_post-info-wrapper__Ac6ep">
+                    <div class="PostCard_post-category__FwBDj">
+                      <h2 style="font-family: 'Product Sans Medium Regular'; font-size: 29px; margin-top: 25px">
+                        Implementation, Setup &amp; Testing
+                      </h2>
+                    </div>
+                    <h3
+                      class="PostCard_post-heading__Ob1pu RelatedLinks_post-heading__OPQ8g h4"
+                      style="font-family: 'Product Sans Regular'; font-size: 23px;">
+                      Once our automation engineers have the scope from the
+                      roadmap, they’ll get busy automating your tasks and
+                      integrating your tech.
+                    </h3>
+                  </div>
+                  <div
+                    class="PostCard_post-timestamp__etH9K RelatedLinks_post-timestamp__VxKS9 text-label"
+                    style="margin-top: 20px"
+                  >
+                    <div style="font-family: 'Product Sans Regular'; font-size: 18px;">Step 3</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+        <section
+          class="FeatureList_b-feature-list__uL467 Section_section-wrapper__7hN5D Section_flush-top__B83gq"
+          style="background-color: #f0eee8;"
+        >
+          <div
+            class="wrapper s:grid s:grid-12"
+            style="background-color: #f0eee8;"
+          >
+            <div
+              class="FeatureList_block-content__Has4q s:col-start-1 s:col-span-12"
+            >
+              <div class="FeatureList_left-right__6jz13">
+                <div class="FeatureList_list__2ZbqF">
+                  <div class="FeatureList_asset-container__JbQrV">
+                    <img
+                      alt="Working office"
+                      width="1152"
+                      height="864"
+                      decoding="async"
+                      data-nimg="1"
+                      src="https://www.google.com/imgres?q=work%20with%20us%20image%20&imgurl=https%3A%2F%2Fwww.work-with-us.co.uk%2Fassets%2Fimages%2Flogo.png&imgrefurl=https%3A%2F%2Fwww.work-with-us.co.uk%2F&docid=TwgsFz5ct2jrKM&tbnid=6c-_hTj28Z6eIM&vet=12ahUKEwiV6I2XyfeKAxVKTaQEHRXqH68QM3oECBoQAA..i&w=400&h=320&hcb=2&ved=2ahUKEwiV6I2XyfeKAxVKTaQEHRXqH68QM3oECBoQAA"
+                      style="color: transparent"
+                    />
+                  </div>
+                  <div class="FeatureList_list-content__uxedb">
+                    <h2 style="font-family: 'Product Sans Medium Regular'; font-size: 27px;">Work with Gatara AI</h2>
+                    <div class="text-b2 spacer-micro-mt">
+                      <p style="font-size: 20px;">
+                        Gatara is an AI automation and SaaS products company
+                        based in Aleppo, Syria.<br />
+                        Our interdisciplinary team has experience across AI,
+                        Software development, Automation, and product.<br />
+                        Together, we create reliable, beneficial AI systems and
+                        products.
+                      </p>
+                    </div>
+                    <a
+                      class="btn-secondary btn-light spacer-small-mt"
+                      aria-label="See open roles"
+                      href="/open-roles/"
+                    >
+                      <span class="btn-label"  style="font-family: 'Product Sans Regular' !important; font-size: 22px;">See open roles </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+</html>

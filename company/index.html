@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+
+<html lang="en" class="__variable_42f43f __variable_403256 __variable_57fc85 __variable_34e0db">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style data-emotion="css" data-s="">
+</style>
+<style>.ace_editor.ace_autocomplete .ace_marker-layer .ace_active-line {    background-color: #CAD6FA;    z-index: 1;}.ace_editor.ace_autocomplete .ace_line-hover {    border: 1px solid #abbffe;    margin-top: -1px;    background: rgba(233,233,253,0.4);}.ace_editor.ace_autocomplete .ace_line-hover {    position: absolute;    z-index: 2;}.ace_editor.ace_autocomplete .ace_scroller {   background: none;   border: none;   box-shadow: none;}.ace_rightAlignedText {    color: gray;    display: inline-block;    position: absolute;    right: 4px;    text-align: right;    z-index: -1;}.ace_editor.ace_autocomplete .ace_completion-highlight{    color: #000;    text-shadow: 0 0 0.01em;}.ace_editor.ace_autocomplete {    width: 280px;    z-index: 200000;    background: #fbfbfb;    color: #444;    border: 1px lightgray solid;    position: fixed;    box-shadow: 2px 3px 5px rgba(0,0,0,.2);    line-height: 1.4;}
+</style>
+<style>.ace_snippet-marker {    -moz-box-sizing: border-box;    box-sizing: border-box;    background: rgba(194, 193, 208, 0.09);    border: 1px dotted rgba(211, 208, 235, 0.62);    position: absolute;}
+</style>
+<style type="text/css">.tippy-touch{cursor:pointer!important}.tippy-notransition{transition:none!important}.tippy-popper{max-width:350px;-webkit-perspective:700px;perspective:700px;z-index:9999;outline:0;transition-timing-function:cubic-bezier(.165,.84,.44,1);pointer-events:none;line-height:1.4}.tippy-popper[data-html]{max-width:96%;max-width:calc(100% - 20px)}.tippy-popper[x-placement^=top] .tippy-backdrop{border-radius:40% 40% 0 0}.tippy-popper[x-placement^=top] .tippy-roundarrow{bottom:-8px;-webkit-transform-origin:50% 0;transform-origin:50% 0}.tippy-popper[x-placement^=top] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(180deg);transform:rotate(180deg)}.tippy-popper[x-placement^=top] .tippy-arrow{border-top:7px solid #333;border-right:7px solid transparent;border-left:7px solid transparent;bottom:-7px;margin:0 6px;-webkit-transform-origin:50% 0;transform-origin:50% 0}.tippy-popper[x-placement^=top] .tippy-backdrop{-webkit-transform-origin:0 90%;transform-origin:0 90%}.tippy-popper[x-placement^=top] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(6) translate(-50%,25%);transform:scale(6) translate(-50%,25%);opacity:1}.tippy-popper[x-placement^=top] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(1) translate(-50%,25%);transform:scale(1) translate(-50%,25%);opacity:0}.tippy-popper[x-placement^=top] [data-animation=shift-toward][data-state=visible]{opacity:1;-webkit-transform:translateY(-10px);transform:translateY(-10px)}.tippy-popper[x-placement^=top] [data-animation=shift-toward][data-state=hidden]{opacity:0;-webkit-transform:translateY(-20px);transform:translateY(-20px)}.tippy-popper[x-placement^=top] [data-animation=perspective]{-webkit-transform-origin:bottom;transform-origin:bottom}.tippy-popper[x-placement^=top] [data-animation=perspective][data-state=visible]{opacity:1;-webkit-transform:translateY(-10px) rotateX(0);transform:translateY(-10px) rotateX(0)}.tippy-popper[x-placement^=top] [data-animation=perspective][data-state=hidden]{opacity:0;-webkit-transform:translateY(0) rotateX(90deg);transform:translateY(0) rotateX(90deg)}.tippy-popper[x-placement^=top] [data-animation=fade][data-state=visible]{opacity:1;-webkit-transform:translateY(-10px);transform:translateY(-10px)}.tippy-popper[x-placement^=top] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateY(-10px);transform:translateY(-10px)}.tippy-popper[x-placement^=top] [data-animation=shift-away][data-state=visible]{opacity:1;-webkit-transform:translateY(-10px);transform:translateY(-10px)}.tippy-popper[x-placement^=top] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateY(0);transform:translateY(0)}.tippy-popper[x-placement^=top] [data-animation=scale][data-state=visible]{opacity:1;-webkit-transform:translateY(-10px) scale(1);transform:translateY(-10px) scale(1)}.tippy-popper[x-placement^=top] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateY(0) scale(0);transform:translateY(0) scale(0)}.tippy-popper[x-placement^=bottom] .tippy-backdrop{border-radius:0 0 30% 30%}.tippy-popper[x-placement^=bottom] .tippy-roundarrow{top:-8px;-webkit-transform-origin:50% 100%;transform-origin:50% 100%}.tippy-popper[x-placement^=bottom] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(0);transform:rotate(0)}.tippy-popper[x-placement^=bottom] .tippy-arrow{border-bottom:7px solid #333;border-right:7px solid transparent;border-left:7px solid transparent;top:-7px;margin:0 6px;-webkit-transform-origin:50% 100%;transform-origin:50% 100%}.tippy-popper[x-placement^=bottom] .tippy-backdrop{-webkit-transform-origin:0 -90%;transform-origin:0 -90%}.tippy-popper[x-placement^=bottom] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(6) translate(-50%,-125%);transform:scale(6) translate(-50%,-125%);opacity:1}.tippy-popper[x-placement^=bottom] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(1) translate(-50%,-125%);transform:scale(1) translate(-50%,-125%);opacity:0}.tippy-popper[x-placement^=bottom] [data-animation=shift-toward][data-state=visible]{opacity:1;-webkit-transform:translateY(10px);transform:translateY(10px)}.tippy-popper[x-placement^=bottom] [data-animation=shift-toward][data-state=hidden]{opacity:0;-webkit-transform:translateY(20px);transform:translateY(20px)}.tippy-popper[x-placement^=bottom] [data-animation=perspective]{-webkit-transform-origin:top;transform-origin:top}.tippy-popper[x-placement^=bottom] [data-animation=perspective][data-state=visible]{opacity:1;-webkit-transform:translateY(10px) rotateX(0);transform:translateY(10px) rotateX(0)}.tippy-popper[x-placement^=bottom] [data-animation=perspective][data-state=hidden]{opacity:0;-webkit-transform:translateY(0) rotateX(-90deg);transform:translateY(0) rotateX(-90deg)}.tippy-popper[x-placement^=bottom] [data-animation=fade][data-state=visible]{opacity:1;-webkit-transform:translateY(10px);transform:translateY(10px)}.tippy-popper[x-placement^=bottom] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateY(10px);transform:translateY(10px)}.tippy-popper[x-placement^=bottom] [data-animation=shift-away][data-state=visible]{opacity:1;-webkit-transform:translateY(10px);transform:translateY(10px)}.tippy-popper[x-placement^=bottom] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateY(0);transform:translateY(0)}.tippy-popper[x-placement^=bottom] [data-animation=scale][data-state=visible]{opacity:1;-webkit-transform:translateY(10px) scale(1);transform:translateY(10px) scale(1)}.tippy-popper[x-placement^=bottom] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateY(0) scale(0);transform:translateY(0) scale(0)}.tippy-popper[x-placement^=left] .tippy-backdrop{border-radius:50% 0 0 50%}.tippy-popper[x-placement^=left] .tippy-roundarrow{right:-16px;-webkit-transform-origin:33.33333333% 50%;transform-origin:33.33333333% 50%}.tippy-popper[x-placement^=left] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(90deg);transform:rotate(90deg)}.tippy-popper[x-placement^=left] .tippy-arrow{border-left:7px solid #333;border-top:7px solid transparent;border-bottom:7px solid transparent;right:-7px;margin:3px 0;-webkit-transform-origin:0 50%;transform-origin:0 50%}.tippy-popper[x-placement^=left] .tippy-backdrop{-webkit-transform-origin:100% 0;transform-origin:100% 0}.tippy-popper[x-placement^=left] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(6) translate(40%,-50%);transform:scale(6) translate(40%,-50%);opacity:1}.tippy-popper[x-placement^=left] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(1.5) translate(40%,-50%);transform:scale(1.5) translate(40%,-50%);opacity:0}.tippy-popper[x-placement^=left] [data-animation=shift-toward][data-state=visible]{opacity:1;-webkit-transform:translateX(-10px);transform:translateX(-10px)}.tippy-popper[x-placement^=left] [data-animation=shift-toward][data-state=hidden]{opacity:0;-webkit-transform:translateX(-20px);transform:translateX(-20px)}.tippy-popper[x-placement^=left] [data-animation=perspective]{-webkit-transform-origin:right;transform-origin:right}.tippy-popper[x-placement^=left] [data-animation=perspective][data-state=visible]{opacity:1;-webkit-transform:translateX(-10px) rotateY(0);transform:translateX(-10px) rotateY(0)}.tippy-popper[x-placement^=left] [data-animation=perspective][data-state=hidden]{opacity:0;-webkit-transform:translateX(0) rotateY(-90deg);transform:translateX(0) rotateY(-90deg)}.tippy-popper[x-placement^=left] [data-animation=fade][data-state=visible]{opacity:1;-webkit-transform:translateX(-10px);transform:translateX(-10px)}.tippy-popper[x-placement^=left] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateX(-10px);transform:translateX(-10px)}.tippy-popper[x-placement^=left] [data-animation=shift-away][data-state=visible]{opacity:1;-webkit-transform:translateX(-10px);transform:translateX(-10px)}.tippy-popper[x-placement^=left] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateX(0);transform:translateX(0)}.tippy-popper[x-placement^=left] [data-animation=scale][data-state=visible]{opacity:1;-webkit-transform:translateX(-10px) scale(1);transform:translateX(-10px) scale(1)}.tippy-popper[x-placement^=left] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateX(0) scale(0);transform:translateX(0) scale(0)}.tippy-popper[x-placement^=right] .tippy-backdrop{border-radius:0 50% 50% 0}.tippy-popper[x-placement^=right] .tippy-roundarrow{left:-16px;-webkit-transform-origin:66.66666666% 50%;transform-origin:66.66666666% 50%}.tippy-popper[x-placement^=right] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(-90deg);transform:rotate(-90deg)}.tippy-popper[x-placement^=right] .tippy-arrow{border-right:7px solid #333;border-top:7px solid transparent;border-bottom:7px solid transparent;left:-7px;margin:3px 0;-webkit-transform-origin:100% 50%;transform-origin:100% 50%}.tippy-popper[x-placement^=right] .tippy-backdrop{-webkit-transform-origin:-100% 0;transform-origin:-100% 0}.tippy-popper[x-placement^=right] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(6) translate(-140%,-50%);transform:scale(6) translate(-140%,-50%);opacity:1}.tippy-popper[x-placement^=right] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(1.5) translate(-140%,-50%);transform:scale(1.5) translate(-140%,-50%);opacity:0}.tippy-popper[x-placement^=right] [data-animation=shift-toward][data-state=visible]{opacity:1;-webkit-transform:translateX(10px);transform:translateX(10px)}.tippy-popper[x-placement^=right] [data-animation=shift-toward][data-state=hidden]{opacity:0;-webkit-transform:translateX(20px);transform:translateX(20px)}.tippy-popper[x-placement^=right] [data-animation=perspective]{-webkit-transform-origin:left;transform-origin:left}.tippy-popper[x-placement^=right] [data-animation=perspective][data-state=visible]{opacity:1;-webkit-transform:translateX(10px) rotateY(0);transform:translateX(10px) rotateY(0)}.tippy-popper[x-placement^=right] [data-animation=perspective][data-state=hidden]{opacity:0;-webkit-transform:translateX(0) rotateY(90deg);transform:translateX(0) rotateY(90deg)}.tippy-popper[x-placement^=right] [data-animation=fade][data-state=visible]{opacity:1;-webkit-transform:translateX(10px);transform:translateX(10px)}.tippy-popper[x-placement^=right] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateX(10px);transform:translateX(10px)}.tippy-popper[x-placement^=right] [data-animation=shift-away][data-state=visible]{opacity:1;-webkit-transform:translateX(10px);transform:translateX(10px)}.tippy-popper[x-placement^=right] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateX(0);transform:translateX(0)}.tippy-popper[x-placement^=right] [data-animation=scale][data-state=visible]{opacity:1;-webkit-transform:translateX(10px) scale(1);transform:translateX(10px) scale(1)}.tippy-popper[x-placement^=right] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateX(0) scale(0);transform:translateX(0) scale(0)}.tippy-tooltip{position:relative;color:#fff;border-radius:4px;font-size:.9rem;padding:.3rem .6rem;text-align:center;will-change:transform;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background-color:#333}.tippy-tooltip[data-size=small]{padding:.2rem .4rem;font-size:.75rem}.tippy-tooltip[data-size=large]{padding:.4rem .8rem;font-size:1rem}.tippy-tooltip[data-animatefill]{overflow:hidden;background-color:transparent}.tippy-tooltip[data-animatefill] .tippy-content{transition:-webkit-clip-path cubic-bezier(.46,.1,.52,.98);transition:clip-path cubic-bezier(.46,.1,.52,.98);transition:clip-path cubic-bezier(.46,.1,.52,.98),-webkit-clip-path cubic-bezier(.46,.1,.52,.98)}.tippy-tooltip[data-interactive],.tippy-tooltip[data-interactive] path{pointer-events:auto}.tippy-tooltip[data-inertia][data-state=visible]{transition-timing-function:cubic-bezier(.53,2,.36,.85)}.tippy-tooltip[data-inertia][data-state=hidden]{transition-timing-function:ease}.tippy-arrow,.tippy-roundarrow{position:absolute;width:0;height:0}.tippy-roundarrow{width:24px;height:8px;fill:#333;pointer-events:none}.tippy-backdrop{position:absolute;will-change:transform;background-color:#333;border-radius:50%;width:26%;left:50%;top:50%;z-index:-1;transition:all cubic-bezier(.46,.1,.52,.98);-webkit-backface-visibility:hidden;backface-visibility:hidden}.tippy-backdrop:after{content:"";float:left;padding-top:100%}body:not(.tippy-touch) .tippy-tooltip[data-animatefill][data-state=visible] .tippy-content{-webkit-clip-path:ellipse(100% 100% at 50% 50%);clip-path:ellipse(100% 100% at 50% 50%)}body:not(.tippy-touch) .tippy-tooltip[data-animatefill][data-state=hidden] .tippy-content{-webkit-clip-path:ellipse(5% 50% at 50% 50%);clip-path:ellipse(5% 50% at 50% 50%)}body:not(.tippy-touch) .tippy-popper[x-placement=right] .tippy-tooltip[data-animatefill][data-state=visible] .tippy-content{-webkit-clip-path:ellipse(135% 100% at 0 50%);clip-path:ellipse(135% 100% at 0 50%)}body:not(.tippy-touch) .tippy-popper[x-placement=right] .tippy-tooltip[data-animatefill][data-state=hidden] .tippy-content{-webkit-clip-path:ellipse(40% 100% at 0 50%);clip-path:ellipse(40% 100% at 0 50%)}body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-animatefill][data-state=visible] .tippy-content{-webkit-clip-path:ellipse(135% 100% at 100% 50%);clip-path:ellipse(135% 100% at 100% 50%)}body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-animatefill][data-state=hidden] .tippy-content{-webkit-clip-path:ellipse(40% 100% at 100% 50%);clip-path:ellipse(40% 100% at 100% 50%)}@media (max-width:360px){.tippy-popper{max-width:96%;max-width:calc(100% - 20px)}}
+</style>
+<style data-merge-styles="true">
+</style>
+<style data-merge-styles="true">
+</style>
+<style data-merge-styles="true">
+</style>
+<link rel="stylesheet" href="./company/60a6eb6d0fe040c5.css" data-precedence="next">
+<link rel="stylesheet" href="./company/b65f95011ed324dc.css" data-precedence="next">
+<link rel="stylesheet" href="./company/9fa4718bb3ae1cae.css" data-precedence="next">
+<link rel="stylesheet" href="./company/91315883a9b46a52.css" data-precedence="next">
+<link rel="stylesheet" href="./company/1f513daff08a6d25.css" data-precedence="next">
+<link rel="stylesheet" href="./company/c3a81d2cee1ead21.css" data-precedence="next">
+<link rel="stylesheet" href="./company/ac6d945a28327846.css" data-precedence="next">
+<link rel="stylesheet" href="./company/8a05732638d9b3eb.css" data-precedence="next">
+<link rel="stylesheet" href="./company/fec95abf28dff384.css" data-precedence="next">
+<link rel="stylesheet" href="./company/31ced174618104b6.css" data-precedence="next">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#141413">
+<title>Company \ Gatara AI
+</title>
+
+<meta name="next-size-adjust">
+<style type="text/css">
+
+
+::selection {
+  background-color: #68ad78;
+}
+</style>
+<style data-styled="active" data-styled-version="5.3.11">
+</style>
+<link rel="stylesheet" media="all" href="/main.css">
+</head>
+<body>
+	
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+
+<main id="main" class="">
+	<article>
+	<section class="HeroCta_b-hero-cta__WA_N9 HeroCta_is-initialized__8btG0 Section_section-wrapper__7hN5D Section_flush-top__B83gq">
+	<div class="HeroCta_content__XdOP7 wrapper">
+	<div class="s:grid s:grid-12">
+	<h1 class="HeroCta_heading__KI2JS s:col-start-3 s:col-span-8 h1" style="font-family: 'Product Sans Bold'; font-size: 40px;">
+	<div class="HeroCta_line-wrapper__oZgBz HeroCta_text-left__U7ci1">
+	<span class="HeroCta_line__raHqP">Making AI systems
+</span> 
+</div>
+<div class="HeroCta_line-wrapper__oZgBz HeroCta_text-right__syMa_">
+	<span class="HeroCta_line__raHqP">you can rely on
+</span> 
+</div>
+</h1>
+<div class="HeroCta_description-wrapper__4wV7A s:col-start-4 s:col-span-6 text-b1 contentFadeUp is-inview">
+	<p  style="font-family: 'Product Sans Medium Regular'; font-size: 25px;">
+    Gatara is an AI and Automation company. We build reliable, interpretable, and steerable AI and Automation systems.
+</p>
+</div>
+<div class="HeroCta_cta-wrapper__j381U s:col-start-3 s:col-span-8 spacer-small-mt">
+	<a class="HeroCta_cta__Wushi btn-primary contentFadeUp is-inview" aria-label="Join us" href="/open-roles/">
+	<span class="btn-label"  style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Join us
+</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="Section_section-wrapper__7hN5D Section_flush-bottom__qEG0P Section_flush-top__B83gq">
+	<div class="wrapper">
+	<div class="GridList_contentWrap__ukzGq s:grid s:grid-12">
+	<div class="AnimatedDivider_divider__yniiR AnimatedDivider_isInView__VV3UM">
+</div>
+<h2 class="block-label h3 s:col-start-1 s:col-span-4 spacer-medium-mb GridList_heading___ygon"
+style="font-family: 'Product Sans Medium Regular'; font-size: 27px;">
+  Our Purpose
+</h2>
+<div class="GridList_body__6hr_6 block-content s:col-start-1 s:col-span-8 m:col-start-5 m:col-span-7 text-b2 spacer-medium-mb">
+	<h2 class="GridList_h2__oUFda h2"  style="font-family: 'Product Sans Medium Regular'; font-size: 27px;">
+      We believe AI will have a vast impact on the world. 
+      Our mission is to make AI truly useful by simplifying it for everyone, 
+      enabling all to harness its potential for productivity, innovation, and growth.
+  </h2>
+</div>
+<div class="block-content s:col-start-1 s:col-span-12 m:col-start-5 m:col-span-8 s:grid s:grid-12">
+	<div class="spacer-medium-mb s:col-span-6">
+	<h3 class="h3" style="font-family: 'Product Sans Medium Regular'; font-size: 25px;">We Build Practical AI Solutions
+</h3>
+<div class="text-b2 spacer-micro-mt">
+	<p style="font-size: 20px; !important">
+    We aim to build AI systems that are reliable, intuitive, and impactful. 
+    We develop user-friendly SaaS products for seamless AI integration and 
+    offer tailored AI automation services to help businesses streamline operations and boost efficiency.
+  </p>
+</div>
+</div>
+<div class="spacer-medium-mb s:col-span-6">
+	<h3 class="h3" style="font-family: 'Product Sans Medium Regular'; font-size: 25px;">AI for Everyone
+</h3>
+<div class="text-b2 spacer-micro-mt">
+	<p style="font-size: 20px; !important">
+    We believe AI should be accessible to all. By simplifying complex technologies, 
+    we empower individuals and businesses to unlock new possibilities without technical expertise, 
+    aiming to democratize AI as a tool for innovation and growth across industries.
+  </p>
+</div>
+</div>
+<div class="spacer-medium-mb s:col-span-6">
+	<h3 class="h3" style="font-family: 'Product Sans Medium Regular'; font-size: 25px;">Collaboration Drives Innovation
+</h3>
+<div class="text-b2 spacer-micro-mt">
+	<p style="font-size: 20px; !important">
+    Gatara AI is a collaborative team of software developers, business strategists, and creative thinkers. 
+    We bring diverse expertise to build solutions for real-world challenges, working with industries, academia, 
+    and the AI community to push the boundaries of what AI can achieve.
+</p>
+</div>
+</div>
+<div class="spacer-medium-mb s:col-span-6">
+	<h3 class="h3" style="font-family: 'Product Sans Medium Regular'; font-size: 25px;">Challenging the Status Quo
+</h3>
+<div class="text-b2 spacer-micro-mt">
+	<p style="font-size: 20px; !important">
+    Everything we do, we believe in challenging the status quo.
+    We believe in thinking differently. The way we change the status quo is by making our solutions beautifully designed, simple to use, and user-friendly—empowering businesses and individuals to achieve more.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="Section_section-wrapper__7hN5D Section_flush-bottom__qEG0P Section_flush-top__B83gq">
+	<div class="wrapper">
+	<div class="GridList_contentWrap__ukzGq s:grid s:grid-12">
+	<div class="AnimatedDivider_divider__yniiR AnimatedDivider_isInView__VV3UM">
+</div>
+<h2 class="block-label h3 s:col-start-1 s:col-span-4 spacer-medium-mb GridList_heading___ygon"
+style="font-family: 'Product Sans Medium Regular'; font-size: 27px;">
+  Our Values
+</h2>
+<div class="block-content s:col-start-1 s:col-span-12 m:col-start-5 m:col-span-8 s:grid s:grid-12">
+	<div class="spacer-medium-mb s:col-span-6">
+	<div class="h4">01
+</div>
+<h3 class="h3" style="font-family: 'Product Sans Medium Regular'; font-size: 25px;">Here for the mission
+</h3>
+<div class="text-b2 spacer-micro-mt">
+	<p style="font-size: 20px; !important">
+    At Gatara AI, we exist to make AI accessible and transformative for everyone. 
+    We believe AI should simplify lives, empower businesses, and break barriers.
+    Our mission drives everything we do,
+    from building intuitive SaaS products to delivering cutting-edge AI automation services.
+</p>
+</div>
+</div>
+<div class="spacer-medium-mb s:col-span-6">
+	<div class="h4">02
+</div>
+<h3 class="h3" style="font-family: 'Product Sans Medium Regular'; font-size: 25px;">Think Bold, Act Fearlessly
+</h3>
+<div class="text-b2 spacer-micro-mt">
+	<p style="font-size: 20px; !important">
+    We’re a young team with big goals, and we’re not afraid to challenge the status quo. We embrace bold ideas, 
+    take calculated risks, and learn quickly from our mistakes. 
+    Innovation is at the heart of what we do, and we’re constantly pushing boundaries to create solutions that matter.
+</p>
+</div>
+</div>
+<div class="spacer-medium-mb s:col-span-6">
+	<div class="h4">03
+</div>
+<h3 class="h3" style="font-family: 'Product Sans Medium Regular'; font-size: 25px;">One Team, One Vision
+</h3>
+<div class="text-b2 spacer-micro-mt">
+	<p style="font-size: 20px; !important">
+    Collaboration is our superpower. We’re a tight-knit team where everyone’s voice matters. 
+    We trust each other, celebrate diversity of thought, and work together to turn ideas into reality. 
+    Leadership sets the direction, but every team member has the freedom to innovate and contribute in their unique way.
+</p>
+</div>
+</div>
+<div class="spacer-medium-mb s:col-span-6">
+	<div class="h4">04
+</div>
+<h3 class="h3" style="font-family: 'Product Sans Medium Regular'; font-size: 25px;">Keep It Simple, Make It Work
+</h3>
+<div class="text-b2 spacer-micro-mt">
+	<p style="font-size: 20px; !important">
+    We believe in simplicity and practicality. Instead of overcomplicating things, 
+    we focus on solutions that are elegant, effective, and easy to use. Whether it’s our products or our processes, 
+    we prioritize what works and iterate to make it better.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="CtaBanner_b-ctaBanner__Apkv7 CtaBanner_dark__mehSY Section_section-wrapper__7hN5D bg-slate-medium">
+	<div class="wrapper s:grid s:grid-12">
+	<div class="s:col-start-2 s:col-span-10 m:col-start-4 m:col-span-6">
+	<h2 class="CtaBanner_heading__ydH8I h2 heading-simple"  style="font-family: 'Product Sans Medium Regular'; font-size: 31px;">Want to help us make AI usefull and accessible for everyone?
+</h2>
+<div class="CtaBanner_cta-1__94eJ2 contentFadeUp is-inview">
+	<a class="ButtonLink_button__hVduT ButtonLink_primary__yV6bX ButtonLink_small__4mz6F" aria-label="Join us" 
+      href="/open-roles/">
+	<span class="ButtonLink_label__DqhYH"  style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Join us
+</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</article>
+</main>
+
+<!-- Footer Placeholder -->
+<div id="footer-placeholder"></div>
+
+<script type="module" src="/src/js/main.js"></script>
+  </body>
+      </html>
