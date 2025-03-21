@@ -366,7 +366,7 @@ input{
 </option>
 <option value="MA">Morocco (‫المغرب‬‎)
 </option>
-<option value="OM">Oman (‫عُمان‬‎)
+<option value="OM">Oman (‫مان‬‎)
 </option>
 <option value="PS">Palestine (‫فلسطين‬‎)
 </option>
@@ -472,4 +472,27 @@ input{
 <div id="footer-placeholder"></div>
 
 <script type="module" src="/src/js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.querySelector('#hsForm_86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined');
+  
+  form.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter' && event.target.tagName !== 'TEXTAREA') {
+      event.preventDefault();
+      
+      // Get all input elements that can receive focus
+      const inputs = form.querySelectorAll('input:not([type="submit"]), select, textarea');
+      const inputArray = Array.from(inputs);
+      
+      // Find the current input's index
+      const currentIndex = inputArray.indexOf(event.target);
+      
+      // Focus the next input if available
+      if (currentIndex < inputArray.length - 1) {
+        inputArray[currentIndex + 1].focus();
+      }
+    }
+  });
+});
+</script>
 </body></html>

@@ -1,8 +1,7 @@
 export const footer = `
       <footer class="SiteFooter_core-footer__VWM8c">
       <div
-        class="SiteFooter_wrapper__qFXh_ wrapper xs:grid xs:grid-2 s:grid-12"
-      >
+        class="SiteFooter_wrapper__qFXh_ wrapper xs:grid xs:grid-2 s:grid-12">
         <div class="SiteFooter_logo-mark__pkgIW xs:col-start-1 xs:col-span-1" style="width: auto;">
           <a aria-label="AI logo mark" href="/">
             <img alt="Logo" src="/logo.svg" width="75" height="75">
