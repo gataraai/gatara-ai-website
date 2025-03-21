@@ -81,6 +81,9 @@ input{
 </style>
 <style data-styled="active" data-styled-version="5.3.11">
 </style>
+
+
+
 <link rel="stylesheet" media="all" href="/main.css">
 </head>
 <body>
@@ -111,7 +114,7 @@ input{
 </div>
 <div id="form-b417e99d-798e-417c-b74d-cfed3bcca1b1" class="xs:col-start-1 xs:col-span-12 s:col-start-5 s:col-span-8 m:col-start-6 m:col-span-6 HubspotForm_form-wrapper__ilHo9" data-hs-forms-root="true">
 	<form id="hsForm_86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" novalidate="" 
-	class="hs-form-private hsForm_86ea22cc-419d-40f1-ba71-13e92df49115 hs-form-86ea22cc-419d-40f1-ba71-13e92df49115 hs-form-86ea22cc-419d-40f1-ba71-13e92df49115_7d17509f-1960-4cad-b70c-89502eda2e11 hs-form stacked hs-custom-style" target="target_iframe_86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" data-instance-id="7d17509f-1960-4cad-b70c-89502eda2e11" data-form-id="86ea22cc-419d-40f1-ba71-13e92df49115" data-portal-id="23987127" data-test-id="hsForm_86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" data-gtm-form-interact-id="0">
+	class="hs-form-private hsForm_86ea22cc-419d-40f1-ba71-13e92df49115 hs-form-86ea22cc-419d-40f1-ba71-13e92df49115 hs-form-86ea22cc-419d-40f1-ba71-13e92df49115 hs-form-86ea22cc-419d-40f1-ba71-13e92df49115_7d17509f-1960-4cad-b70c-89502eda2e11 hs-form stacked hs-custom-style" target="target_iframe_86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" data-instance-id="7d17509f-1960-4cad-b70c-89502eda2e11" data-form-id="86ea22cc-419d-40f1-ba71-13e92df49115" data-portal-id="23987127" data-test-id="hsForm_86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" data-gtm-form-interact-id="0">
 	<div class="hs_firstname hs-firstname hs-fieldtype-text field hs-form-field">
 	<label id="label-firstname-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" class="" placeholder="Enter your First name" for="firstname-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined">
 	<span>First name
@@ -486,6 +489,7 @@ input{
 <div id="footer-placeholder"></div>
 
 <script type="module" src="/src/js/main.js"></script>
+<script type="module" src="./form.js"></script>
 <style>
 /* Hide all error messages by default */
 .hs-error-msgs {
@@ -505,51 +509,7 @@ input{
 .form-submitted .hs-input.invalid.error {
   border-color: red;
 }
-</style>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const form = document.querySelector('#hsForm_86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined');
-  
-  // Handle Enter key for field navigation
-  form.addEventListener('keydown', function(event) {
-    if (event.key === 'Enter' && event.target.tagName !== 'TEXTAREA') {
-      event.preventDefault();
-      
-      const inputs = form.querySelectorAll('input:not([type="submit"]), select, textarea');
-      const inputArray = Array.from(inputs);
-      const currentIndex = inputArray.indexOf(event.target);
-      
-      if (currentIndex < inputArray.length - 1) {
-        inputArray[currentIndex + 1].focus();
-      }
-    }
-  });
 
-  // Handle form submission
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    // Add class to form to show validation messages
-    form.classList.add('form-submitted');
-    
-    // Check if all required fields are filled
-    const requiredFields = form.querySelectorAll('[required]');
-    let isValid = true;
-    
-    requiredFields.forEach(field => {
-      if (!field.value.trim()) {
-        isValid = false;
-        field.classList.add('invalid', 'error');
-      } else {
-        field.classList.remove('invalid', 'error');
-      }
-    });
-    
-    // If form is valid, submit it
-    if (isValid) {
-      form.submit();
-    }
-  });
-});
-</script>
+</style>
+
 </body></html>
