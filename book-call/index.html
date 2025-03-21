@@ -472,25 +472,68 @@ input{
 <div id="footer-placeholder"></div>
 
 <script type="module" src="/src/js/main.js"></script>
+<style>
+/* Hide all error messages by default */
+.hs-error-msgs {
+  display: none !important;
+}
+
+/* Show error messages only when form has been submitted and has errors */
+.form-submitted .hs-error-msgs {
+  display: block !important;
+}
+
+/* Remove the error class from inputs until form submission */
+.hs-input.invalid.error {
+  border-color: initial;
+}
+
+.form-submitted .hs-input.invalid.error {
+  border-color: red;
+}
+</style>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.querySelector('#hsForm_86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined');
   
+  // Handle Enter key for field navigation
   form.addEventListener('keydown', function(event) {
     if (event.key === 'Enter' && event.target.tagName !== 'TEXTAREA') {
       event.preventDefault();
       
-      // Get all input elements that can receive focus
       const inputs = form.querySelectorAll('input:not([type="submit"]), select, textarea');
       const inputArray = Array.from(inputs);
-      
-      // Find the current input's index
       const currentIndex = inputArray.indexOf(event.target);
       
-      // Focus the next input if available
       if (currentIndex < inputArray.length - 1) {
         inputArray[currentIndex + 1].focus();
       }
+    }
+  });
+
+  // Handle form submission
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    // Add class to form to show validation messages
+    form.classList.add('form-submitted');
+    
+    // Check if all required fields are filled
+    const requiredFields = form.querySelectorAll('[required]');
+    let isValid = true;
+    
+    requiredFields.forEach(field => {
+      if (!field.value.trim()) {
+        isValid = false;
+        field.classList.add('invalid', 'error');
+      } else {
+        field.classList.remove('invalid', 'error');
+      }
+    });
+    
+    // If form is valid, submit it
+    if (isValid) {
+      form.submit();
     }
   });
 });
