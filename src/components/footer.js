@@ -18,6 +18,10 @@ export const footer = `
             </li>
 
             <li>
+              <a href="/not-available-yet/" style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Products </a>
+            </li>
+
+            <li>
               <a href="/company/" style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Company </a>
             </li>
 
@@ -25,12 +29,9 @@ export const footer = `
               <a href="/open-roles/"  style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Careers </a>
             </li>
           </ul>
+
           <hr class="SiteFooter_hrule__6yi4j" />
           <ul class="s:col-start-3 s:col-span-2">
-            <li>
-              <a href="mailto:info@gatara.org"  style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Press Inquiries </a>
-            </li>
-
             <li>
               <a href="https://linkedin.com/company/gatara-ai" rel="noopener" target="_blank"  style="font-family: 'Product Sans Regular' !important; font-size: 22px;">LinkedIn </a>
             </li>
@@ -49,6 +50,21 @@ export const footer = `
             <li>
               <a href="https://www.facebook.com/share/1L4wWMNr1W/" rel="noopener" target="_blank"  style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Facebook </a>
             </li>
+          </ul>
+
+          <ul class="s:col-start-5 s:col-span-5">
+            <li>
+              <a href="mailto:info@gatara.org"  style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Press Inquiries </a>
+            </li>
+            
+            <li>
+              <a href="/book-call/" style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Free  Consultaion Call </a>
+            </li>
+
+            <li>
+              <a href="/book-call/wait-list" style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Early Adopters Wait List</a>
+            </li>
+            
           </ul>
 
           <div

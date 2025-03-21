@@ -12,6 +12,8 @@ export default defineConfig({
         'applications/react-typescript': '/applications/react-typescript.html',
         'applications/ui-ux': '/applications/ui-ux.html',
         notavailable: '/not-available-yet/index.html',
+        bookcall: '/book-call/index.html',
+        'book-call/wait-list': '/book-call/wait-list.html',
       },
     },
   },

@@ -1,0 +1,457 @@
+
+<!DOCTYPE html>
+
+<html lang="en" class="__variable_42f43f __variable_403256 __variable_57fc85 __variable_34e0db">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style data-emotion="css" data-s="">
+</style>
+<style>.ace_editor.ace_autocomplete .ace_marker-layer .ace_active-line {    background-color: #CAD6FA;    z-index: 1;}.ace_editor.ace_autocomplete .ace_line-hover {    border: 1px solid #abbffe;    margin-top: -1px;    background: rgba(233,233,253,0.4);}.ace_editor.ace_autocomplete .ace_line-hover {    position: absolute;    z-index: 2;}.ace_editor.ace_autocomplete .ace_scroller {   background: none;   border: none;   box-shadow: none;}.ace_rightAlignedText {    color: gray;    display: inline-block;    position: absolute;    right: 4px;    text-align: right;    z-index: -1;}.ace_editor.ace_autocomplete .ace_completion-highlight{    color: #000;    text-shadow: 0 0 0.01em;}.ace_editor.ace_autocomplete {    width: 280px;    z-index: 200000;    background: #fbfbfb;    color: #444;    border: 1px lightgray solid;    position: fixed;    box-shadow: 2px 3px 5px rgba(0,0,0,.2);    line-height: 1.4;}
+</style>
+<style>.ace_snippet-marker {    -moz-box-sizing: border-box;    box-sizing: border-box;    background: rgba(194, 193, 208, 0.09);    border: 1px dotted rgba(211, 208, 235, 0.62);    position: absolute;}
+</style>
+<style type="text/css">.tippy-touch{cursor:pointer!important}.tippy-notransition{transition:none!important}.tippy-popper{max-width:350px;-webkit-perspective:700px;perspective:700px;z-index:9999;outline:0;transition-timing-function:cubic-bezier(.165,.84,.44,1);pointer-events:none;line-height:1.4}.tippy-popper[data-html]{max-width:96%;max-width:calc(100% - 20px)}.tippy-popper[x-placement^=top] .tippy-backdrop{border-radius:40% 40% 0 0}.tippy-popper[x-placement^=top] .tippy-roundarrow{bottom:-8px;-webkit-transform-origin:50% 0;transform-origin:50% 0}.tippy-popper[x-placement^=top] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(180deg);transform:rotate(180deg)}.tippy-popper[x-placement^=top] .tippy-arrow{border-top:7px solid #333;border-right:7px solid transparent;border-left:7px solid transparent;bottom:-7px;margin:0 6px;-webkit-transform-origin:50% 0;transform-origin:50% 0}.tippy-popper[x-placement^=top] .tippy-backdrop{-webkit-transform-origin:0 90%;transform-origin:0 90%}.tippy-popper[x-placement^=top] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(6) translate(-50%,25%);transform:scale(6) translate(-50%,25%);opacity:1}.tippy-popper[x-placement^=top] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(1) translate(-50%,25%);transform:scale(1) translate(-50%,25%);opacity:0}.tippy-popper[x-placement^=top] [data-animation=shift-toward][data-state=visible]{opacity:1;-webkit-transform:translateY(-10px);transform:translateY(-10px)}.tippy-popper[x-placement^=top] [data-animation=shift-toward][data-state=hidden]{opacity:0;-webkit-transform:translateY(-20px);transform:translateY(-20px)}.tippy-popper[x-placement^=top] [data-animation=perspective]{-webkit-transform-origin:bottom;transform-origin:bottom}.tippy-popper[x-placement^=top] [data-animation=perspective][data-state=visible]{opacity:1;-webkit-transform:translateY(-10px) rotateX(0);transform:translateY(-10px) rotateX(0)}.tippy-popper[x-placement^=top] [data-animation=perspective][data-state=hidden]{opacity:0;-webkit-transform:translateY(0) rotateX(90deg);transform:translateY(0) rotateX(90deg)}.tippy-popper[x-placement^=top] [data-animation=fade][data-state=visible]{opacity:1;-webkit-transform:translateY(-10px);transform:translateY(-10px)}.tippy-popper[x-placement^=top] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateY(-10px);transform:translateY(-10px)}.tippy-popper[x-placement^=top] [data-animation=shift-away][data-state=visible]{opacity:1;-webkit-transform:translateY(-10px);transform:translateY(-10px)}.tippy-popper[x-placement^=top] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateY(0);transform:translateY(0)}.tippy-popper[x-placement^=top] [data-animation=scale][data-state=visible]{opacity:1;-webkit-transform:translateY(-10px) scale(1);transform:translateY(-10px) scale(1)}.tippy-popper[x-placement^=top] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateY(0) scale(0);transform:translateY(0) scale(0)}.tippy-popper[x-placement^=bottom] .tippy-backdrop{border-radius:0 0 30% 30%}.tippy-popper[x-placement^=bottom] .tippy-roundarrow{top:-8px;-webkit-transform-origin:50% 100%;transform-origin:50% 100%}.tippy-popper[x-placement^=bottom] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(0);transform:rotate(0)}.tippy-popper[x-placement^=bottom] .tippy-arrow{border-bottom:7px solid #333;border-right:7px solid transparent;border-left:7px solid transparent;top:-7px;margin:0 6px;-webkit-transform-origin:50% 100%;transform-origin:50% 100%}.tippy-popper[x-placement^=bottom] .tippy-backdrop{-webkit-transform-origin:0 -90%;transform-origin:0 -90%}.tippy-popper[x-placement^=bottom] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(6) translate(-50%,-125%);transform:scale(6) translate(-50%,-125%);opacity:1}.tippy-popper[x-placement^=bottom] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(1) translate(-50%,-125%);transform:scale(1) translate(-50%,-125%);opacity:0}.tippy-popper[x-placement^=bottom] [data-animation=shift-toward][data-state=visible]{opacity:1;-webkit-transform:translateY(10px);transform:translateY(10px)}.tippy-popper[x-placement^=bottom] [data-animation=shift-toward][data-state=hidden]{opacity:0;-webkit-transform:translateY(20px);transform:translateY(20px)}.tippy-popper[x-placement^=bottom] [data-animation=perspective]{-webkit-transform-origin:top;transform-origin:top}.tippy-popper[x-placement^=bottom] [data-animation=perspective][data-state=visible]{opacity:1;-webkit-transform:translateY(10px) rotateX(0);transform:translateY(10px) rotateX(0)}.tippy-popper[x-placement^=bottom] [data-animation=perspective][data-state=hidden]{opacity:0;-webkit-transform:translateY(0) rotateX(-90deg);transform:translateY(0) rotateX(-90deg)}.tippy-popper[x-placement^=bottom] [data-animation=fade][data-state=visible]{opacity:1;-webkit-transform:translateY(10px);transform:translateY(10px)}.tippy-popper[x-placement^=bottom] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateY(10px);transform:translateY(10px)}.tippy-popper[x-placement^=bottom] [data-animation=shift-away][data-state=visible]{opacity:1;-webkit-transform:translateY(10px);transform:translateY(10px)}.tippy-popper[x-placement^=bottom] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateY(0);transform:translateY(0)}.tippy-popper[x-placement^=bottom] [data-animation=scale][data-state=visible]{opacity:1;-webkit-transform:translateY(10px) scale(1);transform:translateY(10px) scale(1)}.tippy-popper[x-placement^=bottom] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateY(0) scale(0);transform:translateY(0) scale(0)}.tippy-popper[x-placement^=left] .tippy-backdrop{border-radius:50% 0 0 50%}.tippy-popper[x-placement^=left] .tippy-roundarrow{right:-16px;-webkit-transform-origin:33.33333333% 50%;transform-origin:33.33333333% 50%}.tippy-popper[x-placement^=left] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(90deg);transform:rotate(90deg)}.tippy-popper[x-placement^=left] .tippy-arrow{border-left:7px solid #333;border-top:7px solid transparent;border-bottom:7px solid transparent;right:-7px;margin:3px 0;-webkit-transform-origin:0 50%;transform-origin:0 50%}.tippy-popper[x-placement^=left] .tippy-backdrop{-webkit-transform-origin:100% 0;transform-origin:100% 0}.tippy-popper[x-placement^=left] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(6) translate(40%,-50%);transform:scale(6) translate(40%,-50%);opacity:1}.tippy-popper[x-placement^=left] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(1.5) translate(40%,-50%);transform:scale(1.5) translate(40%,-50%);opacity:0}.tippy-popper[x-placement^=left] [data-animation=shift-toward][data-state=visible]{opacity:1;-webkit-transform:translateX(-10px);transform:translateX(-10px)}.tippy-popper[x-placement^=left] [data-animation=shift-toward][data-state=hidden]{opacity:0;-webkit-transform:translateX(-20px);transform:translateX(-20px)}.tippy-popper[x-placement^=left] [data-animation=perspective]{-webkit-transform-origin:right;transform-origin:right}.tippy-popper[x-placement^=left] [data-animation=perspective][data-state=visible]{opacity:1;-webkit-transform:translateX(-10px) rotateY(0);transform:translateX(-10px) rotateY(0)}.tippy-popper[x-placement^=left] [data-animation=perspective][data-state=hidden]{opacity:0;-webkit-transform:translateX(0) rotateY(-90deg);transform:translateX(0) rotateY(-90deg)}.tippy-popper[x-placement^=left] [data-animation=fade][data-state=visible]{opacity:1;-webkit-transform:translateX(-10px);transform:translateX(-10px)}.tippy-popper[x-placement^=left] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateX(-10px);transform:translateX(-10px)}.tippy-popper[x-placement^=left] [data-animation=shift-away][data-state=visible]{opacity:1;-webkit-transform:translateX(-10px);transform:translateX(-10px)}.tippy-popper[x-placement^=left] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateX(0);transform:translateX(0)}.tippy-popper[x-placement^=left] [data-animation=scale][data-state=visible]{opacity:1;-webkit-transform:translateX(-10px) scale(1);transform:translateX(-10px) scale(1)}.tippy-popper[x-placement^=left] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateX(0) scale(0);transform:translateX(0) scale(0)}.tippy-popper[x-placement^=right] .tippy-backdrop{border-radius:0 50% 50% 0}.tippy-popper[x-placement^=right] .tippy-roundarrow{left:-16px;-webkit-transform-origin:66.66666666% 50%;transform-origin:66.66666666% 50%}.tippy-popper[x-placement^=right] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(-90deg);transform:rotate(-90deg)}.tippy-popper[x-placement^=right] .tippy-arrow{border-right:7px solid #333;border-top:7px solid transparent;border-bottom:7px solid transparent;left:-7px;margin:3px 0;-webkit-transform-origin:100% 50%;transform-origin:100% 50%}.tippy-popper[x-placement^=right] .tippy-backdrop{-webkit-transform-origin:-100% 0;transform-origin:-100% 0}.tippy-popper[x-placement^=right] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(6) translate(-140%,-50%);transform:scale(6) translate(-140%,-50%);opacity:1}.tippy-popper[x-placement^=right] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(1.5) translate(-140%,-50%);transform:scale(1.5) translate(-140%,-50%);opacity:0}.tippy-popper[x-placement^=right] [data-animation=shift-toward][data-state=visible]{opacity:1;-webkit-transform:translateX(10px);transform:translateX(10px)}.tippy-popper[x-placement^=right] [data-animation=shift-toward][data-state=hidden]{opacity:0;-webkit-transform:translateX(20px);transform:translateX(20px)}.tippy-popper[x-placement^=right] [data-animation=perspective]{-webkit-transform-origin:left;transform-origin:left}.tippy-popper[x-placement^=right] [data-animation=perspective][data-state=visible]{opacity:1;-webkit-transform:translateX(10px) rotateY(0);transform:translateX(10px) rotateY(0)}.tippy-popper[x-placement^=right] [data-animation=perspective][data-state=hidden]{opacity:0;-webkit-transform:translateX(0) rotateY(90deg);transform:translateX(0) rotateY(90deg)}.tippy-popper[x-placement^=right] [data-animation=fade][data-state=visible]{opacity:1;-webkit-transform:translateX(10px);transform:translateX(10px)}.tippy-popper[x-placement^=right] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateX(10px);transform:translateX(10px)}.tippy-popper[x-placement^=right] [data-animation=shift-away][data-state=visible]{opacity:1;-webkit-transform:translateX(10px);transform:translateX(10px)}.tippy-popper[x-placement^=right] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateX(0);transform:translateX(0)}.tippy-popper[x-placement^=right] [data-animation=scale][data-state=visible]{opacity:1;-webkit-transform:translateX(10px) scale(1);transform:translateX(10px) scale(1)}.tippy-popper[x-placement^=right] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateX(0) scale(0);transform:translateX(0) scale(0)}.tippy-tooltip{position:relative;color:#fff;border-radius:4px;font-size:.9rem;padding:.3rem .6rem;text-align:center;will-change:transform;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background-color:#333}.tippy-tooltip[data-size=small]{padding:.2rem .4rem;font-size:.75rem}.tippy-tooltip[data-size=large]{padding:.4rem .8rem;font-size:1rem}.tippy-tooltip[data-animatefill]{overflow:hidden;background-color:transparent}.tippy-tooltip[data-animatefill] .tippy-content{transition:-webkit-clip-path cubic-bezier(.46,.1,.52,.98);transition:clip-path cubic-bezier(.46,.1,.52,.98);transition:clip-path cubic-bezier(.46,.1,.52,.98),-webkit-clip-path cubic-bezier(.46,.1,.52,.98)}.tippy-tooltip[data-interactive],.tippy-tooltip[data-interactive] path{pointer-events:auto}.tippy-tooltip[data-inertia][data-state=visible]{transition-timing-function:cubic-bezier(.53,2,.36,.85)}.tippy-tooltip[data-inertia][data-state=hidden]{transition-timing-function:ease}.tippy-arrow,.tippy-roundarrow{position:absolute;width:0;height:0}.tippy-roundarrow{width:24px;height:8px;fill:#333;pointer-events:none}.tippy-backdrop{position:absolute;will-change:transform;background-color:#333;border-radius:50%;width:26%;left:50%;top:50%;z-index:-1;transition:all cubic-bezier(.46,.1,.52,.98);-webkit-backface-visibility:hidden;backface-visibility:hidden}.tippy-backdrop:after{content:"";float:left;padding-top:100%}body:not(.tippy-touch) .tippy-tooltip[data-animatefill][data-state=visible] .tippy-content{-webkit-clip-path:ellipse(100% 100% at 50% 50%);clip-path:ellipse(100% 100% at 50% 50%)}body:not(.tippy-touch) .tippy-tooltip[data-animatefill][data-state=hidden] .tippy-content{-webkit-clip-path:ellipse(5% 50% at 50% 50%);clip-path:ellipse(5% 50% at 50% 50%)}body:not(.tippy-touch) .tippy-popper[x-placement=right] .tippy-tooltip[data-animatefill][data-state=visible] .tippy-content{-webkit-clip-path:ellipse(135% 100% at 0 50%);clip-path:ellipse(135% 100% at 0 50%)}body:not(.tippy-touch) .tippy-popper[x-placement=right] .tippy-tooltip[data-animatefill][data-state=hidden] .tippy-content{-webkit-clip-path:ellipse(40% 100% at 0 50%);clip-path:ellipse(40% 100% at 0 50%)}body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-animatefill][data-state=visible] .tippy-content{-webkit-clip-path:ellipse(135% 100% at 100% 50%);clip-path:ellipse(135% 100% at 100% 50%)}body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-animatefill][data-state=hidden] .tippy-content{-webkit-clip-path:ellipse(40% 100% at 100% 50%);clip-path:ellipse(40% 100% at 100% 50%)}@media (max-width:360px){.tippy-popper{max-width:96%;max-width:calc(100% - 20px)}}
+</style>
+<style data-merge-styles="true">
+</style>
+<style data-merge-styles="true">
+</style>
+<style data-merge-styles="true">
+</style>
+<link rel="stylesheet" href="./book-call/05f26799581622a7.css" data-precedence="next">
+<link rel="stylesheet" href="./book-call/4563406689594623.css" data-precedence="next">
+<link rel="stylesheet" href="./book-call/7851968f92a2a6dc.css" data-precedence="next">
+<link rel="stylesheet" href="./book-call/da6d6678cc431616.css" data-precedence="next">
+<link rel="stylesheet" href="./book-call/fb0526ef74a9b746.css" data-precedence="next">
+<link rel="stylesheet" href="./book-call/141e966c466484ce.css" data-precedence="next">
+<link rel="stylesheet" href="./book-call/60a6eb6d0fe040c5.css" data-precedence="next">
+<link rel="stylesheet" href="./book-call/ea6c171c0ada55a5.css" data-precedence="next">
+<link rel="stylesheet" href="./book-call/ef9d40123f42bec8.css" data-precedence="next">
+<link rel="stylesheet" href="./book-call/d250c0297e6bf4a1.css" data-precedence="next">
+<link rel="stylesheet" href="./book-call/632c646e62f21123.css" data-precedence="next">
+<link rel="stylesheet" href="./book-call/29f3230b176e00de.css" data-precedence="next">
+<link
+      rel="stylesheet"
+      href="../home/91315883a9b46a52.css"
+      data-precedence="next"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../home/166acf0bb0be8c25.css"
+      data-precedence="next"
+    />
+
+
+
+
+
+ 
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#141413">
+<title>Join the wait-list
+</title>
+
+<meta name="next-size-adjust">
+<style type="text/css">
+
+
+::selection {
+  background-color: #68ad78;
+}
+</style>
+<style data-styled="active" data-styled-version="5.3.11">
+</style>
+<link rel="stylesheet" media="all" href="/main.css">
+</head>
+<body>
+	
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+
+<main id="main" class="">
+	<article>
+
+<section class="LandingPageSection_root__nbLb0" data-theme="light">
+	<div class="page-wrapper">
+	<div class="HubspotForm_grid__JDdxw xs:grid xs:grid-12">
+	<div class="xs:col-start-1 xs:col-span-12  s:col-span-3 m:col-span-4">
+	<h2 class="HubspotForm_heading__Xit8V h2" style="font-family: 'Product Sans Medium Regular' !important; margin-bottom: 15px;">GataraAI Wait-List
+</h2>
+<div class="HubspotForm_description-wrapper__UieuA text-b2 contentFadeUp is-inview">
+	<p>Join the Wait list for our early-adopters program to get pre-sale offers for new products or services.
+</p>
+<p>
+</p>
+<p>If you want to get a free Consultation call or any additional resources and support,<br>  
+	<a href="/book-call/">Book a Call
+</a>.
+</p>
+</div>
+</div>
+<div id="form-b417e99d-798e-417c-b74d-cfed3bcca1b1" class="xs:col-start-1 xs:col-span-12 s:col-start-5 s:col-span-8 m:col-start-6 m:col-span-6 HubspotForm_form-wrapper__ilHo9" data-hs-forms-root="true">
+	<form id="hsForm_86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" novalidate="" action="https://forms.hsforms.com/submissions/v3/public/submit/formsnext/multipart/23987127/86ea22cc-419d-40f1-ba71-13e92df49115" class="hs-form-private hsForm_86ea22cc-419d-40f1-ba71-13e92df49115 hs-form-86ea22cc-419d-40f1-ba71-13e92df49115 hs-form-86ea22cc-419d-40f1-ba71-13e92df49115_7d17509f-1960-4cad-b70c-89502eda2e11 hs-form stacked hs-custom-style" target="target_iframe_86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" data-instance-id="7d17509f-1960-4cad-b70c-89502eda2e11" data-form-id="86ea22cc-419d-40f1-ba71-13e92df49115" data-portal-id="23987127" data-test-id="hsForm_86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" data-gtm-form-interact-id="0">
+	<div class="hs_firstname hs-firstname hs-fieldtype-text field hs-form-field">
+	<label id="label-firstname-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" class="" placeholder="Enter your First name" for="firstname-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined">
+	<span>First name
+</span>
+<span class="hs-form-required">*
+</span>
+</label>
+<legend class="hs-field-desc" style="display: none;">
+</legend>
+<div class="input">
+	<input id="firstname-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" name="firstname" required="" placeholder="" type="text" class="hs-input invalid error" inputmode="text" autocomplete="given-name" value="">
+</div>
+<ul class="no-list hs-error-msgs inputs-list" role="alert">
+	<li>
+	<label class="hs-error-msg hs-main-font-element">Please complete this required field.
+</label>
+</li>
+</ul>
+</div>
+<div class="hs_lastname hs-lastname hs-fieldtype-text field hs-form-field">
+	<label id="label-lastname-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" class="" placeholder="Enter your Last name" for="lastname-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined">
+	<span>Last name
+</span>
+<span class="hs-form-required">*
+</span>
+</label>
+<legend class="hs-field-desc" style="display: none;">
+</legend>
+<div class="input">
+	<input id="lastname-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" name="lastname" required="" placeholder="" type="text" class="hs-input invalid error" inputmode="text" autocomplete="family-name" value="">
+</div>
+<ul class="no-list hs-error-msgs inputs-list" role="alert">
+	<li>
+	<label class="hs-error-msg hs-main-font-element">Please complete this required field.
+</label>
+</li>
+</ul>
+</div>
+<div class="hs_email hs-email hs-fieldtype-text field hs-form-field">
+	<label id="label-email-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" class="" placeholder="Enter your Business email" for="email-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined">
+	<span>Business email
+</span>
+<span class="hs-form-required">*
+</span>
+</label>
+<legend class="hs-field-desc" style="display: block;">If you don't have a buisness one, please enter your Gmail.
+</legend>
+<div class="input">
+	<input id="email-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" name="email" required="" placeholder="" type="email" class="hs-input invalid error" inputmode="email" autocomplete="email" value="">
+</div>
+<ul class="no-list hs-error-msgs inputs-list" role="alert">
+	<li>
+	<label class="hs-error-msg hs-main-font-element">Please complete this required field.
+</label>
+</li>
+</ul>
+</div>
+<div class="hs_phone hs-phone hs-fieldtype-phonenumber field hs-form-field">
+	<label id="label-phone-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" class="" placeholder="Enter your Phone number" for="phone-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined">
+	<span>Phone number
+</span>
+</label>
+<legend class="hs-field-desc" style="display: none;">
+</legend>
+<div class="input">
+	<div class="hs-input hs-fieldtype-intl-phone">
+<input id="phone-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" name="" placeholder="" type="tel" class="hs-input" inputmode="tel" autocomplete="tel" value="+963 ">
+<input name="phone" class="hs-input" type="hidden" value="">
+</div>
+</div>
+</div>
+<div class="hs_0-2/name hs-0-2/name hs-fieldtype-text field hs-form-field">
+	<label id="label-0-2/name-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" class="" placeholder="Enter your Company or organization name" for="0-2/name-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined">
+	<span>Company or organization name
+</span>
+<span class="hs-form-required">*
+</span>
+</label>
+<legend class="hs-field-desc" style="display: none;">
+</legend>
+<div class="input">
+	<input id="0-2/name-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" name="0-2/name" required="" placeholder="" type="text" class="hs-input invalid error" inputmode="text" value="" spellcheck="false" data-ms-editor="true">
+</div>
+<ul class="no-list hs-error-msgs inputs-list" role="alert">
+	<li>
+	<label class="hs-error-msg hs-main-font-element">Please complete this required field.
+</label>
+</li>
+</ul>
+</div>
+<div class="hs_0-2/domain hs-0-2/domain hs-fieldtype-text field hs-form-field">
+	<label id="label-0-2/domain-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" class="" placeholder="Enter your Company or organization website" for="0-2/domain-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined">
+	<span>Company or organization website
+</span>
+<span class="hs-form-required">*
+</span>
+</label>
+<legend class="hs-field-desc" style="display: block;">If you don't have a website yet, please enter your company LinkedIn profile.<br>if none please enter Instegram or Facebook profile.
+</legend>
+<div class="input">
+	<input id="0-2/domain-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" name="0-2/domain" required="" placeholder="" type="text" class="hs-input invalid error" inputmode="text" value="" spellcheck="false" data-ms-editor="true">
+</div>
+<ul class="no-list hs-error-msgs inputs-list" role="alert">
+	<li>
+	<label class="hs-error-msg hs-main-font-element">Please complete this required field.
+</label>
+</li>
+</ul>
+</div>
+<div class="hs_jobtitle hs-jobtitle hs-fieldtype-text field hs-form-field">
+	<label id="label-jobtitle-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" class="" placeholder="Enter your Job title" for="jobtitle-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined">
+	<span>Job title
+</span>
+<span class="hs-form-required">*
+</span>
+</label>
+<legend class="hs-field-desc" style="display: none;">
+</legend>
+<div class="input">
+	<input id="jobtitle-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" name="jobtitle" required="" placeholder="" type="text" class="hs-input invalid error" inputmode="text" autocomplete="organization-title" value="" spellcheck="false" data-ms-editor="true">
+</div>
+<ul class="no-list hs-error-msgs inputs-list" role="alert">
+	<li>
+	<label class="hs-error-msg hs-main-font-element">Please complete this required field.
+</label>
+</li>
+</ul>
+</div>
+<div class="hs_0-2/company_size hs-0-2/company_size hs-fieldtype-select field hs-form-field">
+	<label id="label-0-2/company_size-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" class="" placeholder="Enter your Company size" for="0-2/company_size-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined">
+	<span>Company size
+</span>
+<span class="hs-form-required">*
+</span>
+</label>
+<legend class="hs-field-desc" style="display: none;">
+</legend>
+<div class="input">
+	<select id="0-2/company_size-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" required="" class="hs-input" name="0-2/company_size" data-gtm-form-interact-field-id="1">
+	<option disabled="" value="">Please Select
+</option>
+<option value="1-50">1-50
+</option>
+<option value="51-100">51-100
+</option>
+<option value="101-500">101-500
+</option>
+<option value="501-1,000">501-1,000
+</option>
+<option value="1,001-5,000">1,001-5,000
+</option>
+<option value="5,000+">5,000+
+</option>
+</select>
+</div>
+</div>
+<div class="hs-dependent-field">
+	<div class="hs_0-2/anthropic_industry hs-0-2/anthropic_industry hs-fieldtype-select field hs-form-field">
+	<label id="label-0-2/anthropic_industry-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" class="" placeholder="Enter your Industry" for="0-2/anthropic_industry-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined">
+	<span>Industry
+</span>
+<span class="hs-form-required">*
+</span>
+</label>
+<legend class="hs-field-desc" style="display: none;">
+</legend>
+<div class="input">
+	<select id="0-2/anthropic_industry-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" required="" class="hs-input" name="0-2/anthropic_industry" data-gtm-form-interact-field-id="2">
+	<option disabled="" value="">Please Select
+</option>
+<option value="">
+</option>
+<option value="Biotechnology">Biotechnology
+</option>
+<option value="Business, consultancy, or management">Consulting
+</option>
+<option value="Eduction">Education 
+</option>
+<option value="Finance, accountancy, or banking">Finance
+</option>
+<option value="Food &amp; Beverage">Food &amp; Beverage
+</option>
+<option value="Government">Government
+</option>
+<option value="Healthcare">Healthcare
+</option>
+<option value="Insurance">Insurance
+</option>
+<option value="Law">Law
+</option>
+<option value="Manufacturing">Manufacturing
+</option>
+<option value="Media">Media
+</option>
+<option value="Nonprofit">Nonprofit
+</option>
+<option value="Real estate">Real estate
+</option>
+<option value="Retail">Retail
+</option>
+<option value="Sport &amp; Recreation">Sport &amp; Recreation
+</option>
+<option value="Technology">Technology
+</option>
+<option value="Other">Other
+</option>
+</select>
+</div>
+</div>
+</div>
+<div class="hs_country_ hs-country_ hs-fieldtype-select field hs-form-field">
+	<label id="label-country_-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" class="" placeholder="Enter your Company headquarters location" for="country_-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined">
+	<span>Company headquarters location
+</span>
+<span class="hs-form-required">*
+</span>
+</label>
+<legend class="hs-field-desc" style="display: none;">
+</legend>
+<div class="input">
+	<select id="country_-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" required="" class="hs-input" name="country_" data-gtm-form-interact-field-id="3">
+	<option disabled="" value="">Please Select
+</option>
+<option value="DZ">Algeria (‫الجزائر‬‎)
+</option>
+<option value="BH">Bahrain (‫البحرين‬‎)
+</option>
+<option value="CA">Canada
+</option>
+<option value="EG">Egypt (‫مصر‬‎)
+</option>
+<option value="FR">France
+</option>
+<option value="DE">Germany (Deutschland)
+</option>
+<option value="IR">Iran (‫ایران‬‎)
+</option>
+<option value="IQ">Iraq (‫العراق‬‎)
+</option>
+<option value="JO">Jordan (‫الأردن‬‎)
+</option>
+<option value="KW">Kuwait (‫الكويت‬‎)
+</option>
+<option value="LB">Lebanon (‫لبنان‬‎)
+</option>
+<option value="LY">Libya (‫ليبيا‬‎)
+</option>
+<option value="LU">Luxembourg
+</option>
+<option value="MY">Malaysia
+</option>
+<option value="MR">Mauritania (‫موريتانيا‬‎)
+</option>
+<option value="MA">Morocco (‫المغرب‬‎)
+</option>
+<option value="OM">Oman (‫عُمان‬‎)
+</option>
+<option value="PS">Palestine (‫فلسطين‬‎)
+</option>
+<option value="QA">Qatar (‫قطر‬‎)
+</option>
+<option value="SA">Saudi Arabia (‫المملكة العربية السعودية‬‎)
+</option>
+<option value="ES">Spain (España)
+</option>
+<option value="SD">Sudan (‫السودان‬‎)
+</option>
+<option value="SE">Sweden (Sverige)
+</option>
+<option value="SY">Syria (‫سوريا‬‎)
+</option>
+<option value="TN">Tunisia (‫تونس‬‎)
+</option>
+<option value="TR">Turkey (Türkiye)
+</option>
+<option value="AE">United Arab Emirates (‫الإمارات العربية المتحدة‬‎)
+</option>
+<option value="GB">United Kingdom
+</option>
+<option value="US">United States
+</option>
+<option value="YE">Yemen (‫اليمن‬‎)
+</option>
+</select>
+</div>
+</div>
+<div class="hs_current_gen_ai_saas_solution hs-current_gen_ai_saas_solution hs-fieldtype-text field hs-form-field">
+	<label id="label-current_gen_ai_saas_solution-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" class="" placeholder="Enter your Please describe the Gen AI SaaS solution you're currently using, if any." for="current_gen_ai_saas_solution-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined">
+	<span>Please describe the Gen AI SaaS solution you're currently using, if any.
+</span>
+</label>
+<legend class="hs-field-desc" style="display: none;">
+</legend>
+<div class="input">
+	<input id="current_gen_ai_saas_solution-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" name="current_gen_ai_saas_solution" placeholder="" type="text" class="hs-input" inputmode="text" value="" spellcheck="false" data-ms-editor="true">
+</div>
+</div>
+<div class="hs_where_are_you_in_your_evaluation_journey_ hs-where_are_you_in_your_evaluation_journey_ hs-fieldtype-select field hs-form-field">
+	<label id="label-where_are_you_in_your_evaluation_journey_-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" class="" placeholder="Enter your Where are you in your evaluation journey?" for="where_are_you_in_your_evaluation_journey_-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined">
+	<span>Where are you in your evaluation journey?
+</span>
+<span class="hs-form-required">*
+</span>
+</label>
+<legend class="hs-field-desc" style="display: none;">
+</legend>
+<div class="input">
+	<select id="where_are_you_in_your_evaluation_journey_-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" required="" class="hs-input is-placeholder" name="where_are_you_in_your_evaluation_journey_">
+	<option disabled="" value="">Please Select
+</option>
+<option value="just_curious_for_now">Just curious for now
+</option>
+<option value="actively_exploring_solutions">Actively exploring solutions for an enterprise deployment
+</option>
+<option value="i_know_what_I_want">I know what I want, just need to talk to a sales person
+</option>
+</select>
+</div>
+</div>
+<div class="hs_message hs-message hs-fieldtype-textarea field hs-form-field">
+	<label id="label-message-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" class="" placeholder="Enter your Please share a bit more about why you’re contacting us and how the GataraAI team can support you.&amp;#xa0;" for="message-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined">
+	<span>Please share a bit more about why you’re contacting us and how the GataraAI team can support you.&nbsp;
+
+</span>
+<span class="hs-form-required">*
+</span>
+</label>
+<legend class="hs-field-desc" style="display: none;">
+</legend>
+<div class="input">
+	<textarea id="message-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined" class="hs-input hs-fieldtype-textarea invalid error" name="message" required="" placeholder="" spellcheck="false" data-ms-editor="true">
+</textarea>
+</div>
+<ul class="no-list hs-error-msgs inputs-list" role="alert">
+	<li>
+	<label class="hs-error-msg hs-main-font-element">Please complete this required field.
+</label>
+</li>
+</ul>
+</div>
+<div class="hs_submit hs-submit">
+	<div class="hs-field-desc" style="display: none;">
+</div>
+<div class="actions">
+	<input type="submit" class="hs-button primary large" value="Submit">
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+
+</article>
+</main>
+
+<!-- Footer Placeholder -->
+<div id="footer-placeholder"></div>
+
+<script type="module" src="/src/js/main.js"></script>
+</body></html>

@@ -23,7 +23,7 @@ export const header = `
         <a class="SiteHeader_link-label__s59w1" href="/not-available-yet/" style="font-family: 'Product Sans Regular' !important; font-size: 26px;">Products</a>
         <a class="SiteHeader_link-label__s59w1" href="/company/" style="font-family: 'Product Sans Regular' !important; font-size: 26px;">Company</a>
         <a class="SiteHeader_link-label__s59w1" href="/open-roles/"  style="font-family: 'Product Sans Regular' !important; font-size: 26px;">Careers</a>
-        <a href="/not-available-yet/" class="ButtonLink_button__hVduT ButtonLink_primary__yV6bX ButtonLink_small__4mz6F SiteHeader_nav-cta-a__e5H8v" rel="noopener" aria-label="Try Murshed">
+        <a href="/book-call/" class="ButtonLink_button__hVduT ButtonLink_primary__yV6bX ButtonLink_small__4mz6F SiteHeader_nav-cta-a__e5H8v" rel="noopener" aria-label="Try Murshed">
           <span class="ButtonLink_label__DqhYH" style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Book a Free Consultation Call</span>
         </a>
       </nav>
