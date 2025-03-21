@@ -87,7 +87,7 @@ function attachEventListeners() {
         // Show success message and reset form
         popup.querySelector('.card-image').innerHTML = `
           <div class="success-message">
-            <p>Thanks for joining our wait-list!<br>Our team will review your application and get back to you soon.</p>
+            <p style="font-size: 0.7em;">Thanks for Booking a consulting call<br>Our team will review your request and get back to you soon.</p>
           </div>
         `;
         
@@ -108,7 +108,7 @@ function attachEventListeners() {
       console.error('Error:', error);
       popup.querySelector('.card-image').innerHTML = `
         <div class="error-message">
-          <p>Failed to submit the form.<br>Please check your connection and try again.</p>
+          <p style="font-size: 0.7em;">Failed to submit the form.<br>Please check your connection and try again.</p>
         </div>
       `;
       setTimeout(() => {

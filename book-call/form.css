@@ -91,7 +91,7 @@
   }
   
   .success-message {
-    font-family: 'Product Sans Medium Regular', system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: 'Product Sans Regular', system-ui, Avenir, Helvetica, Arial, sans-serif;
     font-size: 2em;
     line-height: 1.1;
     font-weight: 400;
@@ -101,7 +101,7 @@
   }
   
   .error-message {
-    font-family: 'Product Sans Medium Regular', system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: 'Product Sans Regular', system-ui, Avenir, Helvetica, Arial, sans-serif;
     font-size: 2em;
     line-height: 1.1;
     font-weight: 400;
