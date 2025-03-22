@@ -14,6 +14,7 @@ export default defineConfig({
         notavailable: '/not-available-yet/index.html',
         bookcall: '/book-call/index.html',
         'book-call/wait-list': '/book-call/wait-list.html',
+        products: '/products/index.html',
       },
     },
   },
