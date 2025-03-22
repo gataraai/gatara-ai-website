@@ -120,11 +120,11 @@
   
     /* Adjust the font size for better readability on mobile */
     .card .card-title {
-      font-size: 1.2em;
+      font-size: 0.5em;
     }
   
     .card .card-top p, .card .card-bottom p {
-      font-size: 0.9em;
+      font-size: 0.5em;
     }
   
     /* Adjust the loader size for mobile */
@@ -150,6 +150,15 @@
       width: 3em;
       height: 3em;
     }
+
+    input {
+      max-width: 288px;
+    }
+
+    select {
+      max-width: 288px;
+    }
+
   }
   
   /* Media query for very small mobile screens (max-width: 480px) */
@@ -162,11 +171,11 @@
   
     /* Further adjust font sizes for very small screens */
     .card .card-title {
-      font-size: 1em;
+      font-size: 0.5em;
     }
   
     .card .card-top p, .card .card-bottom p {
-      font-size: 0.8em;
+      font-size: 0.5em;
     }
   
     /* Further adjust the loader size for very small screens */
