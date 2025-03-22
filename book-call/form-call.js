@@ -74,7 +74,7 @@ function attachEventListeners() {
 
     try {
       // Construct the URL with query parameters
-      const url = new URL('URL_SHEET');
+      const url = new URL('https://script.google.com/macros/s/AKfycbwECQIwwjgySyghApB9OXCtsZPyQkNsyhhernAB7puIIpylISJJJ4SjMLTofl-08CuJOQ/exec');
       url.search = new URLSearchParams(formData).toString();
 
       // Send a GET request
