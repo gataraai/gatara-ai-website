@@ -71,34 +71,43 @@ export const header = `
       </a>
       </li>
       </ul>
+
+      <ul class="MobileNav_footer-primary__r7Gh0">
+      <li>
+        <a href="/book-call/" style="font-family: 'Product Sans Regular' !important; font-size:27px;">Free Consultaion Call
+      </a>
+      <li>
+        <a href="mailto:info@gatara.org" style="font-family: 'Product Sans Regular' !important; font-size:27px;">Press Inquiries
+      </a>
+      </li>
+      </li>
+      </ul>
+
       <ul class="MobileNav_footer-additional__077im">
-        <li>
-        <a href="mailto:info@gatara.org">Press Inquiries
+        
+      <li>
+        <a href="https://linkedin.com/company/gatara-ai" rel="noopener" target="_blank" style="font-family: 'Product Sans Regular' !important;">LinkedIn
       </a>
       </li>
       <li>
-        <a href="https://linkedin.com/company/gatara-ai" rel="noopener" target="_blank">LinkedIn
-      </a>
-      </li>
-      <li>
-        <a href="https://www.instagram.com/gatara.ai" rel="noopener" target="_blank">Instagram
+        <a href="https://www.instagram.com/gatara.ai" rel="noopener" target="_blank" style="font-family: 'Product Sans Regular' !important;">Instagram
 
       </a>
       </li>
 
       <li>
-        <a href="https://x.com/gatara_ai" rel="noopener" target="_blank">Twitter / X
+        <a href="https://x.com/gatara_ai" rel="noopener" target="_blank" style="font-family: 'Product Sans Regular' !important;">Twitter / X
       </a>
       </li>
       <li>
-        <a href="https://www.facebook.com/share/1L4wWMNr1W/" rel="noopener" target="_blank">Facebook
+        <a href="https://www.facebook.com/share/1L4wWMNr1W/" rel="noopener" target="_blank" style="font-family: 'Product Sans Regular' !important;">Facebook
 
       </a>
       </li>
       </ul>
       </div>
       <div class="MobileNav_footer-bottom__6UcuR xs:col-start-1 xs:col-span-2">
-        <div class="MobileNav_copyright__bfnmJ">© 2024 Anthropic PBC
+        <div class="MobileNav_copyright__bfnmJ">© 2025 GataraAI
       </div>
       </div>
       </div>

@@ -50,7 +50,8 @@ export const footer = `
               <a href="https://www.facebook.com/share/1L4wWMNr1W/" rel="noopener" target="_blank"  style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Facebook </a>
             </li>
           </ul>
-
+          
+          <hr class="SiteFooter_hrule__6yi4j" />
           <ul class="s:col-start-5 s:col-span-5">
             <li>
               <a href="mailto:info@gatara.org"  style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Press Inquiries </a>
