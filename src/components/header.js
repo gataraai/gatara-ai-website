@@ -30,7 +30,7 @@ export const header = `
 
     <div id="humbergermenu" style="display: none">   
       <div class="MobileNav_core-mobile-nav__Z_kbE wrapper xs:grid xs:grid-2">
-        <div class="MobileNav_controls__Fr5Ii xs:grid xs:grid-2 xs:col-start-1 xs:col-span-2">
+        <div class="MobileNav_controls__Fr5Ii xs:grid xs:grid-2 xs:col-start-1 xs:col-span-2" style="margin-top: 36px;">
         <div class="MobileNav_logo-mark__d5VUH xs:col-start-1 xs:col-span-1" style="width: auto;">
         <a href="/">
         <img alt="Logo" src="/logo.svg" height="75">
@@ -47,7 +47,7 @@ export const header = `
         <div class="MobileNav_claude-select__F_qk3">
         <button class="MobileNav_btn-claude__s7ywz">
         <a href="https://murshed.gatara.org" target="_blank">
-        <span style="font-family: 'Product Sans Regular' !important;">Murshed
+        <span style="font-family: 'Product Sans Regular' !important; font-size: 36px !important;">Murshed
       </span>
       </a>
       <svg class="Icon_icon__UdTNj MobileNav_icon-caret__4cotZ" width="24" height="24" viewBox="0 0 24 24">
@@ -72,7 +72,7 @@ export const header = `
       </li>
       </ul>
 
-      <ul class="MobileNav_footer-primary__r7Gh0">
+      <ul class="MobileNav_footer-primary__r7Gh0" style="margin-top: 60px;">
       <li>
         <a href="/book-call/" style="font-family: 'Product Sans Regular' !important; font-size:27px;">Free Consultaion Call
       </a>
