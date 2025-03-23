@@ -13,11 +13,11 @@ export const footer = `
         >
           <ul class="s:col-start-1 s:col-span-2">
             <li>
-              <a href="https://murshed.gatara.org" style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Murshed </a>
+              <a href="/products/#murshed" style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Murshed </a>
             </li>
 
             <li>
-              <a href="/not-available-yet/" style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Products </a>
+              <a href="/products/" style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Products </a>
             </li>
 
             <li>
@@ -62,7 +62,7 @@ export const footer = `
             </li>
 
             <li>
-              <a href="/book-call/wait-list" style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Early Adopters Wait List</a>
+              <a href="/book-call/early-adopters-program" style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Early Adopters Wait List</a>
             </li>
             
           </ul>
