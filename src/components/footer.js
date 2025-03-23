@@ -62,7 +62,7 @@ export const footer = `
             </li>
 
             <li>
-              <a href="/book-call/early-adopters-program" style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Early Adopters Wait List</a>
+              <a href="/early-adopters-program/" style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Early Adopters Wait List</a>
             </li>
             
           </ul>
