@@ -14,7 +14,7 @@ export default defineConfig({
         notavailable: '/not-available-yet/index.html',
         bookcall: '/book-call/index.html',
         products: '/products/index.html',
-        'book-call/early-adopters-program': '/book-call/early-adopters-program.html',
+        'book-call-early-adopters-program': '/book-call/early-adopters-program.html',
       },
     },
   },
