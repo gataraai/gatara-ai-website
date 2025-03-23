@@ -40,7 +40,8 @@ body {
     font-family: 'Product Sans Medium Regular';
     font-size: 27px;
 }
-    
+
+
 ::selection {
-    background-color: #d5c491 !important;
+    background-color: #d5c491 !important; 
   }
