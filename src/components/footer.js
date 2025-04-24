@@ -13,7 +13,7 @@ export const footer = `
         >
           <ul class="s:col-start-1 s:col-span-2">
             <li>
-              <a href="/products/#murshed" style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Murshed </a>
+              <a href="/products/#agents" style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Agents</a>
             </li>
 
             <li>
@@ -62,7 +62,7 @@ export const footer = `
             </li>
 
             <li>
-              <a href="/early-adopters-program/" style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Early Adopters Wait List</a>
+              <a href="/early-adopters-program/" style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Newsletter and exclusive offers</a>
             </li>
             
           </ul>

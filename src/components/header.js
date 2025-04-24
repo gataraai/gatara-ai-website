@@ -13,8 +13,8 @@ export const header = `
       </button>
       <nav class="SiteHeader_core-nav__dsHuH">
         <div class="SiteHeader_claude-select__1ZKkq">
-          <a href="/products/#murshed">
-            <span class="SiteHeader_link-label__s59w1"  style="font-family: 'Product Sans Regular' !important; font-size: 26px !important;">Murshed</span>
+          <a href="/products/#agents">
+            <span class="SiteHeader_link-label__s59w1"  style="font-family: 'Product Sans Regular' !important; font-size: 26px !important;">Agents</span>
             <svg class="Icon_icon__UdTNj" width="24" height="24" viewBox="0 0 24 24">
               <path d="M8.76693 10.7417L12.0003 13.975L15.2336 10.7417C15.5586 10.4167 16.0836 10.4167 16.4086 10.7417C16.7336 11.0667 16.7336 11.5917 16.4086 11.9167L12.5836 15.7417C12.2586 16.0667 11.7336 16.0667 11.4086 15.7417L7.58359 11.9167C7.25859 11.5917 7.25859 11.0667 7.58359 10.7417C7.90859 10.425 8.44193 10.4167 8.76693 10.7417Z" fill="#141413"></path>
             </svg>
@@ -23,7 +23,7 @@ export const header = `
         <a class="SiteHeader_link-label__s59w1" href="/products/" style="font-family: 'Product Sans Regular' !important; font-size: 26px;">Products</a>
         <a class="SiteHeader_link-label__s59w1" href="/company/" style="font-family: 'Product Sans Regular' !important; font-size: 26px;">Company</a>
         <a class="SiteHeader_link-label__s59w1" href="/open-roles/"  style="font-family: 'Product Sans Regular' !important; font-size: 26px;">Careers</a>
-        <a href="/book-call/" class="ButtonLink_button__hVduT ButtonLink_primary__yV6bX ButtonLink_small__4mz6F SiteHeader_nav-cta-a__e5H8v" rel="noopener" aria-label="Try Murshed">
+        <a href="/book-call/" class="ButtonLink_button__hVduT ButtonLink_primary__yV6bX ButtonLink_small__4mz6F SiteHeader_nav-cta-a__e5H8v" rel="noopener" aria-label="Book Call">
           <span class="ButtonLink_label__DqhYH" style="font-family: 'Product Sans Regular' !important; font-size: 22px;">Book a Free Consultation Call</span>
         </a>
       </nav>
@@ -46,8 +46,8 @@ export const header = `
       <div class="MobileNav_footer-top__dnH1m xs:col-start-1 xs:col-span-2">
         <div class="MobileNav_claude-select__F_qk3">
         <button class="MobileNav_btn-claude__s7ywz">
-        <a href="/products/#murshed">
-        <span style="font-family: 'Product Sans Regular' !important; font-size: 36px !important;">Murshed
+        <a href="/products/#agents">
+        <span style="font-family: 'Product Sans Regular' !important; font-size: 36px !important;">Agents
       </span>
       </a>
       <svg class="Icon_icon__UdTNj MobileNav_icon-caret__4cotZ" width="24" height="24" viewBox="0 0 24 24">
@@ -59,7 +59,7 @@ export const header = `
       </div>
       <ul class="MobileNav_footer-primary__r7Gh0">
         <li>
-        <a href="/products/" style="font-family: 'Product Sans Regular' !important;">Product
+        <a href="/products/" style="font-family: 'Product Sans Regular' !important;">Products
       </a>
       </li>
       <li>
