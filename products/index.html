@@ -96,7 +96,7 @@
 	<div class="AnimatedDivider_divider__yniiR AnimatedDivider_isInView__VV3UM">
 </div>
 <h2 class="block-label h3 s:col-start-1 s:col-span-4 spacer-medium-mb GridList_heading___ygon"
-style="font-family: 'Product Sans Medium Regular'; font-size: 27px;" id="murshed">
+style="font-family: 'Product Sans Medium Regular'; font-size: 27px;" id="agents">
   What is an AI Agent?
 </h2>
 <div class="GridList_body__6hr_6 block-content s:col-start-1 s:col-span-8 m:col-start-5 m:col-span-7 text-b2 spacer-medium-mb">
@@ -319,23 +319,18 @@ style="font-family: 'Product Sans Medium Regular'; font-size: 27px;">
         Sound Interesting?
     </h2>
     <div class="CtaBanner_cta-1__94eJ2 contentFadeUp is-inview" style="
+        display: -webkit-inline-box;
+        gap: 15px;
         @media (max-width: 768px) {
-            width: 100%;
-            text-align: center;
+            display: inline-grid;
         }
     ">
-
-		<a class="HeroCta_cta__Wushi btn-primary contentFadeUp is-inview" href="/early-adopters-program/">
+		<h3 class="CtaBanner_heading__ydH8I h3" style="font-family: 'Product Sans Medium Regular'; font-size: 27px; max-width: 618px;">
+			If you're ready to automate the boring stuff and scale smarter
+		</h3>
+		<a class="HeroCta_cta__Wushi btn-primary contentFadeUp is-inview" href="/book-call/">
 			<span class="btn-label" style="font-family: 'Product Sans Regular' !important; font-size: 22px;">
-				<span class="desktop-text">Get the latest news about our AI agents</span>
-				<span class="mobile-text" style="display: none;">Get our AI agents Latest news</span>
-				<style>
-				Product Development Agen		.mobile-text {
-							display: inline-flex !important;
-							font-size: 20px !important;
-							text-align: center !important; 
-						}
-				</style>
+				<span >Lets Chat</span>
 			</span>
 		</a>
         
@@ -350,29 +345,6 @@ style="font-family: 'Product Sans Medium Regular'; font-size: 27px;">
 <section class="CtaBanner_b-ctaBanner__Apkv7 CtaBanner_dark__mehSY Section_section-wrapper__7hN5D bg-slate-medium">
 	<div class="wrapper s:grid s:grid-12">
 		<div class="s:col-start-2 s:col-span-10 m:col-start-4 m:col-span-6">
-			<h2 class="CtaBanner_heading__ydH8I h2 heading-simple" style="font-family: 'Product Sans Medium Regular'; font-size: 31px;">
-				Sounds Interesting?
-			</h2>
-			
-			<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
-				<!-- Column 1 -->
-				<div>
-					<h3 class="CtaBanner_heading__ydH8I h3" style="font-family: 'Product Sans Medium Regular'; font-size: 27px;">
-						If you're ready to automate the boring stuff and scale smarter
-					</h3>
-					<div class="CtaBanner_cta-1__94eJ2 contentFadeUp is-inview">
-						<a class="ButtonLink_button__hVduT ButtonLink_primary__yV6bX ButtonLink_small__4mz6F" 
-						   aria-label="Chat with us" 
-						   href="/book-call/">
-							<span class="ButtonLink_label__DqhYH" style="font-family: 'Product Sans Regular' !important; font-size: 22px;">
-								Lets chat
-							</span>
-						</a>
-					</div>
-				</div>
-				
-				<!-- Column 2 -->
-				<div>
 					<h3 class="CtaBanner_heading__ydH8I h3" style="font-family: 'Product Sans Medium Regular'; font-size: 27px;">
 						Not ready yet? Join our early access program to stay in the loop
 					</h3>
@@ -385,7 +357,6 @@ style="font-family: 'Product Sans Medium Regular'; font-size: 27px;">
 							</span>
 						</a>
 					</div>
-				</div>
 			</div>
 		</div>
 	</div>
@@ -399,5 +370,34 @@ style="font-family: 'Product Sans Medium Regular'; font-size: 27px;">
 <div id="footer-placeholder"></div>
 
 <script type="module" src="/src/js/main.js"></script>
+<script>
+	// Add this function to handle the banner display
+function handleBannerDisplay() {
+    const bannerElements = document.querySelectorAll('.CtaBanner_cta-1__94eJ2');
+    
+    bannerElements.forEach(element => {
+        if (window.innerWidth <= 768) {
+            element.style.display = 'inline-grid';
+        } else {
+            element.style.display = '-webkit-inline-box';
+        }
+    });
+}
+
+// Add these event listeners
+window.addEventListener('resize', handleBannerDisplay);
+document.addEventListener('DOMContentLoaded', handleBannerDisplay);
+
+// Modify your existing injectComponents function
+function injectComponents() {
+    // Existing header injection code...
+    
+    // Existing footer injection code...
+    
+    // Call the banner display handler after components are loaded
+    handleBannerDisplay();
+}
+</script>
+
   </body>
       </html>
