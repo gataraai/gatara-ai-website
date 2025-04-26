@@ -13,6 +13,7 @@ export default defineConfig({
         'applications/ui-ux': '/applications/ui-ux.html',
         notavailable: '/not-available-yet/index.html',
         bookcall: '/book-call/index.html',
+        scheduletime: '/book-call/schedule-time/index.html',
         earlyadopters: '/early-adopters-program/index.html',
         products: '/products/index.html',
       },
