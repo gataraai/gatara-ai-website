@@ -92,7 +92,7 @@
   
   .success-message {
     font-family: 'Product Sans Regular', system-ui, Avenir, Helvetica, Arial, sans-serif;
-    font-size: 1.3em;
+    font-size: 1.2em;
     line-height: 1.1;
     font-weight: 300;
     color: rgba(255, 255, 255, 0.87);
@@ -102,7 +102,7 @@
   
   .error-message {
     font-family: 'Product Sans Regular', system-ui, Avenir, Helvetica, Arial, sans-serif;
-    font-size: 1.3em;
+    font-size: 1.2em;
     line-height: 1.1;
     font-weight: 300;
     color: rgba(255, 255, 255, 0.87);
@@ -152,11 +152,11 @@
     }
 
     .success-message {
-      font-size: 1.2em;
+      font-size: 1em;
     }
     
     .error-message {
-      font-size: 1.2em;
+      font-size: 1em;
     }
 
     input {
