@@ -50,6 +50,7 @@
       font-family: 'Product Sans Medium Regular' !important;
       margin-bottom: 15px;
       font-size: 2.5rem;
+      color: #141413;
     }
     .page-subtitle {
       text-align: center;
@@ -63,6 +64,32 @@
     }
     .underline-text {
       text-decoration: underline;
+    }
+    .iframe-container {
+      background: #faf9f5;
+      border-radius: 24px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      margin: 0 auto;
+      overflow: hidden;
+      padding: 20px;
+      position: relative;
+    }
+    .iframe-container iframe {
+      background: #fff;
+      border-radius: 16px;
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      transition: all 0.3s ease;
+    }
+    @media (max-width: 768px) {
+      .iframe-container {
+        border-radius: 16px;
+        padding: 15px;
+      }
+      .iframe-container iframe {
+        height: 800px;
+      }
     }
   </style>
 </head>
@@ -79,13 +106,15 @@
           
           <div class="HubspotForm_grid__JDdxw xs:grid xs:grid-12">
             <div class="xs:col-start-1 xs:col-span-12">
-              <iframe 
-                width='100%' 
-                height='750px' 
-                src='https://gataraai.zohobookings.com/portal-embed#/ceo-call' 
-                frameborder='0' 
-                allowfullscreen=''
-              ></iframe>
+              <div class="iframe-container">
+                <iframe 
+                  width='100%' 
+                  height='750px' 
+                  src='https://gataraai.zohobookings.com/portal-embed#/ceo-call' 
+                  frameborder='0' 
+                  allowfullscreen=''
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>
