@@ -87,7 +87,7 @@ function attachEventListeners() {
         // Show success message and reset form
         popup.querySelector('.card-image').innerHTML = `
           <div class="success-message">
-            Thanks for Booking a consulting call<br>Our team will review your request and get back to you soon.
+            Thank you for providng you info <br>We are now directing you to the booking page to pick a date & time for the call.
           </div>
         `;
         
@@ -100,6 +100,8 @@ function attachEventListeners() {
           selects.forEach(select => {
             select.selectedIndex = 0;
           });
+          // Redirect to scheduling page
+          window.location.href = '/book-call/schedule-time/';
         }, 3000);
       } else {
         throw new Error('Network response was not ok');
