@@ -31,3 +31,6 @@ pnpm-debug.log*
 .cache/
 .temp/
 .vite/
+
+# custom
+posts/
