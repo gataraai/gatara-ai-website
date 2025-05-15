@@ -489,6 +489,28 @@ input{
 
 <script type="module" src="/src/js/main.js"></script>
 <script type="module" src="./form-call.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.querySelector('#hsForm_86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined');
+  const messageTextarea = document.querySelector('#message-86ea22cc-419d-40f1-ba71-13e92df49115_86ea22cc-419d-40f1-ba71-13e92df49115-undefined');
+  
+  form.addEventListener('submit', function(e) {
+    const messageText = messageTextarea.value.trim();
+    const wordCount = messageText.split(/\s+/).filter(word => word.length > 0).length;
+    
+    if (wordCount < 7) {
+      e.preventDefault();
+      // Force add the classes and inline style for immediate visual feedback
+      messageTextarea.classList.add('invalid', 'error');
+      messageTextarea.style.border = '2px solid red';
+      const errorMsg = messageTextarea.closest('.hs-form-field').querySelector('.hs-error-msg');
+      errorMsg.textContent = 'Please tell us more!';
+      errorMsg.style.display = 'block';
+      form.classList.add('form-submitted');
+    }
+  });
+});
+</script>
 <style>
 /* Hide all error messages by default */
 .hs-error-msgs {
@@ -507,6 +529,11 @@ input{
 
 .form-submitted .hs-input.invalid.error {
   border-color: red;
+}
+
+/* Specifically target the textarea */
+.form-submitted textarea.hs-input.invalid.error {
+  border: 2px solid red !important;
 }
 </style>
 </body></html>
