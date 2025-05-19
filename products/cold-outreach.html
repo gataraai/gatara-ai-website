@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B2B Cold Outreach Process</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Basic Reset & Body Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align to top for potentially long card */
+            min-height: 100vh;
+            color: #333;
+        }
+
+        /* Card Styling */
+        .outreach-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            padding: 25px 30px;
+            width: 100%;
+            max-width: 500px; /* Max width of the card */
+            text-align: center;
+            border-top: 5px solid #007bff; /* Accent color */
+        }
+
+        .card-header h2 {
+            color: #007bff;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.8em;
+        }
+        .card-header .product-description {
+            font-size: 0.95em;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        /* Workflow Diagram Elements */
+        .workflow-step {
+            background-color: #e9f5ff; /* Light blue background for steps */
+            border: 1px solid #bde0ff;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            position: relative;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .workflow-step:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.15);
+        }
+
+        .workflow-step .icon {
+            font-size: 1.8em; /* Icon size */
+            color: #007bff;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .workflow-step h4 {
+            margin: 5px 0 5px;
+            color: #0056b3; /* Darker blue for heading */
+            font-size: 1.1em;
+        }
+
+        .workflow-step p, .workflow-step ul {
+            font-size: 0.9em;
+            color: #444;
+            margin: 0;
+            line-height: 1.5;
+        }
+        .workflow-step ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 8px;
+        }
+        .workflow-step ul li {
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center list items for overall centered look */
+        }
+        .workflow-step ul li .fas {
+            margin-right: 8px;
+            color: #007bff;
+            font-size: 0.9em;
+        }
+
+
+        /* Arrow Styling */
+        .arrow {
+            font-size: 2em;
+            color: #007bff;
+            margin: 5px 0 10px 0;
+            display: block; /* Make it block to take full width for centering */
+            font-weight: bold;
+        }
+        .arrow.down::before {
+            content: "\f063"; /* Font Awesome down arrow */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+        }
+
+        /* Specific AI step styling */
+        #ai-processor .icon {
+            font-size: 2.2em; /* Make AI icon slightly larger */
+            color: #28a745; /* Green for AI */
+        }
+        #ai-processor {
+            background-color: #e6ffed; /* Light green for AI box */
+            border-color: #c3e6cb;
+        }
+        #ai-processor h4 {
+            color: #155724; /* Darker green */
+        }
+         #ai-processor.pulsate .icon {
+            animation: pulsate 1.5s infinite ease-in-out;
+        }
+
+        @keyframes pulsate {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Inputs to AI section (mimicking convergence) */
+        .ai-inputs-group {
+            display: flex;
+            justify-content: space-around; /* Distribute items */
+            align-items: flex-start; /* Align items to their top */
+            margin-bottom: 10px;
+            padding: 0 10px; /* Some padding if items are too close to edge */
+        }
+
+        .input-source {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 10px;
+            width: calc(33% - 10px); /* Adjust width, considering gaps */
+            box-sizing: border-box;
+            font-size: 0.8em;
+            min-height: 90px; /* Ensure consistent height */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .input-source .icon {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+        .input-source p {
+            margin: 0;
+            font-size: 0.9em;
+            line-height: 1.3;
+        }
+
+        /* Simple lines/arrows for convergence (visual cue) */
+        .ai-inputs-group-wrapper {
+            position: relative;
+            margin-bottom: 15px; /* Space before AI module */
+        }
+
+        /* This SVG will hold the connecting lines */
+        #converging-arrows-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Behind the input boxes, if needed, or manage via wrapper */
+            pointer-events: none; /* So it doesn't interfere with clicks */
+        }
+        .ai-inputs-group-wrapper {
+            padding-bottom: 30px; /* Space for arrows to point downwards */
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="outreach-card">
+        <div class="card-header">
+            <h2><i class="fas fa-bullhorn"></i> B2B Cold Outreach AI</h2>
+            <p class="product-description">
+                Engage potential leads through personalized, Al-powered cold outreach across email.
+                Capture attention with relevant messaging tailored to each prospect's industry and needs.
+            </p>
+        </div>
+
+        <div class="workflow-diagram">
+
+            <div class="workflow-step" id="lead-list">
+                <span class="icon"><i class="fas fa-list-alt"></i></span>
+                <h4>1. Lead List Input</h4>
+                <p>Basic Info, Emails, Website Links, LinkedIn Profiles</p>
+            </div>
+
+            <div class="arrow down"></div>
+
+            <!-- Inputs that feed into the AI -->
+            <div class="ai-inputs-group-wrapper">
+                <div class="ai-inputs-group">
+                    <div class="input-source" id="email-template-source">
+                        <span class="icon"><i class="fas fa-user-edit"></i></span>
+                        <p>Email Template</p>
+                    </div>
+                    <div class="input-source" id="lead-info-source">
+                        <span class="icon"><i class="fas fa-database"></i></span>
+                        <p>Lead Info</p>
+                    </div>
+                    <div class="input-source" id="tone-style-source">
+                        <span class="icon"><i class="fas fa-palette"></i></span>
+                        <p>Business Tone & Style</p>
+                    </div>
+                </div>
+                <!-- SVG for connecting lines will be drawn by JS -->
+                 <svg id="converging-arrows-svg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></svg>
+            </div>
+
+
+            <div class="workflow-step" id="ai-processor">
+                <span class="icon"><i class="fas fa-robot"></i></span>
+                <h4>2. AI Processing</h4>
+                <p>Generates custom, personalized message</p>
+            </div>
+
+            <div class="arrow down"></div>
+
+            <div class="workflow-step" id="send-message">
+                <span class="icon"><i class="fas fa-paper-plane"></i></span>
+                <h4>3. Send Personalized Email</h4>
+                <p>Deliver relevant outreach to prospect</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add a subtle pulsation to the AI icon
+            const aiProcessor = document.getElementById('ai-processor');
+            if (aiProcessor) {
+                aiProcessor.classList.add('pulsate');
+            }
+
+            // Draw converging arrows
+            const svg = document.getElementById('converging-arrows-svg');
+            const aiInputsGroup = document.querySelector('.ai-inputs-group');
+            const aiProcessorBox = document.getElementById('ai-processor');
+
+            const sources = [
+                document.getElementById('email-template-source'),
+                document.getElementById('lead-info-source'),
+                document.getElementById('tone-style-source')
+            ];
+
+            function drawArrows() {
+                svg.innerHTML = ''; // Clear previous arrows
+
+                const aiProcessorRect = aiProcessorBox.getBoundingClientRect();
+                const svgRect = svg.getBoundingClientRect(); // Get SVG's own position
+
+                // Target point: top-center of the AI processor box, relative to the SVG
+                const targetX = aiProcessorRect.left + aiProcessorRect.width / 2 - svgRect.left;
+                const targetY = aiProcessorRect.top - svgRect.top - 5; // 5px above the box
+
+                sources.forEach(source => {
+                    if (!source) return;
+                    const sourceRect = source.getBoundingClientRect();
+                    
+                    // Start point: bottom-center of the source box, relative to the SVG
+                    const startX = sourceRect.left + sourceRect.width / 2 - svgRect.left;
+                    const startY = sourceRect.bottom - svgRect.top + 5; // 5px below the box
+
+                    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                    line.setAttribute('x1', startX.toString());
+                    line.setAttribute('y1', startY.toString());
+                    line.setAttribute('x2', targetX.toString());
+                    line.setAttribute('y2', targetY.toString());
+                    line.setAttribute('stroke', '#007bff');
+                    line.setAttribute('stroke-width', '2');
+                    line.setAttribute('marker-end', 'url(#arrowhead)');
+                    svg.appendChild(line);
+                });
+            }
+
+            // Define arrowhead marker (only need to do this once)
+            const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+            const marker = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
+            marker.setAttribute('id', 'arrowhead');
+            marker.setAttribute('markerWidth', '10');
+            marker.setAttribute('markerHeight', '7');
+            marker.setAttribute('refX', '0');
+            marker.setAttribute('refY', '3.5');
+            marker.setAttribute('orient', 'auto');
+            const polygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+            polygon.setAttribute('points', '0 0, 10 3.5, 0 7');
+            polygon.setAttribute('fill', '#007bff');
+            marker.appendChild(polygon);
+            defs.appendChild(marker);
+            svg.appendChild(defs);
+
+            // Initial draw
+            // Timeout to ensure layout is stable
+            setTimeout(drawArrows, 100);
+
+
+            // Redraw on window resize
+            window.addEventListener('resize', () => {
+                // Debounce resize event for performance
+                clearTimeout(window.resizedFinished);
+                window.resizedFinished = setTimeout(drawArrows, 250);
+            });
+        });
+    </script>
+
+</body>
+</html>
