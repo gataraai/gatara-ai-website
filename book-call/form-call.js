@@ -3,6 +3,20 @@ import Navigo from 'navigo';
 
 const router = new Navigo('/');
 
+// Extract UTM and campaign parameters from the URL
+const urlParams = new URLSearchParams(window.location.search);
+
+// Store them in JS variables
+const trackingParams = {
+  utm_id: urlParams.get('utm_id') || '',
+  utm_source: urlParams.get('utm_source') || '',
+  utm_medium: urlParams.get('utm_medium') || '',
+  utm_campaign: urlParams.get('utm_campaign') || '',
+  utm_term: urlParams.get('utm_term') || '',
+  utm_content: urlParams.get('utm_content') || '',
+  ref: urlParams.get('ref') || '',
+};
+
 // Function to attach event listeners
 function attachEventListeners() {
   // Existing newsletter form handler
@@ -93,12 +107,21 @@ function attachEventListeners() {
       desiredSolution: e.target.querySelector('[name="message"]').value,
       
       // Add timestamp
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
+
+      // Tracking parameters
+      utm_id: trackingParams.utm_id,
+      utm_source: trackingParams.utm_source,
+      utm_medium: trackingParams.utm_medium, 
+      utm_campaign: trackingParams.utm_campaign,
+      utm_term: trackingParams.utm_term,
+      utm_content: trackingParams.utm_content,
+      ref: trackingParams.ref
     };
 
     try {
       // Construct the URL with query parameters
-      const url = new URL('https://script.google.com/macros/s/AKfycbwECQIwwjgySyghApB9OXCtsZPyQkNsyhhernAB7puIIpylISJJJ4SjMLTofl-08CuJOQ/exec');
+      const url = new URL('https://script.google.com/macros/s/AKfycbwRms-I4FTdDIACutxyB-lBBdEzTeUm7KgjbBWQ2LAtetnkhfIxODfsG4LcDGq6DaRqwQ/exec');
       url.search = new URLSearchParams(formData).toString();
 
       // Send a GET request
