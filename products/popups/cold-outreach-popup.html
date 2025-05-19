@@ -204,6 +204,11 @@
       padding: 1.5em;
     }
     
+    /* Hide description on mobile */
+    .outreach-description {
+      display: none;
+    }
+    
     .workflow-row {
       flex-direction: column;
     }
@@ -213,9 +218,48 @@
       margin: 5px 0;
     }
     
+    /* Keep input sources horizontal even on mobile */
     .input-sources {
-      flex-direction: column;
+      flex-direction: row;
       gap: 10px;
+    }
+    
+    /* Hide descriptions on mobile */
+    .step-description {
+      display: none;
+    }
+    
+    /* Make titles smaller */
+    .step-title {
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+    
+    /* Make icons smaller */
+    .step-icon, .input-icon {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+    
+    /* Reduce padding */
+    .workflow-step, .input-source, .ai-processor {
+      padding: 10px;
+    }
+    
+    /* Reduce gap between elements */
+    .workflow-row {
+      gap: 10px;
+    }
+    
+    /* Make the AI processor more compact */
+    .ai-processor {
+      margin: 5px 0;
+    }
+    
+    /* Reduce size of converging arrows */
+    .converging-arrows {
+      height: 30px;
+      margin: 5px 0;
     }
   }
   
@@ -226,11 +270,41 @@
     }
     
     .outreach-title {
-      font-size: 20px;
+      font-size: 18px;
     }
     
-    .outreach-description {
+    /* Further reduce sizes */
+    .step-icon, .input-icon {
+      font-size: 16px;
+    }
+    
+    .step-title, .input-title {
+      font-size: 12px;
+    }
+    
+    /* Minimal padding */
+    .workflow-step, .input-source, .ai-processor {
+      padding: 8px;
+    }
+    
+    /* Smaller coming soon text */
+    .coming-soon a {
       font-size: 14px;
+    }
+    
+    /* Smaller close button */
+    .close-popup {
+      font-size: 16px;
+    }
+    
+    /* Keep input sources horizontal even on very small screens */
+    .input-sources {
+      flex-direction: row;
+    }
+    
+    /* Make input titles even smaller on very small screens */
+    .input-title {
+      font-size: 10px;
     }
   }
     </style>
