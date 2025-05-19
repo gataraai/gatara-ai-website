@@ -16,6 +16,7 @@ export default defineConfig({
         scheduletime: '/book-call/schedule-time/index.html',
         earlyadopters: '/early-adopters-program/index.html',
         unsubscribe: '/early-adopters-program/unsubscribe/index.html',
+        resubscribe: '/early-adopters-program/resubscribe/index.html',
         products: '/products/index.html',
       },
     },
