@@ -3,6 +3,20 @@ import Navigo from 'navigo';
 
 const router = new Navigo('/');
 
+// Extract UTM and campaign parameters from the URL
+const urlParams = new URLSearchParams(window.location.search);
+
+// Store them in JS variables
+const trackingParams = {
+  utm_id: urlParams.get('utm_id') || '',
+  utm_source: urlParams.get('utm_source') || '',
+  utm_medium: urlParams.get('utm_medium') || '',
+  utm_campaign: urlParams.get('utm_campaign') || '',
+  utm_term: urlParams.get('utm_term') || '',
+  utm_content: urlParams.get('utm_content') || '',
+  ref: urlParams.get('ref') || '',
+};
+
 // Function to attach event listeners
 function attachEventListeners() {
   // Existing newsletter form handler
@@ -91,14 +105,23 @@ function attachEventListeners() {
       currentAiSolution: e.target.querySelector('[name="current_gen_ai_saas_solution"]').value,
       evaluationStage: e.target.querySelector('[name="where_are_you_in_your_evaluation_journey_"]').value,
       desiredSolution: e.target.querySelector('[name="message"]').value,
-      
+         
       // Add timestamp
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
+
+      // Tracking parameters
+      utm_id: trackingParams.utm_id,
+      utm_source: trackingParams.utm_source,
+      utm_medium: trackingParams.utm_medium, 
+      utm_campaign: trackingParams.utm_campaign,
+      utm_term: trackingParams.utm_term,
+      utm_content: trackingParams.utm_content,
+      ref: trackingParams.ref
     };
 
     try {
       // Construct the URL with query parameters
-      const url = new URL('https://script.google.com/macros/s/AKfycbz21NjoJ0o6_Ae_HtHD88NdcwNS8VnKst5GkRWdeg83UG9NyCE2wFP7jYOO2M7zSqYEkg/exec');
+      const url = new URL('https://script.google.com/macros/s/AKfycby15a-dM6tfk1ZM2hlprObr4Y8bcFn_9BQG1rpTcLNkNh0B3C0zVGlNN2iAEqMX-sVnkA/exec');
       url.search = new URLSearchParams(formData).toString();
 
       // Send a GET request
@@ -124,6 +147,8 @@ function attachEventListeners() {
           selects.forEach(select => {
             select.selectedIndex = 0;
           });
+          // Redirect to home page
+          window.location.href = '/';
         }, 3000);
       } else {
         throw new Error('Network response was not ok');
