@@ -27,85 +27,42 @@ async function showLeadsEnhancementPopup(event) {
     addClickOutsideToClose(popup);
   } catch (error) {
     console.error('Error loading popup content:', error);
-    // Fallback to inline HTML if fetch fails
-    showLeadsEnhancementPopupFallback(event);
   }
 }
 
-// Fallback function with inline HTML
-function showLeadsEnhancementPopupFallback(event) {
+
+
+async function showColdOutreachPopup(event) {
   event.preventDefault();
   
-  const popup = document.createElement('div');
-  popup.className = 'popup';
-  popup.innerHTML = `
-    <div class="card">
-      <div class="card-content">
-        <div class="card-top">
-          <h3 style="color: white; font-family: 'Product Sans Medium Regular'; font-size: 22px;">Leads Enhancement Agent</h3>
-          <button onclick="closePopup()" style="background: none; border: none; color: white; cursor: pointer; font-size: 20px;">×</button>
-        </div>
-        <div class="card-image">
-          <p style="color: white; font-family: 'Product Sans Regular'; font-size: 18px;">
-            Our Leads Enhancement Agent enriches your lead data by:
-            <ul style="color: white; font-family: 'Product Sans Regular'; font-size: 18px;">
-              <li>Adding missing contact information</li>
-              <li>Finding social profiles</li>
-              <li>Scoring leads based on fit</li>
-              <li>Identifying decision makers</li>
-              <li>Suggesting personalization points</li>
-            </ul>
-          </p>
-        </div>
-        <div class="card-bottom">
-          <a href="/products/leads-enhancment.html" style="color: #d97757; text-decoration: none; font-family: 'Product Sans Regular'; font-size: 18px;">Learn more →</a>
-        </div>
-      </div>
-    </div>
-  `;
-  document.body.appendChild(popup);
-  addPopupStyles();
-  
-  // Add click outside to close
-  addClickOutsideToClose(popup);
+  try {
+    // Fetch the HTML content
+    const response = await fetch('/products/popups/cold-outreach-popup.html');
+    if (!response.ok) {
+      throw new Error('Failed to load popup content');
+    }
+    
+    const htmlContent = await response.text();
+    
+    // Create popup
+    const popup = document.createElement('div');
+    popup.className = 'popup';
+    popup.innerHTML = htmlContent;
+    document.body.appendChild(popup);
+    
+    // Add close functionality to the button
+    const closeButton = popup.querySelector('.close-popup');
+    if (closeButton) {
+      closeButton.addEventListener('click', () => closePopup());
+    }
+    
+    // Add click outside to close
+    addClickOutsideToClose(popup);
+  } catch (error) {
+    console.error('Error loading popup content:', error);
+  }
 }
 
-function showColdOutreachPopup(event) {
-  event.preventDefault();
-  
-  const popup = document.createElement('div');
-  popup.className = 'popup';
-  popup.innerHTML = `
-    <div class="card">
-      <div class="card-content">
-        <div class="card-top">
-          <h3 style="color: white; font-family: 'Product Sans Medium Regular'; font-size: 22px;">B2B Cold Outreach</h3>
-          <button onclick="closePopup()" style="background: none; border: none; color: white; cursor: pointer; font-size: 20px;">×</button>
-        </div>
-        <div class="card-image">
-          <p style="color: white; font-family: 'Product Sans Regular'; font-size: 18px;">
-            Our Cold Outreach Agent helps you:
-            <ul style="color: white; font-family: 'Product Sans Regular'; font-size: 18px;">
-              <li>Create personalized outreach at scale</li>
-              <li>Adapt messaging to each prospect's industry</li>
-              <li>Craft compelling subject lines</li>
-              <li>A/B test different approaches</li>
-              <li>Maintain your brand voice consistently</li>
-            </ul>
-          </p>
-        </div>
-        <div class="card-bottom">
-          <a href="/products/cold-outreach.html" style="color: #d97757; text-decoration: none; font-family: 'Product Sans Regular'; font-size: 18px;">Learn more →</a>
-        </div>
-      </div>
-    </div>
-  `;
-  document.body.appendChild(popup);
-  addPopupStyles();
-  
-  // Add click outside to close
-  addClickOutsideToClose(popup);
-}
 
 function showLeadQualificationPopup(event) {
   event.preventDefault();
@@ -284,6 +241,15 @@ function addPopupStyles() {
         z-index: 1000;
       }
       
+      .popup-content {
+        padding: 20px;
+        border-radius: 12px;
+        background-color: #ffffff;
+        max-width: 90%;
+        max-height: 90vh;
+        overflow: auto;
+      }
+      
       .card {
         width: 320px;
         height: auto;
@@ -309,6 +275,12 @@ function addPopupStyles() {
       }
       
       @media (max-width: 768px) {
+        .popup-content {
+          max-width: 95%;
+          max-height: 80vh;
+          padding: 15px;
+        }
+        
         .card {
           width: 280px;
           padding: 1.5em;
@@ -316,6 +288,12 @@ function addPopupStyles() {
       }
       
       @media (max-width: 480px) {
+        .popup-content {
+          max-width: 95%;
+          max-height: 70vh;
+          padding: 10px;
+        }
+        
         .card {
           width: 256px;
           padding: 1em;
