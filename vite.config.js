@@ -15,6 +15,7 @@ export default defineConfig({
         bookcall: '/book-call/index.html',
         scheduletime: '/book-call/schedule-time/index.html',
         earlyadopters: '/early-adopters-program/index.html',
+        unsubscribe: '/early-adopters-program/unsubscribe/index.html',
         products: '/products/index.html',
       },
     },
