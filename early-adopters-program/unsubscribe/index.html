@@ -165,6 +165,11 @@
 									<label for="email" style="font-family: 'Product Sans Regular' !important;">Email Address</label>
 									<input type="email" id="email" name="email" placeholder="Your email address" required>
 								</div>
+								<div class="form-field">
+									<label for="reason" style="font-family: 'Product Sans Regular' !important;">Why are you unsubscribing?</label>
+									<textarea id="reason" name="reason" placeholder="Optional feedback..." rows="3"></textarea>
+								</div>
+
 								<div class="form-submit">
 									<button type="submit" class="btn-primary">Unsubscribe</button>
 								</div>
@@ -204,9 +209,12 @@
 
       try {
         // Construct the URL with query parameters
-        const url = new URL('https://script.google.com/macros/s/AKfycbxZ_mGYtnwr3dcgkniDdF0qqzc8_6AIZdvBuHUm_rv7hFxKnl_C_4ScTx74uq1Y92FtHg/exec');
+        const url = new URL('https://script.google.com/macros/s/AKfycbzQSDGFpSc4_YHx8o4JEQc1E70Cwj-O7GB7qXzI5lEN_sKojDPpSHhHXxcK7w58f5sN6A/exec');
         url.searchParams.append('action', 'unsubscribe');
         url.searchParams.append('email', email);
+		const reason = unsubscribeForm.querySelector('#reason').value.trim();
+		url.searchParams.append('reason', reason);
+
 
         // Send a GET request
         const response = await fetch(url, {
