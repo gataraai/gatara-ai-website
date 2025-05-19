@@ -98,7 +98,7 @@ function attachEventListeners() {
 
     try {
       // Construct the URL with query parameters
-      const url = new URL('https://script.google.com/macros/s/AKfycbxZ_mGYtnwr3dcgkniDdF0qqzc8_6AIZdvBuHUm_rv7hFxKnl_C_4ScTx74uq1Y92FtHg/exec');
+      const url = new URL('https://script.google.com/macros/s/AKfycbxISALLt44oLtTY_mRKXc-Cc5_hWaiI9kbZmwl3NrPa_snTLzXA0IKFy620r_shMUlrAQ/exec');
       url.search = new URLSearchParams(formData).toString();
 
       // Send a GET request
