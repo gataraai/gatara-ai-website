@@ -142,6 +142,17 @@
 				padding: 1.5rem;
 			}
 		}
+		.required-mark {
+			color: red;
+			margin-left: 3px;
+		}
+		
+		.error-message {
+			font-family: 'Product Sans Regular' !important;
+			font-size: 14px !important;
+		}
+		
+		
 	</style>
 	
 	<link rel="stylesheet" media="all" href="/main.css">
@@ -167,7 +178,8 @@
 								</div>
 								<div class="form-field">
 									<label for="reason" style="font-family: 'Product Sans Regular' !important;">Why are you unsubscribing?</label>
-									<textarea id="reason" name="reason" placeholder="Optional feedback..." rows="3"></textarea>
+									<textarea id="reason" name="reason" placeholder="Please tell us why you're unsubscribing (min 5 words)..." rows="3" required style="width: 100%; padding: 0.75rem 1rem; border: 1px solid #ddd; border-radius: 8px; transition: border-color 0.3s; font-family: 'Product Sans Regular' !important; font-size: 20px !important;"></textarea>
+									<div id="reason-error" class="error-message" style="color: red; font-size: 14px; margin-top: 5px; display: none;">Please tell us more!</div>
 								</div>
 
 								<div class="form-submit">
@@ -190,18 +202,32 @@
   document.addEventListener('DOMContentLoaded', () => {
   const unsubscribeForm = document.getElementById('unsubscribe-form');
   const resultDiv = document.getElementById('unsubscribe-result');
+  const reasonField = document.getElementById('reason');
+  const reasonError = document.getElementById('reason-error');
 
   if (unsubscribeForm) {
     unsubscribeForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const email = unsubscribeForm.querySelector('#email').value.trim();
-
-      // Basic validation
+      const reason = reasonField.value.trim();
+      
+      // Validate email
       if (!email) {
         resultDiv.textContent = 'Please enter a valid email address.';
         resultDiv.style.color = 'red';
         return;
+      }
+      
+      // Validate reason (minimum 5 words)
+      const wordCount = reason.split(/\s+/).filter(word => word.length > 0).length;
+      if (wordCount < 5) {
+        reasonError.style.display = 'block';
+        reasonField.style.borderColor = 'red';
+        return;
+      } else {
+        reasonError.style.display = 'none';
+        reasonField.style.borderColor = '#ddd';
       }
 
       // Optional: show loader
@@ -209,12 +235,10 @@
 
       try {
         // Construct the URL with query parameters
-        const url = new URL('https://script.google.com/macros/s/AKfycbzQSDGFpSc4_YHx8o4JEQc1E70Cwj-O7GB7qXzI5lEN_sKojDPpSHhHXxcK7w58f5sN6A/exec');
+        const url = new URL('https://script.google.com/macros/s/AKfycbz21NjoJ0o6_Ae_HtHD88NdcwNS8VnKst5GkRWdeg83UG9NyCE2wFP7jYOO2M7zSqYEkg/exec');
         url.searchParams.append('action', 'unsubscribe');
         url.searchParams.append('email', email);
-		const reason = unsubscribeForm.querySelector('#reason').value.trim();
-		url.searchParams.append('reason', reason);
-
+        url.searchParams.append('reason', reason);
 
         // Send a GET request
         const response = await fetch(url, {
@@ -240,6 +264,15 @@
         resultDiv.textContent = 'Something went wrong. Please try again.';
         resultDiv.style.color = 'red';
         console.error(err);
+      }
+    });
+    
+    // Add input event listener to hide error when user types
+    reasonField.addEventListener('input', () => {
+      const wordCount = reasonField.value.trim().split(/\s+/).filter(word => word.length > 0).length;
+      if (wordCount >= 5) {
+        reasonError.style.display = 'none';
+        reasonField.style.borderColor = '#ddd';
       }
     });
   }
