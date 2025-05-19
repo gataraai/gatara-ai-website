@@ -29,6 +29,30 @@ function attachEventListeners() {
       }
     });
     
+    // Check message field for minimum word count
+    const messageField = e.target.querySelector('[name="message"]');
+    if (messageField) {
+      const messageText = messageField.value.trim();
+      const wordCount = messageText.split(/\s+/).filter(word => word.length > 0).length;
+      
+      if (wordCount < 7) {
+        isValid = false;
+        messageField.classList.add('invalid', 'error');
+        messageField.style.border = '2px solid red';
+        const errorMsg = messageField.closest('.hs-form-field').querySelector('.hs-error-msg');
+        errorMsg.textContent = 'Please tell us more!';
+        errorMsg.style.display = 'block';
+      } else {
+        // Remove error styling when word count is sufficient
+        messageField.classList.remove('invalid', 'error');
+        messageField.style.border = '';
+        const errorMsg = messageField.closest('.hs-form-field').querySelector('.hs-error-msg');
+        if (errorMsg) {
+          errorMsg.style.display = 'none';
+        }
+      }
+    }
+    
     if (!isValid) {
       return;
     }
