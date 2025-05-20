@@ -661,16 +661,6 @@ function showColdOutreachPopup(event) {
   addClickOutsideToClose(popup);
 }
 
-
-
-
-
-
-
-
-
-
-
 function showLeadsEnhancementPopup(event) {
   if (event) event.preventDefault();
   
@@ -740,14 +730,11 @@ function showLeadsEnhancementPopup(event) {
   addClickOutsideToClose(popup);
 }
 
-
-
-
 function leadsEnhancementPopupStyles() {
   // Add popup styles if not already in your CSS
-  if (!document.getElementById('popup-styles')) {
+  if (!document.getElementById('leads-enhancement-popup-styles')) {
     const style = document.createElement('style');
-    style.id = 'popup-styles';
+    style.id = 'leads-enhancement-popup-styles';
     style.innerHTML = `
       .leads-enhancement-container {
       background: #151515;
@@ -1047,119 +1034,11 @@ function leadsEnhancementPopupStyles() {
   }
 }
 
-
-
-
-
-
-
-
-
-
-// Function to add click outside to close functionality
-function addClickOutsideToClose(popup) {
-  popup.addEventListener('click', (e) => {
-    // If the click is directly on the popup background (not on its children)
-    if (e.target === popup) {
-      closePopup();
-    }
-  });
-}
-
-function addPopupStyles() {
-  // Add popup styles if not already in your CSS
-  if (!document.getElementById('popup-styles')) {
-    const style = document.createElement('style');
-    style.id = 'popup-styles';
-    style.innerHTML = `
-      .popup {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-      }
-      
-      .popup-content {
-        padding: 20px;
-        border-radius: 12px;
-        background-color: #ffffff;
-        max-width: 90%;
-        max-height: 90vh;
-        overflow: auto;
-      }
-      
-      .card {
-        width: 320px;
-        height: auto;
-        background: #151515;
-        position: relative;
-        border-radius: 2.5em;
-        padding: 2em;
-        transition: transform 0.4s ease;
-        border: 1.5px solid rgba(128, 128, 128, 0.6);
-      }
-      
-      .card .card-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 1.5em;
-      }
-      
-      .card .card-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      
-      @media (max-width: 768px) {
-        .popup-content {
-          max-width: 95%;
-          max-height: 80vh;
-          padding: 15px;
-        }
-        
-        .card {
-          width: 280px;
-          padding: 1.5em;
-        }
-      }
-      
-      @media (max-width: 480px) {
-        .popup-content {
-          max-width: 95%;
-          max-height: 70vh;
-          padding: 10px;
-        }
-        
-        .card {
-          width: 256px;
-          padding: 1em;
-        }
-      }
-    `;
-    document.head.appendChild(style);
-  }
-}
-
-function closePopup() {
-  const popup = document.querySelector('.popup');
-  if (popup) {
-    document.body.removeChild(popup);
-  }
-}
-
 function coldOutrechPopupStyles() {
   // Add popup styles if not already in your CSS
-  if (!document.getElementById('popup-styles')) {
+  if (!document.getElementById('cold-outreach-popup-styles')) {
     const style = document.createElement('style');
-    style.id = 'popup-styles';
+    style.id = 'cold-outreach-popup-styles';
     style.innerHTML = `
        <style>
     .popup {
@@ -1473,8 +1352,104 @@ function coldOutrechPopupStyles() {
   }
 }
 
-</script>
-<script>
+function addPopupStyles() {
+  // Add popup styles if not already in your CSS
+  if (!document.getElementById('general-popup-styles')) {
+    const style = document.createElement('style');
+    style.id = 'general-popup-styles';
+    style.innerHTML = `
+      .popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+      
+      .popup-content {
+        padding: 20px;
+        border-radius: 12px;
+        background-color: #ffffff;
+        max-width: 90%;
+        max-height: 90vh;
+        overflow: auto;
+      }
+      
+      .card {
+        width: 320px;
+        height: auto;
+        background: #151515;
+        position: relative;
+        border-radius: 2.5em;
+        padding: 2em;
+        transition: transform 0.4s ease;
+        border: 1.5px solid rgba(128, 128, 128, 0.6);
+      }
+      
+      .card .card-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1.5em;
+      }
+      
+      .card .card-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      @media (max-width: 768px) {
+        .popup-content {
+          max-width: 95%;
+          max-height: 80vh;
+          padding: 15px;
+        }
+        
+        .card {
+          width: 280px;
+          padding: 1.5em;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .popup-content {
+          max-width: 95%;
+          max-height: 70vh;
+          padding: 10px;
+        }
+        
+        .card {
+          width: 256px;
+          padding: 1em;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+}
+
+function closePopup() {
+  const popup = document.querySelector('.popup');
+  if (popup) {
+    document.body.removeChild(popup);
+  }
+}
+
+// Function to add click outside to close functionality
+function addClickOutsideToClose(popup) {
+  popup.addEventListener('click', (e) => {
+    // If the click is directly on the popup background (not on its children)
+    if (e.target === popup) {
+      closePopup();
+    }
+  });
+}
 
 // Add this function to handle the banner display
 function handleBannerDisplay() {
