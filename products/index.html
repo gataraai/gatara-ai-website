@@ -678,62 +678,61 @@ function showLeadsEnhancementPopup(event) {
   popup.className = 'popup';
   popup.style = 'position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); display: flex; justify-content: center; align-items: center; z-index: 1000;';
   popup.innerHTML = `
-    
-<div class="leads-enhancement-container">
-  <div class="leads-header">
-    <h2 class="leads-title">
-      <i class="fas fa-user-secret leads-icon"></i> Leads List Enhancement Agent
-    </h2>
-    <button class="btn-close-popup" onclick="closePopup()">×</button>
-  </div>
+  <div class="leads-enhancement-container">
+    <div class="leads-header">
+      <h2 class="leads-title">
+        <i class="fas fa-user-secret leads-icon"></i> Leads List Enhancement Agent
+      </h2>
+      <button class="btn-close-popup" onclick="closePopup()" aria-label="Close Leads Enhancement Card">×</button>
+    </div>
 
-  <div class="workflow-steps">
-    <!-- Step 1 -->
-    <div class="workflow-step-box">
-      <div class="workflow-icon"><i class="fas fa-upload"></i></div>
-      <h4 class="workflow-title">1. Upload Your Leads List</h4>
-      <div class="workflow-info-list">
-        <div class="workflow-info-item"><i class="fas fa-user workflow-info-icon"></i> Leads Name</div>
-        <div class="workflow-info-item"><i class="fas fa-building workflow-info-icon"></i> Company</div>
-        <div class="workflow-info-item"><i class="fas fa-globe workflow-info-icon"></i> Website</div>
-        <div class="workflow-info-item"><i class="fab fa-linkedin workflow-info-icon"></i> LinkedIn Profile</div>
+    <div class="workflow-steps">
+      <!-- Step 1 -->
+      <div class="workflow-step-box">
+        <div class="workflow-icon"><i class="fas fa-upload"></i></div>
+        <h4 class="workflow-title">1. Upload Your Leads List</h4>
+        <div class="workflow-info-list">
+          <div class="workflow-info-item"><i class="fas fa-user workflow-info-icon"></i> Leads Name</div>
+          <div class="workflow-info-item"><i class="fas fa-building workflow-info-icon"></i> Company</div>
+          <div class="workflow-info-item"><i class="fas fa-globe workflow-info-icon"></i> Website</div>
+          <div class="workflow-info-item"><i class="fab fa-linkedin workflow-info-icon"></i> LinkedIn Profile</div>
+        </div>
+      </div>
+
+      <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
+
+      <!-- Step 2 -->
+      <div class="workflow-step-box">
+        <div class="workflow-icon"><i class="fas fa-cogs"></i></div>
+        <h4 class="workflow-title">2. Agent Enhances Data</h4>
+        <div class="workflow-process-container">
+          <div class="workflow-process-box"><i class="fas fa-search-plus workflow-info-icon"></i> Getting details...</div>
+          <div class="workflow-process-box"><i class="fas fa-layer-group workflow-info-icon"></i> Creating fields...</div>
+          <div class="workflow-process-box"><i class="fas fa-clipboard-check workflow-info-icon"></i> Analyzing & scoring...</div>
+        </div>
+        <div class="workflow-note">
+          Enriching your data <i class="fas fa-spinner fa-spin" style="margin-left: 5px;"></i>
+        </div>
+      </div>
+
+      <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
+
+      <!-- Step 3 -->
+      <div class="workflow-step-box"> <!-- This will get the :last-of-type style -->
+        <div class="workflow-icon"><i class="fas fa-file-download"></i></div>
+        <h4 class="workflow-title">3. Download Enriched List</h4>
+        <div class="workflow-info-list">
+          <div class="workflow-info-item"><i class="fas fa-plus-circle workflow-info-icon"></i> Added info</div>
+          <div class="workflow-info-item"><i class="fas fa-check-double workflow-info-icon"></i> Is Good Fit?</div>
+          <div class="workflow-info-item"><i class="fas fa-sort-amount-down workflow-info-icon"></i> More ways to filter</div>
+        </div>
       </div>
     </div>
 
-    <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
-
-    <!-- Step 2 -->
-    <div class="workflow-step-box">
-      <div class="workflow-icon"><i class="fas fa-cogs"></i></div>
-      <h4 class="workflow-title">2. Agent Enhances Data</h4>
-      <div>
-        <div class="workflow-process-box"><i class="fas fa-search-plus workflow-info-icon"></i> Getting more details...</div>
-        <div class="workflow-process-box"><i class="fas fa-layer-group workflow-info-icon"></i> Creating fields...</div>
-        <div class="workflow-process-box"><i class="fas fa-clipboard-check workflow-info-icon"></i> Analyzing & scoring ...</div>
-      </div>
-      <div class="workflow-note">
-        Enriching your data <i class="fas fa-spinner fa-spin" style="margin-left: 5px;"></i>
-      </div>
-    </div>
-
-    <div class="arrow-icon"><i class="fas fa-arrow-right"></i></div>
-
-    <!-- Step 3 -->
-    <div class="workflow-step-box">
-      <div class="workflow-icon"><i class="fas fa-file-download"></i></div>
-      <h4 class="workflow-title">3. Download Enriched List</h4>
-      <div class="workflow-info-list">
-        <div class="workflow-info-item"><i class="fas fa-plus-circle workflow-info-icon"></i> Added info</div>
-        <div class="workflow-info-item"><i class="fas fa-check-double workflow-info-icon"></i> Is Good Fit?</div>
-        <div class="workflow-info-item"><i class="fas fa-sort-amount-down workflow-info-icon"></i> More ways to filter</div>
-      </div>
+    <div class="btn-coming-soon-container">
+      <a href="#" class="btn-coming-soon">Coming soon <i class="fas fa-arrow-right" style="font-size: 0.8em; margin-left: 5px;"></i></a>
     </div>
   </div>
-
-  <div class="btn-coming-soon-container">
-    <a href="#" class="btn-coming-soon">Coming soon →</a>
-  </div>
-</div>
   `;
   document.body.appendChild(popup);
   leadsEnhancementPopupStyles();
@@ -750,210 +749,300 @@ function leadsEnhancementPopupStyles() {
     const style = document.createElement('style');
     style.id = 'popup-styles';
     style.innerHTML = `
-       .leads-enhancement-container {
-    background: #151515;
-    border-radius: 1.5em;
-    padding: 2.5em;
-    width: 90%;
-    max-width: 1100px;
-    color: white;
-    font-family: 'Product Sans Regular';
-    border: 1px solid rgba(217, 119, 87, 0.3);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  }
-
-  .leads-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 25px;
-  }
-
-  .leads-title {
-    color: white;
-    font-family: 'Product Sans Medium Regular';
-    font-size: 24px;
-    margin: 0;
-  }
-
-  .leads-icon {
-    color: #d97757;
-    margin-right: 10px;
-  }
-
-  .btn-close-popup {
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 22px;
-    transition: color 0.2s ease;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-  }
-
-  .btn-close-popup:hover {
-    color: #d97757;
-  }
-
-  .workflow-steps {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-  }
-
-  .workflow-step-box {
-    flex: 1;
-    background: #2A2A2A;
-    border-radius: 10px;
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .workflow-step-box:nth-child(3) {
-    background: #3A2A25;
-  }
-
-  .workflow-icon {
-    color: #d97757;
-    font-size: 28px;
-    margin-bottom: 15px;
-  }
-
-  .workflow-title {
-    color: #d97757;
-    margin: 0 0 15px 0;
-    font-family: 'Product Sans Medium Regular';
-    font-size: 18px;
-    text-align: center;
-  }
-
-  .workflow-info-list {
-    display: inline-block;
-    text-align: left;
-  }
-
-  .workflow-info-item {
-    margin-bottom: 12px;
-    font-size: 15px;
-  }
-
-  .workflow-info-icon {
-    margin-right: 10px;
-    color: #d97757;
-  }
-
-  .workflow-process-box {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 10px;
-    border-radius: 8px;
-    text-align: left;
-    font-size: 15px;
-    margin-bottom: 12px;
-  }
-
-  .workflow-note {
-    font-size: 15px;
-    font-style: italic;
-    text-align: center;
-    margin-top: 10px;
-  }
-
-  .arrow-icon {
-    display: flex;
-    align-items: center;
-    color: #d97757;
-    font-size: 28px;
-  }
-
-  .btn-coming-soon-container {
-    text-align: center;
-    margin-top: 30px;
-  }
-
-  .btn-coming-soon {
-    color: #d97757;
-    text-decoration: none;
-    font-family: 'Product Sans Regular';
-    font-size: 18px;
-    padding: 8px 16px;
-    border: 1px solid #d97757;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-    background-color: transparent;
-  }
-
-  .btn-coming-soon:hover {
-    background-color: rgba(217, 119, 87, 0.2);
-  }
-
-  /* Mobile responsive styles */
-  @media (max-width: 768px) {
-    .leads-enhancement-container {
-      width: 95%;
-      max-width: 400px;
-      padding: 1.5em;
-      overflow-y: auto;
-      max-height: 90vh;
+      .leads-enhancement-container {
+      background: #151515;
+      border-radius: 1.5em;
+      padding: 2.5em;
+      width: 90%;
+      max-width: 1100px;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      border: 1px solid rgba(217, 119, 87, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
-    
+
+    .leads-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.875rem; /* 30px */
+    }
+
     .leads-title {
-      font-size: 20px;
+      color: white;
+      font-weight: 600;
+      font-size: 1.5rem; /* 24px */
+      margin: 0;
     }
-    
+
+    .leads-icon {
+      color: #d97757;
+      margin-right: 0.625rem; /* 10px */
+    }
+
+    .btn-close-popup {
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 1.5rem; /* 24px */
+      transition: color 0.2s ease;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+
+    .btn-close-popup:hover {
+      color: #d97757;
+      background-color: rgba(255, 255, 255, 0.05); /* Subtle hover for better feedback */
+    }
+
     .workflow-steps {
-      flex-direction: column;
-      gap: 10px;
+      display: flex;
+      justify-content: space-between;
+      gap: 1.25rem; /* 20px */
+      align-items: stretch; /* Make boxes same height if content differs slightly */
     }
-    
+
     .workflow-step-box {
-      padding: 15px;
-      margin-bottom: 0;
-      width: 100%;
+      flex: 1;
+      background: #2A2A2A;
+      border-radius: 0.625rem; /* 10px */
+      padding: 1.5rem; /* 24px */
+      display: flex;
+      flex-direction: column;
+      /* justify-content: center; Removed to allow natural top alignment */
+      align-items: center;
+      text-align: center; /* Center text content within the box */
+    }
+
+    .workflow-step-box:nth-child(3) { /* Specific style for the 3rd box as per original */
+       /* No, this selector is wrong. It should target the 3rd direct child of workflow-steps
+          If there are arrows in between, it won't be the 3rd.
+          Let's assume it's meant for the actual 3rd step box.
+          For now, I'll keep the intent if the structure is 3 boxes directly.
+          If arrows are divs, then it would be: .workflow-step-box:nth-of-type(3)
+          But since there are arrows, we might need a specific class or target the last one.
+          Let's say we target the last logical step box.
+       */
+    }
+    /* Let's give the last step-box a unique style to differentiate it as in the original example */
+    .workflow-steps > .workflow-step-box:last-of-type {
+        background: #3A2A25;
+    }
+
+
+    .workflow-icon {
+      color: #d97757;
+      font-size: 1.75rem; /* 28px */
+      margin-bottom: 1rem; /* 16px */
+    }
+
+    .workflow-title {
+      color: #d97757;
+      margin: 0 0 1rem 0; /* 16px */
+      font-weight: 600;
+      font-size: 1.125rem; /* 18px */
+      text-align: center;
+      min-height: 2.5em; /* Ensure titles have space even if one is shorter */
+    }
+
+    .workflow-info-list {
+      display: inline-block; /* Keeps it centered if text-align:center on parent */
+      text-align: left;
+      width: 100%; /* Allow list to take width then align text left */
+      margin-top: 0.5rem;
+    }
+
+    .workflow-info-item {
+      margin-bottom: 0.75rem; /* 12px */
+      font-size: 0.9375rem; /* 15px */
+      display: flex; /* For better alignment of icon and text */
+      align-items: center;
+    }
+
+    .workflow-info-icon {
+      margin-right: 0.625rem; /* 10px */
+      color: #d97757;
+      width: 20px; /* Give icon a fixed width for alignment */
       text-align: center;
     }
-    
-    .workflow-icon {
-      font-size: 24px;
-      margin-bottom: 10px;
+
+    .workflow-process-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem; /* 8px */
+      width: 100%;
+      margin-top: 0.5rem;
     }
-    
-    .workflow-title {
-      font-size: 16px;
-      margin-bottom: 10px;
-    }
-    
-    .workflow-info-item {
-      font-size: 14px;
-      margin-bottom: 8px;
-    }
-    
+
     .workflow-process-box {
-      font-size: 14px;
-      padding: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.625rem; /* 10px */
+      border-radius: 0.5rem; /* 8px */
+      text-align: center;
+      font-size: 0.875rem; /* 14px */
+      flex: 1 1 auto;
+      min-width: 120px;
+      /* max-width: 160px; Removed max-width for better flexibility */
+      display: flex; /* Align icon and text within process box */
+      align-items: center;
+      justify-content: center;
     }
-    
+    .workflow-process-box .workflow-info-icon { /* Style for icons inside process boxes */
+        margin-right: 0.3rem;
+        font-size: 0.8em; /* Slightly smaller icon */
+    }
+
+
+    .workflow-note {
+      font-size: 0.875rem; /* 14px */
+      font-style: italic;
+      text-align: center;
+      margin-top: 0.75rem; /* 12px */
+      color: #aaa; /* Softer color for note */
+    }
+
     .arrow-icon {
-      transform: rotate(90deg);
-      margin: 5px 0;
-      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #d97757;
+      font-size: 1.75rem; /* 28px */
+      flex-shrink: 0; /* Prevent arrows from shrinking */
     }
-    
-    .btn-coming-soon {
-      font-size: 16px;
-    }
-    
+
     .btn-coming-soon-container {
-      margin-top: 20px;
+      text-align: center;
+      margin-top: 2rem; /* 32px */
     }
-  }
+
+    .btn-coming-soon {
+      color: #d97757;
+      text-decoration: none;
+      font-size: 1.125rem; /* 18px */
+      padding: 0.625rem 1.25rem; /* 10px 20px */
+      border: 1px solid #d97757;
+      border-radius: 1.25rem; /* 20px */
+      transition: all 0.3s ease;
+      background-color: transparent;
+      display: inline-block;
+    }
+
+    .btn-coming-soon:hover {
+      background-color: rgba(217, 119, 87, 0.2);
+      color: #f09a7c; /* Lighten text on hover */
+    }
+
+    /* Mobile responsive styles */
+    @media (max-width: 992px) { /* Tablet and below adjustments */
+        .workflow-process-box {
+            min-width: 100px; /* Allow slightly smaller boxes on tablets */
+        }
+        .leads-title {
+            font-size: 1.375rem; /* 22px */
+        }
+    }
+
+
+    @media (max-width: 768px) {
+      .leads-enhancement-container {
+        width: 95%;
+        max-width: 500px; /* Max width for larger phones */
+        padding: 1.5em;
+        overflow-y: auto; /* Keep this for potentially tall content on small screens */
+        max-height: 90vh; /* Keep this as well */
+      }
+      
+      .leads-header {
+        margin-bottom: 1.5rem;
+      }
+
+      .leads-title {
+        font-size: 1.25rem; /* 20px */
+      }
+      
+      .btn-close-popup {
+        font-size: 1.375rem; /* 22px */
+        width: 36px;
+        height: 36px;
+      }
+
+      .workflow-steps {
+        flex-direction: column;
+        gap: 1rem; /* 16px */
+      }
+      
+      .workflow-step-box {
+        padding: 1.25rem; /* 20px */
+        /* margin-bottom: 0; /* Removed, gap handles spacing */
+        width: 100%;
+      }
+      
+      .workflow-icon {
+        font-size: 1.625rem; /* 26px */
+        margin-bottom: 0.75rem; /* 12px */
+      }
+      
+      .workflow-title {
+        font-size: 1.0625rem; /* 17px */
+        margin-bottom: 0.75rem; /* 12px */
+        min-height: auto; /* Don't need fixed min-height on mobile */
+      }
+      
+      .workflow-info-item {
+        font-size: 0.875rem; /* 14px */
+        margin-bottom: 0.625rem; /* 10px */
+      }
+      
+      .workflow-process-container {
+        gap: 0.5rem; /* 8px */
+      }
+      
+      .workflow-process-box {
+        font-size: 0.8125rem; /* 13px */
+        padding: 0.5rem; /* 8px */
+        flex: 1 1 calc(50% - 4px); /* Aim for 2 columns, accounting for half the gap */
+        min-width: 0; /* Override desktop min-width, let flex-basis control it */
+      }
+      .workflow-process-box .workflow-info-icon {
+        font-size: 0.75em;
+      }
+      
+      .arrow-icon {
+        transform: rotate(90deg);
+        margin: 0.75rem 0; /* 12px */
+      }
+      
+      .btn-coming-soon {
+        font-size: 1rem; /* 16px */
+        padding: 0.5rem 1rem; /* 8px 16px */
+      }
+      
+      .btn-coming-soon-container {
+        margin-top: 1.5rem; /* 24px */
+      }
+    }
+
+    @media (max-width: 480px) { /* Smaller mobile screens */
+        .leads-enhancement-container {
+            padding: 1.2em;
+        }
+        .leads-title {
+            font-size: 1.15rem;
+        }
+        .workflow-process-box {
+             /* On very small screens, make them stack if 2-col is too tight */
+            flex: 1 1 100%;
+        }
+        .workflow-info-item {
+           font-size: 0.825rem;
+        }
+    }
     `;
     document.head.appendChild(style);
   }
