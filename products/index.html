@@ -581,10 +581,6 @@ function showColdOutreachPopup(event) {
     </div>
     
     <div class="outreach-content">
-      <p class="outreach-description">
-        Engage potential leads through personalized, AI-powered cold outreach across email.
-        Capture attention with relevant messaging tailored to each prospect's industry and needs.
-      </p>
       
       <div class="workflow-landscape">
         <!-- First row: Lead input and the 3 sources -->
@@ -757,7 +753,6 @@ function leadsEnhancementPopupStyles() {
 
     .leads-title {
       color: white;
-      font-weight: 600;
       font-size: 1.5rem; /* 24px */
       margin: 0;
     }
@@ -831,7 +826,6 @@ function leadsEnhancementPopupStyles() {
     .workflow-title {
       color: #d97757;
       margin: 0 0 1rem 0; /* 16px */
-      font-weight: 600;
       font-size: 1.125rem; /* 18px */
       text-align: center;
       min-height: 2.5em; /* Ensure titles have space even if one is shorter */
@@ -1085,7 +1079,19 @@ function coldOutrechPopupStyles() {
     border: none;
     color: white;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 1.5rem; /* 24px, matching leads popup */
+    transition: color 0.2s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  
+  .close-popup:hover {
+    color: #d97757;
+    background-color: rgba(255, 255, 255, 0.05);
   }
   
   .outreach-content {
@@ -1096,13 +1102,12 @@ function coldOutrechPopupStyles() {
   .outreach-title {
     color: white;
     font-family: 'Product Sans Medium Regular', sans-serif;
-    font-size: 22px;
-    margin-top: 0;
-    margin-bottom: 10px;
+    font-size: 1.5rem; /* 24px, matching leads popup */
+    margin: 0;
   }
   
   .outreach-description {
-    font-size: 16px;
+    font-size: 0.9375rem; /* 15px, matching leads popup info items */
     margin-bottom: 20px;
     text-align: center;
   }
@@ -1111,19 +1116,19 @@ function coldOutrechPopupStyles() {
   .workflow-landscape {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 1.25rem; /* 20px, matching leads popup */
   }
   
   .workflow-row {
     display: flex;
     justify-content: space-between;
-    gap: 15px;
+    gap: 1.25rem; /* 20px, matching leads popup */
   }
   
   .workflow-step {
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 15px;
+    border-radius: 0.625rem; /* 10px, matching leads popup */
+    padding: 1.5rem; /* 24px, matching leads popup */
     flex: 1;
     text-align: center;
     transition: transform 0.2s ease;
@@ -1138,20 +1143,20 @@ function coldOutrechPopupStyles() {
   }
   
   .step-icon {
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 1.75rem; /* 28px, matching leads popup */
+    margin-bottom: 1rem; /* 16px, matching leads popup */
     color: #d97757;
   }
   
   .step-title {
-    font-size: 16px;
-    margin-bottom: 8px;
+    font-size: 1.125rem; /* 18px, matching leads popup */
+    margin-bottom: 1rem; /* 16px, matching leads popup */
     color: #d97757;
     text-align: center;
   }
   
   .step-description {
-    font-size: 14px;
+    font-size: 0.93rem; /* 15px, matching leads popup info items */
     line-height: 1.4;
     text-align: center;
   }
@@ -1239,39 +1244,43 @@ function coldOutrechPopupStyles() {
     font-size: 18px;
   }
   
-  @media (max-width: 850px) {
+  @media (max-width: 768px) {
     .card {
-      width: 90%;
-      max-width: 600px;
+      width: 95%;
+      max-width: 500px; /* Max width for larger phones, matching leads popup */
       padding: 1.5em;
     }
     
-    /* Hide description on mobile */
-    .outreach-description {
-      display: none;
+    .outreach-title {
+      font-size: 1.25rem; /* 20px, matching leads popup */
+    }
+    
+    .close-popup {
+      font-size: 1.375rem; /* 22px, matching leads popup */
+      width: 36px;
+      height: 36px;
     }
     
     .workflow-row {
       flex-direction: column;
+      gap: 1rem; /* 16px, matching leads popup */
     }
     
     .arrow-icon {
       transform: rotate(90deg);
-      margin: 5px 0;
+      margin: 0.75rem 0; /* 12px, matching leads popup */
     }
     
-    /* Keep input sources horizontal even on mobile */
-    .input-sources {
-      flex-direction: row;
-      gap: 10px;
+    .workflow-step {
+      padding: 1.25rem; /* 20px, matching leads popup */
+      width: 100%;
     }
     
-    /* Hide descriptions on mobile */
-    .step-description {
-      display: none;
+    .step-icon {
+      font-size: 1.625rem; /* 26px, matching leads popup */
+      margin-bottom: 0.75rem; /* 12px, matching leads popup */
     }
     
-    /* Make titles smaller */
     .step-title {
       font-size: 14px;
       margin-bottom: 0;
@@ -1308,20 +1317,15 @@ function coldOutrechPopupStyles() {
   @media (max-width: 480px) {
     .card {
       width: 95%;
-      padding: 1.2em;
+      padding: 1.2em; /* Matching leads popup */
     }
     
     .outreach-title {
-      font-size: 18px;
-    }
-    
-    /* Further reduce sizes */
-    .step-icon, .input-icon {
-      font-size: 16px;
+      font-size: 1.15rem; /* Matching leads popup */
     }
     
     .step-title, .input-title {
-      font-size: 12px;
+      font-size: 15px;
     }
     
     /* Minimal padding */
@@ -1346,7 +1350,7 @@ function coldOutrechPopupStyles() {
     
     /* Make input titles even smaller on very small screens */
     .input-title {
-      font-size: 10px;
+      font-size: 14px;
     }
   }
     `;
