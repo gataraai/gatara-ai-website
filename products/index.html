@@ -671,6 +671,107 @@ function showColdOutreachPopup(event) {
 
 
 
+function showLeadsEnhancementPopup(event) {
+  event.preventDefault();
+  
+  const popup = document.createElement('div');
+  popup.className = 'popup';
+  popup.style= 'position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); display: flex; justify-content: center; align-items: center; z-index: 1000;';
+  popup.innerHTML = `
+        <div class="enhancement-card">
+        <div class="card-header">
+            <h2><i class="fas fa-user-secret"></i> Leads List Enhancement Agent</h2>
+            <p class="product-description">
+                The Leads List Enhancement Agent supercharges your outreach. After you upload your initial leads list (e.g., names, companies, websites, LinkedIn profiles), the agent intelligently searches for more relevant information, creates new data fields, and even assesses if a lead is a "good fit" for your business (True/False). This allows you to prioritize your outreach effectively.
+            </p>
+        </div>
+
+        <div class="workflow-diagram">
+
+            <div class="workflow-step" id="upload-list">
+                <span class="icon"><i class="fas fa-upload"></i></span>
+                <h4>1. Upload Your Leads List</h4>
+                <p class="details">Provide your existing list with basic lead information.</p>
+                <ul>
+                    <li><i class="fas fa-user"></i> Leads Name</li>
+                    <li><i class="fas fa-building"></i> Company</li>
+                    <li><i class="fas fa-globe"></i> Website</li>
+                    <li><i class="fab fa-linkedin"></i> LinkedIn Profile</li>
+                </ul>
+            </div>
+
+            <div class="arrow down"></div>
+
+            <div class="workflow-step agent-processing" id="agent-work">
+                <span class="icon"><i class="fas fa-cogs"></i></span> <!-- Or fa-robot, fa-microchip -->
+                <h4>2. Agent Enhances Data</h4>
+                <div class="agent-actions">
+                    <div class="action-item"><i class="fas fa-search-plus"></i> Searching for comprehensive lead details...</div>
+                    <div class="action-item"><i class="fas fa-layer-group"></i> Creating new, valuable data fields...</div>
+                    <div class="action-item"><i class="fas fa-clipboard-check"></i> Analyzing and scoring "Good Fit" (True/False)...</div>
+                </div>
+                <div class="processing-indicator">
+                    <span>Enriching your data</span>
+                    <div class="spinner"></div>
+                </div>
+            </div>
+
+            <div class="arrow down"></div>
+
+            <div class="workflow-step" id="download-list">
+                <span class="icon"><i class="fas fa-file-download"></i></span>
+                <h4>3. Download Enriched List</h4>
+                <p class="details">Access your updated list, ready for smarter, prioritized outreach.</p>
+                <ul>
+                    <li><i class="fas fa-plus-circle"></i> Additional relevant info (e.g., industry, size, tech)</li>
+                    <li><i class="fas fa-check-double"></i> "Good Fit" indicator for each lead</li>
+                    <li><i class="fas fa-sort-amount-down"></i> Data to help you prioritize effectively</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+  `;
+  document.body.appendChild(popup);
+  leadsEnhancementPopupStyles();
+  
+  // Add click outside to close
+  addClickOutsideToClose(popup);
+}
+
+
+
+
+function leadsEnhancementPopupStyles() {
+  // Add popup styles if not already in your CSS
+  if (!document.getElementById('popup-styles')) {
+    const style = document.createElement('style');
+    style.id = 'popup-styles';
+    style.innerHTML = `
+      .popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+      
+      .popup-content {
+    `;
+    document.head.appendChild(style);
+  }
+}
+
+
+
+
+
+
 
 
 
